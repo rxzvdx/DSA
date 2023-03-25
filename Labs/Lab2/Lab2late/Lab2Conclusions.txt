@@ -1,0 +1,1 @@
+I found Lab 2 very informative as the method of creating another class for a full Array/ArrayList is completely new to me and I found it to be a very useful implementation that I will use in the future. 

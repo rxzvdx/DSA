@@ -1,0 +1,403 @@
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Insert item into the list 
+	 2. Remove item from the list 
+	 3. Get item from the list 
+	 4. Clear the list 
+	 5. Display size and content of the list 
+	 6. Delete the smallest and largest item in the list 
+	 7. Reverse the list 
+
+Make your menu selection now: 5
+List is empty.
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Insert item into the list 
+	 2. Remove item from the list 
+	 3. Get item from the list 
+	 4. Clear the list 
+	 5. Display size and content of the list 
+	 6. Delete the smallest and largest item in the list 
+	 7. Reverse the list 
+
+Make your menu selection now: 6
+List is empty, nothing to delete!
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Insert item into the list 
+	 2. Remove item from the list 
+	 3. Get item from the list 
+	 4. Clear the list 
+	 5. Display size and content of the list 
+	 6. Delete the smallest and largest item in the list 
+	 7. Reverse the list 
+
+Make your menu selection now: 7
+List is empty... nothing to reverse!
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Insert item into the list 
+	 2. Remove item from the list 
+	 3. Get item from the list 
+	 4. Clear the list 
+	 5. Display size and content of the list 
+	 6. Delete the smallest and largest item in the list 
+	 7. Reverse the list 
+
+Make your menu selection now: 1
+You are now inserting an item into the list.
+	 Enter item: Data
+	 Enter the position to insert item in: 0
+Item Data inserted in position 0 in the list.
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Insert item into the list 
+	 2. Remove item from the list 
+	 3. Get item from the list 
+	 4. Clear the list 
+	 5. Display size and content of the list 
+	 6. Delete the smallest and largest item in the list 
+	 7. Reverse the list 
+
+Make your menu selection now: 5
+	 List of size 1 has the following items: Data 
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Insert item into the list 
+	 2. Remove item from the list 
+	 3. Get item from the list 
+	 4. Clear the list 
+	 5. Display size and content of the list 
+	 6. Delete the smallest and largest item in the list 
+	 7. Reverse the list 
+
+Make your menu selection now: 7
+	 Here is the content: Data 
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Insert item into the list 
+	 2. Remove item from the list 
+	 3. Get item from the list 
+	 4. Clear the list 
+	 5. Display size and content of the list 
+	 6. Delete the smallest and largest item in the list 
+	 7. Reverse the list 
+
+Make your menu selection now: 1
+You are now inserting an item into the list.
+	 Enter item: Beverly
+	 Enter the position to insert item in: 0
+Item Beverly inserted in position 0 in the list.
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Insert item into the list 
+	 2. Remove item from the list 
+	 3. Get item from the list 
+	 4. Clear the list 
+	 5. Display size and content of the list 
+	 6. Delete the smallest and largest item in the list 
+	 7. Reverse the list 
+
+Make your menu selection now: 5
+	 List of size 2 has the following items: Beverly Data 
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Insert item into the list 
+	 2. Remove item from the list 
+	 3. Get item from the list 
+	 4. Clear the list 
+	 5. Display size and content of the list 
+	 6. Delete the smallest and largest item in the list 
+	 7. Reverse the list 
+
+Make your menu selection now: 1
+You are now inserting an item into the list.
+	 Enter item: Jean-Luc
+	 Enter the position to insert item in: 5
+Position specified is out of range!
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Insert item into the list 
+	 2. Remove item from the list 
+	 3. Get item from the list 
+	 4. Clear the list 
+	 5. Display size and content of the list 
+	 6. Delete the smallest and largest item in the list 
+	 7. Reverse the list 
+
+Make your menu selection now: 5
+	 List of size 2 has the following items: Beverly Data 
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Insert item into the list 
+	 2. Remove item from the list 
+	 3. Get item from the list 
+	 4. Clear the list 
+	 5. Display size and content of the list 
+	 6. Delete the smallest and largest item in the list 
+	 7. Reverse the list 
+
+Make your menu selection now: 1
+You are now inserting an item into the list.
+	 Enter item: Jean-Luc
+	 Enter the position to insert item in: 2
+Item Jean-Luc inserted in position 2 in the list.
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Insert item into the list 
+	 2. Remove item from the list 
+	 3. Get item from the list 
+	 4. Clear the list 
+	 5. Display size and content of the list 
+	 6. Delete the smallest and largest item in the list 
+	 7. Reverse the list 
+
+Make your menu selection now: 1
+You are now inserting an item into the list.
+	 Enter item: Geordi
+	 Enter the position to insert item in: 2
+Item Geordi inserted in position 2 in the list.
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Insert item into the list 
+	 2. Remove item from the list 
+	 3. Get item from the list 
+	 4. Clear the list 
+	 5. Display size and content of the list 
+	 6. Delete the smallest and largest item in the list 
+	 7. Reverse the list 
+
+Make your menu selection now: 1
+You are now inserting an item into the list.
+	 Enter item: Worf
+	 Enter the position to insert item in: 3
+Item Worf inserted in position 3 in the list.
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Insert item into the list 
+	 2. Remove item from the list 
+	 3. Get item from the list 
+	 4. Clear the list 
+	 5. Display size and content of the list 
+	 6. Delete the smallest and largest item in the list 
+	 7. Reverse the list 
+
+Make your menu selection now: 5
+	 List of size 5 has the following items: Beverly Data Geordi Worf Jean-Luc 
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Insert item into the list 
+	 2. Remove item from the list 
+	 3. Get item from the list 
+	 4. Clear the list 
+	 5. Display size and content of the list 
+	 6. Delete the smallest and largest item in the list 
+	 7. Reverse the list 
+
+Make your menu selection now: 7
+	 Here is the content: Jean-Luc Worf Geordi Data Beverly 
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Insert item into the list 
+	 2. Remove item from the list 
+	 3. Get item from the list 
+	 4. Clear the list 
+	 5. Display size and content of the list 
+	 6. Delete the smallest and largest item in the list 
+	 7. Reverse the list 
+
+Make your menu selection now: 7
+	 Here is the content: Jean-Luc Worf Geordi Data Beverly 
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Insert item into the list 
+	 2. Remove item from the list 
+	 3. Get item from the list 
+	 4. Clear the list 
+	 5. Display size and content of the list 
+	 6. Delete the smallest and largest item in the list 
+	 7. Reverse the list 
+
+Make your menu selection now: 6
+Smallest item Beverly deleted.
+Largest item Worf deleted.
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Insert item into the list 
+	 2. Remove item from the list 
+	 3. Get item from the list 
+	 4. Clear the list 
+	 5. Display size and content of the list 
+	 6. Delete the smallest and largest item in the list 
+	 7. Reverse the list 
+
+Make your menu selection now: 5
+	 List of size 3 has the following items: Data Geordi Worf 
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Insert item into the list 
+	 2. Remove item from the list 
+	 3. Get item from the list 
+	 4. Clear the list 
+	 5. Display size and content of the list 
+	 6. Delete the smallest and largest item in the list 
+	 7. Reverse the list 
+
+Make your menu selection now: 7
+	 Here is the content: Worf Geordi Data 
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Insert item into the list 
+	 2. Remove item from the list 
+	 3. Get item from the list 
+	 4. Clear the list 
+	 5. Display size and content of the list 
+	 6. Delete the smallest and largest item in the list 
+	 7. Reverse the list 
+
+Make your menu selection now: 7
+	 Here is the content: Worf Geordi Data 
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Insert item into the list 
+	 2. Remove item from the list 
+	 3. Get item from the list 
+	 4. Clear the list 
+	 5. Display size and content of the list 
+	 6. Delete the smallest and largest item in the list 
+	 7. Reverse the list 
+
+Make your menu selection now: 2
+You are now removing an item from the list.
+	 Enter position to remove item from: 9
+Position specified is out of range!
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Insert item into the list 
+	 2. Remove item from the list 
+	 3. Get item from the list 
+	 4. Clear the list 
+	 5. Display size and content of the list 
+	 6. Delete the smallest and largest item in the list 
+	 7. Reverse the list 
+
+Make your menu selection now: 2
+You are now removing an item from the list.
+	 Enter position to remove item from: 2
+Item Worf removed from position 2 in the list.
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Insert item into the list 
+	 2. Remove item from the list 
+	 3. Get item from the list 
+	 4. Clear the list 
+	 5. Display size and content of the list 
+	 6. Delete the smallest and largest item in the list 
+	 7. Reverse the list 
+
+Make your menu selection now: 5
+	 List of size 2 has the following items: Data Geordi 
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Insert item into the list 
+	 2. Remove item from the list 
+	 3. Get item from the list 
+	 4. Clear the list 
+	 5. Display size and content of the list 
+	 6. Delete the smallest and largest item in the list 
+	 7. Reverse the list 
+
+Make your menu selection now: 2
+You are now removing an item from the list.
+	 Enter position to remove item from: 0
+Item Data removed from position 0 in the list.
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Insert item into the list 
+	 2. Remove item from the list 
+	 3. Get item from the list 
+	 4. Clear the list 
+	 5. Display size and content of the list 
+	 6. Delete the smallest and largest item in the list 
+	 7. Reverse the list 
+
+Make your menu selection now: 1
+You are now inserting an item into the list.
+	 Enter item: Will
+	 Enter the position to insert item in: 0
+Item Will inserted in position 0 in the list.
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Insert item into the list 
+	 2. Remove item from the list 
+	 3. Get item from the list 
+	 4. Clear the list 
+	 5. Display size and content of the list 
+	 6. Delete the smallest and largest item in the list 
+	 7. Reverse the list 
+
+Make your menu selection now: 5
+	 List of size 2 has the following items: Will Geordi 
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Insert item into the list 
+	 2. Remove item from the list 
+	 3. Get item from the list 
+	 4. Clear the list 
+	 5. Display size and content of the list 
+	 6. Delete the smallest and largest item in the list 
+	 7. Reverse the list 
+
+Make your menu selection now: 3
+	 Enter position to retrieve item from: 1
+Item Geordi retrieved from position 1 in the list.
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Insert item into the list 
+	 2. Remove item from the list 
+	 3. Get item from the list 
+	 4. Clear the list 
+	 5. Display size and content of the list 
+	 6. Delete the smallest and largest item in the list 
+	 7. Reverse the list 
+
+Make your menu selection now: 3
+	 Enter position to retrieve item from: 0
+Item Will retrieved from position 0 in the list.
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Insert item into the list 
+	 2. Remove item from the list 
+	 3. Get item from the list 
+	 4. Clear the list 
+	 5. Display size and content of the list 
+	 6. Delete the smallest and largest item in the list 
+	 7. Reverse the list 
+
+Make your menu selection now: 3
+	 Enter position to retrieve item from: 8
+Position specified is out of range!
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Insert item into the list 
+	 2. Remove item from the list 
+	 3. Get item from the list 
+	 4. Clear the list 
+	 5. Display size and content of the list 
+	 6. Delete the smallest and largest item in the list 
+	 7. Reverse the list 
+
+Make your menu selection now: 5
+	 List of size 2 has the following items: Will Geordi 
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Insert item into the list 
+	 2. Remove item from the list 
+	 3. Get item from the list 
+	 4. Clear the list 
+	 5. Display size and content of the list 
+	 6. Delete the smallest and largest item in the list 
+	 7. Reverse the list 
+
+Make your menu selection now: 6
+Smallest item Geordi deleted.

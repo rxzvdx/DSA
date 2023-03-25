@@ -1,0 +1,1 @@
+My biggest takeaway from this lab was the ability to create a collection without the usage of official collections such as ArrayList, etc. Despite this lab requiring an Array, the overall collection was only changed by the Array, not maintained by it. I also learned the importance of the compareTo method as it is clear it can be used for a variety of things in programming.

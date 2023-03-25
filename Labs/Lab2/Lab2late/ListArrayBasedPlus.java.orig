@@ -1,0 +1,76 @@
+/*
+ * Purpose: Data Structure and Algorithms Review Programming Assignment
+ * Status: Complete and thoroughly tested
+ * Last update: 1/30/23
+ * Submitted:  1/30/23
+ * Comment: test suite and sample run attached
+ * Comment: I declare that this is entirely my own work
+ * @author: Antonio Rosado
+ * @version: 2023.01.30
+ */
+
+public class ListArrayBasedPlus extends ListArrayBased
+{
+    /**
+     * Constructor.
+     */
+    public ListArrayBasedPlus() {
+        super();
+    }
+
+    /**
+     * Adds items to Array
+     */
+    public void add()
+    {
+        if(items.length == numItems)
+        {
+            resize(); // if items reaches max size/num of items, resize array
+        }
+        super.add(numItems, items); // call superclass
+    }
+
+    /**
+     * Reverses Array.
+     */
+    public void reverse()
+    {
+        for (int index = 0; index < numItems / 2; index++)
+        {
+            Object temps = items[numItems - index];
+            items[numItems - index] = items[index];
+            items[index] = temps; 
+        }
+    }
+
+    /**
+     * Resizes array if size cap is reached.
+     */
+    public void resize()
+    {
+            if(numItems == items.length)
+            {
+                int resize = items.length;
+                Object[] new_items = new Object[resize * 2]; // new Array == oldArray * 2
+                for(int index = 0; index < items.length; index++)
+                {
+                    new_items[index] = items;
+                }
+                new_items = items;
+            }
+            super.add(numItems + 1, items);
+    }
+
+    /* 
+     * Returns a string value of item(s) in Array
+     */
+    public String toString() 
+    {
+        StringBuilder sb = new StringBuilder();
+        for (int index = 0; index < numItems; ++index) // pre-increment
+            {
+                sb.append(items[index] + " ");
+            }
+            return sb.toString();
+    }
+}

@@ -1,0 +1,24 @@
+a) Space Complexity analysis:
+
+The CDLS implementation uses class DNode that itself contains 3 instance variables.
+Those being:
+An object reference to the item stored in DNode.
+A reference to the next DNode in the list.
+A reference to the previous DNode in the list.
+
+ListCDLSBased contains two instance variables.
+Those being:
+An Object reference to the first item in DNode
+An int to keep track of the number of items in DNode
+
+Each object reference should take 4 bytes so each DNode would require 4 * 4 = 16 bytes. The number of DNodes in the list is stored in the "numItems" variable which takes 4 bytes. So, the total space complexity of the CDLS implementation is O(16 * n + 4) = O(16n + 4), where n is the number of items in the list.
+
+b) Time Complexity analysis:
+
+get(int index) - The "find" method is called to find the item at the specified index. The find method has a time complexity of O(n/2) in the worst-case scenario where n is the number of items in the list. So, the overall time complexity of the "get" method is O(n/2) + O(1) = O(n/2), where O(1) represents the time taken to return the node item.
+
+add(int index, Object item): The "find" method is again called to find the DNode before the specified index. The find method has a time complexity of O(n/2) in the worst-case scenario where n is the number of items in the list. So, the overall time complexity of the "add" method is O(n/2) + O(1) = O(n/2), where O(1) represents the time taken to add the item.
+
+remove(int index): The "find" method is called to find the DNode at the specified index. The find method has a time complexity of O(n/2) in the worst-case scenario where n is the number of items in the list. So, the overall time complexity of the "remove" method is O(n/2) + O(1) = O(n/2), where O(1) represents the time taken to remove the item.
+
+As a result, the average time complexity of the CDLS implementation is O(n/2). 

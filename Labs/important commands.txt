@@ -1,0 +1,85 @@
+Header:
+/*
+ * Purpose: Data Structure and Algorithms Lab X Problem Y [instantiate X and Y]
+ * Status: Barely started/ Incomplete/ Complete and thoroughly tested [choose only one!!!]
+ * Last update: 01/18/23
+ * Submitted:  01/19/23
+ * Comment: test suite and sample run attached
+ * Comment: I declare that this is entirely my own work
+ * @author: John Doe [replace with your own first and last name]
+ * @version: 2023.01.18
+ */
+ 
+Styling java files:
+astyle --mode=java  Lab0Driver.java
+ 
+Creating allfiles.txt:
+more  Lab0Status.txt  Lab0Conclusions.txt  Lab0Driver.java  Lab0Sampleruns.txt > allfiles.txt
+more Lab4Status.txt Lab4Conclusions.txt DNode.java ListCDLSBased.java Lab4P1Driver.java Lab4P1Sampleruns.txt Lab4P2.txt > allfiles.txt
+Making pdf:
+makepdf  allfiles.txt 
+  
+Submission:
+~hristescu/DSA/Labs/Process/submit intime
+~hristescu/DSA/Labs/Process/submit late
+~hristescu/DSA/Labs/Process/submit redo
+
+Checking submissions:
+~hristescu/DSA/Labs/Process/what intime
+~hristescu/DSA/Labs/Process/what late
+~hristescu/DSA/Labs/Process/what redo
+
+Getting feedbackL
+~hristescu/DSA/Labs/Process/feedback
+
+In status file:
+Example:
+Problem 1: does not compile [give your most informed guess why]
+Problem 2: compiles, runs correctly on all provided input
+Problem 3: compiles, runs on some input from developed input suite [give your most informed guess why]
+
+Compile java file:
+javac *filename*.java
+
+Run java file:
+java *filename* (no .java)
+
+Running input:
+java  Lab1P1Driver <i1_P1.input>Lab1P1sampleruns.txt
+java Lab1P1Driver <i2_P1.input  >> Lab1P1Sampleruns.txt
+
+All Alias commands:
+alias submit="~hristescu/DSA/Labs/Process/submit intime"
+alias what="~hristescu/DSA/Labs/Process/what intime"
+alias submitlate="~hristescu/DSA/Labs/Process/submit late"
+alias whatlate="~hristescu/DSA/Labs/Process/what late"
+alias submitredo="~hristescu/DSA/Labs/Process/submit redo"
+alias whatredo="~hristescu/DSA/Labs/Process/what redo"
+alias feedback="~hristescu/DSA/Labs/Process/feedback"
+alias submitquiz="~hristescu/DSA/Quiz/Process/submit"
+
+Terminal commands:
+ls - list contents of current file/directory
+mkdir - make directory
+cat *filename* - Display file contents on the terminal
+touch *filename* - create file
+pwd - Print working directory command in Linux
+cd - Linux command to navigate through directories
+mv - Move or rename files in Linux
+cp - Similar usage as mv but for copying files in Linux
+rm - Delete files or directories
+ln - Create symbolic links (shortcuts) to other files
+clear - Clear the terminal display
+echo - Print any text that follows the command
+less - Linux command to display paged outputs in the terminal
+man - Access manual pages for all Linux commands
+grep - Search for a string within an output
+head - Return the specified number of lines from the top
+tail - Return the specified number of lines from the bottom
+zip - Zip files in Linux
+unzip - Unzip files in Linux
+chmod - Command to change file permissions
+chown - Command for granting ownership of files or folders
+alias - Create custom shortcuts for your regularly used commands
+
+

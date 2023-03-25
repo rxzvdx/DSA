@@ -1,0 +1,64 @@
+/*
+ * Purpose: Data Structure and Algorithms Lab 1 Problem 2
+ * Status: Complete and thoroughly tested
+ * Last update: 1/21/23
+ * Submitted:  1/22/23
+ * Comment: test suite and sample run attached
+ * Comment: I declare that this is entirely my own work
+ * @author: Antonio Rosado
+ * @version: 2023.01.21
+ */
+
+import java.io.*;
+
+class Lab1P2Driver {
+    static BufferedReader stdin = new BufferedReader (new InputStreamReader(System.in)); // input for user
+    public static void main(String args[]) throws IOException
+    {
+        System.out.print("Enter number of pairs: ");
+        int pairs = Integer.parseInt(stdin.readLine()); // parse num given by user
+        System.out.println(pairs);
+
+        // sums for final results
+        double sum_weighted = 0.0;
+        double sum_simple = 0.0;
+        // arrays for number of pairs and weight
+        double[] weightArray = new double[pairs];
+        double[] numOfPairs = new double[pairs];
+        double weight_total = 0.0; // total weight(s) added
+
+        if(pairs == 0) // if user inputs 0, program will cease at this point
+        {
+            System.out.print("Simple arithmetic mean of these " + pairs + " numbers is: " + pairs + "\n");
+            System.out.print("Weighted arithmetic mean of these " + pairs + " pairs is: " + pairs);
+        }
+
+        else {
+
+            for (int index = 0; index < pairs; index++)
+            {
+                System.out.print("Enter number: ");
+                double number = Double.parseDouble(stdin.readLine()); // parse num given by user
+                System.out.println(number);
+
+                System.out.print("Enter weight: ");
+                double weight = Double.parseDouble(stdin.readLine()); // parse double given by user
+                System.out.println(weight);
+
+                sum_simple += number; // sum for simple mean
+                numOfPairs[index] = number; // index of number of pairs aligns with number given by user
+                weight_total += weight;
+                sum_weighted += (number * weight); // sum for weighted mean
+                weightArray[index] = weight; // index of array of weight should align with weight given by user
+
+            }
+
+            double weightedMean = sum_weighted / weight_total; // final result for weightedMean
+            double simpleMean = sum_simple / pairs; // final result for simpleMean
+
+            System.out.print("Simple arithmetic of these " + pairs + " numbers is: " + simpleMean + "\n");
+            System.out.print("Weighted arithmetic mean of these " + pairs + " pairs is: " + weightedMean);
+        }
+
+    }
+}

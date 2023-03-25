@@ -1,0 +1,230 @@
+/**
+ * Purpose: Data Structure and Algorithms Lab 4
+ * Status: Complete and thoroughly tested
+ * Last update: 02/13/23
+ * Submitted: 02/13/23
+ * Comment: test suite and sample run attached
+ * Comment: I declare that this is entirely my own work
+ *
+ * @author: Antonio Rosado
+ * @version: 2023.02.13
+ */
+
+public class ListCDLSBased implements ListInterface
+{
+    private DNode head; // 'beginning' of list
+    private int numItems; // number of items in list
+
+    public ListCDLSBased()
+    {
+        head = null;
+        numItems = 0;
+    }
+
+    /**
+     * Check if DNode is empty
+     *
+     * @return head == null
+     */
+    public boolean isEmpty()
+    {
+        return head == null;
+    }
+
+    /**
+     * Return size of DNode
+     *
+     * @return size of DNode
+     */
+    public int size()
+    {
+        return numItems;
+    } // end size
+
+    /**
+     * Get item from DNode
+     *
+     * @param int index index to find
+     * @return DNode curr item found
+     */
+    private DNode find(int index) throws ListIndexOutOfBoundsException
+    {
+        DNode curr = head;
+        if(index >= 0 && index <= numItems)
+        {
+            if (index <= (numItems / 2))
+            {
+                for(int i = 0; i < index; i++)
+                {
+                    curr = curr.getNext();
+                }
+            }
+
+            else
+            {
+                for(int i = numItems; i > index; i--)
+                {
+                    curr = curr.getBack();
+                }
+            }
+        }
+        return curr;
+    }
+
+    /**
+     * Get item from DNode
+     * @param int index index of item
+     * @return Object nodeTtem item from specified index
+     */
+    public Object get(int index) throws ListIndexOutOfBoundsException
+    {
+        if (index >= 0 && index < numItems)
+        {
+            // get reference to node, then data in node
+            DNode curr = find(index);
+            Object nodeItem = curr.getItem();
+            return nodeItem;
+        }
+
+        else
+        {
+            throw new ListIndexOutOfBoundsException("List index out of bounds exception on get");
+        } // end if
+        // end get
+    }
+
+    /**
+     * Add item to DNode
+     * @param int    index index of item
+     * @param Object item item Object
+     */
+    public void add(int index, Object item) throws ListIndexOutOfBoundsException
+    {
+
+        if(index >= 0 && index <= numItems)
+        {
+            DNode temp = new DNode(item);
+            // if new structure, no items inserted
+            if (index == 0)
+            {
+                if (numItems == 0)
+                {
+                    temp.setNext(temp); // new DNode is next
+                    temp.setBack(temp);
+                    head = temp; // first = new item
+                }
+
+                else
+                {
+                    // insertion into non-empty list
+                    // store previous DNode which will then have its following index reference new
+                    temp.setNext(head);
+                    temp.setBack(head.getBack());
+                    head.getBack().setNext(temp);
+                    head.setBack(temp);
+                    head = temp;
+                }
+            }
+
+            else
+            {
+                // insertion into non-empty list
+                // store previous DNode which will then have its following index reference
+                DNode prev = find(index - 1);
+                DNode curr = prev.getNext(); // curr = next thing after prev
+                temp.setNext(curr); // curr = next
+                temp.setBack(prev); // prev = prev
+                prev.setNext(temp); // new insertion is next
+                curr.setBack(temp);
+            }
+            numItems++;
+        }
+
+        else
+        {
+            throw new ListIndexOutOfBoundsException("List index out of bounds on add.");
+        }
+
+    }
+
+    /**
+     * Remove item from DNode
+     * @param int index index of item
+     */
+    public Object remove(int index) throws ListIndexOutOfBoundsException
+    {
+        Object result;
+        // if list is empty, no items inserted yet
+        if (index >= 0 && index < numItems)
+        {
+            if(numItems == 1) // list only contains single item
+            {
+                head = null;
+                result = head;
+            }
+
+            else
+            {   // if numItems > 1
+                // delete the first DNode from the list
+                // reassign positions
+                DNode curr = find(index);
+                result = curr.getItem();
+                curr.getBack().setNext(curr.getNext());
+                curr.getNext().setBack(curr.getBack());
+                if (index == 0) // if item is first or 0
+                {
+                    head = curr.getNext(); // only item is first item, i.e. 'head'
+                }
+            }
+            numItems--;
+            return result;
+        }
+        else
+        {
+            throw new ListIndexOutOfBoundsException("List index out of bounds exception on remove");
+        } // end if
+        // end remove
+    }
+
+
+    /**
+     * Remove all items from DNode
+     */
+    public void removeAll()
+    {
+        numItems = 0; // if empty, no items
+        head = null; // no head if empty
+    }
+
+    /**
+     * Returns a string value of DNode items
+     */
+    public String toString()
+    {
+        String list = "";
+        DNode curr = head;
+        for (int index = 0; index < numItems; index++)
+        {
+            list += curr.getItem() + " "; // retrieve and collect
+            curr = curr.getNext(); // retrieve next item
+        }
+        return list.toString(); // collection becomes a string
+    }
+
+
+    /**
+     * Returns a string value of DNode items reversed
+     */
+    public String toStringR()
+    {
+        String reversed = "";
+        DNode curr = head.getBack();
+        for (int index = numItems - 1; index >= 0; index--)
+        {
+            reversed = reversed + curr.getItem() + " "; // retrieve and collect item
+            curr = curr.getBack(); // retrieve last item
+        }
+        return reversed.toString(); // collection becomes a string
+    }
+}
+

@@ -1,0 +1,50 @@
+How should we evaluate? [Enter 'oldest' or 'youngest']
+youngest
+Enter person's first name: 
+
+Antonio
+Enter person's middle name: 
+
+N/A 
+Enter person's last name:
+
+Rosado
+Enter person's email address
+
+rosado44@students.rowan.edu
+Enter person's SSN (in ###-##-#### format):
+
+555-55-6575
+Enter person's age:
+
+20
+
+916421999
+Rip Van Winkle
+rowan.edu
+3333
+Youngest: false
+
+
+
+916422000
+Jane Marie Doe
+students.rowan.edu
+4444
+Youngest: true
+Computer Science
+
+
+916422001
+Chia C. Chien
+rowan.edu
+5555
+Youngest: false
+
+Math/Science
+
+916422002
+Antonio N/A Rosado
+students.rowan.edu
+6575
+Youngest: false

@@ -1,0 +1,46 @@
+Problem 1:
+Status update 1:
+Output separates correctly due to for loop, but only displays total number of people rather than separating i.e. "name number 1" "name number 2" etc.
+
+Status update 2: 
+Name number lines now separated, but "shouts Hello" line is missing, only first name displays.
+
+Status update 3:
+Names all combined with no "and" for ex: "Tony and Joe".
+
+Status update 4: 
+All names besides last are concatenated if more than 3. 
+
+Status update 5:
+Accidental extra space between commas.
+
+Status update 6:
+Statement repeats itself, incorrect output.
+
+Status update 7:
+Output is correct with 2 people.
+
+Status update 8:
+Output is correct entirely. 
+
+Problem 2:
+Status update 1: 
+Output fully functional for when user input equals zero, everything else non functional. 
+
+Status update 2:
+Output correctly interprets number of pairs to amount of lines needed for number and weight. 
+
+Status update 3:
+Program is fully functional with correct output except that weighted mean is not divided by total of all weight(s). Simple mean is correct. 
+
+Problem 3:
+Status update 1:
+Everything is functional except for Each + method ref and palindrome
+
+Status update 2:
+Palindrome still not operating
+
+Status update 3:
+ERROR RESOLVED: missing break lines
+
+Output fully functional. 

@@ -1,0 +1,64 @@
+Some examples of compared strings are: 
+'a' compared to 'A' is : 32
+'t' compared to 'T' is : 32
+'a' compared to 'z' is : -25
+'a' compared to 'l' is : -11
+'l' compared to 'A' is : 43
+'1' compared to '9' is : -8
+'1' compared to '18' is : -1
+'21' compared to '81' is : -6
+'to' compared to 'top' is : -1
+'%' compared to '0' is : -11
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Compare two strings
+1
+You are now comparing two strings...
+	 Enter string 1: Zebra
+	 Enter string 2: zebra
+'Zebra' compared to 'zebra' is: -32
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Compare two strings
+1
+You are now comparing two strings...
+	 Enter string 1: Animal
+	 Enter string 2: *&%
+'Animal' compared to '*&%' is: 23
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Compare two strings
+1
+You are now comparing two strings...
+	 Enter string 1: Chocolate
+	 Enter string 2: charcoal
+'Chocolate' compared to 'charcoal' is: -32
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Compare two strings
+1
+You are now comparing two strings...
+	 Enter string 1: zero
+	 Enter string 2: zero
+'zero' compared to 'zero' is: 0
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Compare two strings
+1
+You are now comparing two strings...
+	 Enter string 1: two
+	 Enter string 2: too
+'two' compared to 'too' is: 8
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Compare two strings
+1
+You are now comparing two strings...
+	 Enter string 1: Sesquipedalianism
+	 Enter string 2: I
+'Sesquipedalianism' compared to 'I' is: 10
+Select from the following menu: 
+	 0. Exit the program 
+	 1. Compare two strings
+0
+Exiting program... good bye

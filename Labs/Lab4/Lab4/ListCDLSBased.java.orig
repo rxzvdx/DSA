@@ -1,0 +1,210 @@
+/**
+ * Purpose: Data Structure and Algorithms Lab 4
+ * Status: Complete and thoroughly tested
+ * Last update: 02/13/23
+ * Submitted: 02/13/23
+ * Comment: test suite and sample run attached
+ * Comment: I declare that this is entirely my own work
+ * 
+ * @author: Antonio Rosado
+ * @version: 2023.02.13
+ */
+
+public class ListCDLSBased implements ListInterface 
+{
+    private DNode head; // 'beginning' of list
+    private int numItems; // number of items in list
+
+    public ListCDLSBased() 
+    {
+        head = null;
+        numItems = 0;
+    }
+
+    /**
+     * Check if DNode is empty
+     * 
+     * @return head == null
+     */
+    public boolean isEmpty() 
+    {
+        return head == null;
+    }
+
+    /**
+     * Return size of DNode
+     * 
+     * @return size of DNode
+     */
+    public int size() 
+    {
+        return numItems;
+    } // end size
+
+    /**
+     * Get item from DNode
+     * 
+     * @param int index index to find
+     * @return DNode curr item found
+     */
+    private DNode find(int index) throws ListIndexOutOfBoundsException {
+        DNode curr = head;
+        int num = 0;
+        if (index > (size() / 2)) 
+        {
+            while (num < (size() - index)) 
+            {
+                curr = curr.getBack();
+                num++;
+            }
+        }
+
+        else 
+        {
+            while (index > num) 
+            {
+                curr = curr.getNext();
+                num++;
+            }
+        }
+        return curr;
+    }
+
+    /**
+     * Get item from DNode
+     * @param int index index of item
+     * @return Object nodeTtem item from specified index
+     */
+    public Object get(int index) throws ListIndexOutOfBoundsException 
+    {
+        if (index >= 0 && index < size()) 
+        {
+            // get reference to node, then data in node
+            DNode curr = find(index);
+            Object nodeItem = curr.getItem();
+            return nodeItem;
+        } 
+            
+        else 
+        {
+            throw new ListIndexOutOfBoundsException("List index out of bounds exception on get");
+        } // end if
+        // end get
+    }
+
+    /**
+     * Add item to DNode
+     * @param int    index index of item
+     * @param Object item item Object
+     */
+    public void add(int index, Object item) throws ListIndexOutOfBoundsException 
+    {
+        if (size() == 0) 
+        {
+            DNode temp = new DNode(item); // new DNode that references itself
+            head = temp;
+            numItems++;
+            return;
+        }
+
+        else if (index >= 0 && index <= size()) 
+        {
+            if (index == 0) 
+            {
+                DNode newNode = new DNode(item, head, head.getBack());
+                head.getBack().setNext(newNode);
+                head.setBack(newNode);
+                head = (index == 0) ? newNode : head;
+            }
+
+            else 
+            {
+                // store previous DNode which will then have its following index reference new
+                // DNode
+                DNode prev = find(index - 1);
+                DNode newNode = new DNode(item, prev.getNext(), prev);
+                prev.getNext().setBack(newNode);
+                prev.setNext(newNode);
+            }
+            numItems++; // update num of items
+        }
+
+        else 
+        {
+            throw new ListIndexOutOfBoundsException("List index out of bounds on add.");
+        }
+    }
+
+    /**
+     * Remove item from DNode
+     * @param int index index of item
+     */
+    public void remove(int index) throws ListIndexOutOfBoundsException 
+    {
+        if (index >= 0 && index < size()) 
+        {
+            if (index == 0) // if item is first or 0
+            {
+                // delete the first DNode from the list
+                DNode prev = head.getBack(); // retrieve previous item
+                head = head.getNext(); // set head to second or index 1
+                head.setBack(prev); // set previous to new head
+            }
+
+            else
+            {
+                // delete the DNode after the previous DNode
+                // references, save reference to DNode
+                DNode prev = find(index - 1); // find previous index
+                DNode curr = prev.getNext(); // retrieve current or next index
+                prev.setNext(curr.getNext()); 
+                prev.setBack(prev.getBack());
+            } // end if
+            numItems--; // decrement num of items
+        } // end if
+        else 
+        {
+            throw new ListIndexOutOfBoundsException("List index out of bounds exception on remove");
+        } // end if
+    } // end remove
+
+    /**
+     * Remove all items from DNode
+     */
+    public void removeAll() 
+    {
+        numItems = 0; // if empty, no items
+        head = null; // no head if empty
+    }
+
+    /**
+     * Returns a string value of DNode items
+     */
+    public String toString() 
+    {
+        String list = "";
+        DNode curr = head;
+        for (int index = 0; index <= numItems - 1; index++) 
+        {
+            list += curr.getItem() + " "; // retrieve and collect item
+            curr = curr.getNext(); // retrieve next item
+        }
+        return list.toString(); // collection becomes a string
+    }
+
+
+    /**
+     * Returns a string value of DNode items reversed
+     */
+    public String toStringR() 
+    {
+        String reversed = "";
+        DNode curr = head;
+        for (int index = 0; index <= numItems - 1; index++) 
+        {
+            reversed += curr.getBack().getItem() + " "; // retrieve and collect item
+            curr = curr.getBack(); // retrieve previous item
+        }
+        return reversed.toString();
+    }
+}

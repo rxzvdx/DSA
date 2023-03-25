@@ -1,0 +1,3 @@
+Question 1: This problem was a lab from OOPDA that involved utilizing polymorphism to create a Person object that will be the 'skeleton' for Instructor and Student objects. My solution is efficient because not only does it reflect polymorphism, but lambda expressions and regular expressions are used for the best possible efficiency and memory optimization. 
+
+Question 2: From a thorough look of the course site and materials, it seems that strong foundational knowledge from the prior two courses (IOOP and OOPDA) are key in being successful in DSA. Furthermore, applying one self to study new material like reading the textbook and practicing outside of class will only strengthen the likelihood of being successful. It all boils down to hard work and dedication. 

@@ -1,0 +1,218 @@
+/*
+ * Purpose: Data Structure and Algorithms Lab 1 Problem 3
+ * Status: Complete and thoroughly tested
+ * Last update: 1/22/23
+ * Submitted:  1/23/23
+ * Comment: test suite and sample run attached
+ * Comment: I declare that this is entirely my own work
+ * @author: Antonio Rosado
+ * @version: 2023.01.23
+ */
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.ListIterator;
+
+class Lab1P3Driver {
+    ArrayList<Character> data = new ArrayList<Character>(); // ArrayList for Character(s)
+    static BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
+
+    public static void main(String args[]) throws IOException {
+        Lab1P3Driver charProgram = new Lab1P3Driver();
+        int input = 0;
+        while (input != 6) {
+            System.out.print("What would you like to do? \n"
+                             + "1. Add a character \n"
+                             + "2. Display a list (in order entered) \n"
+                             + "3. Display a list (reversed) \n"
+                             + "4. Display every 3rd element of list \n"
+                             + "5. Test if list is a palindrome \n"
+                             + "6. Quit. \n");
+            input = Integer.parseInt(stdin.readLine());
+            System.out.println("You chose: " + input + "\n");
+
+            // possible cases for initial input
+            switch (input) {
+            case 1:
+                System.out.print("Enter the character you would like to add to the list: ");
+                char c = stdin.readLine().charAt(0);
+                System.out.println(c);
+                charProgram.add(c);
+                break;
+
+            case 2:
+                int second_choice = 0;
+                System.out.print("How would you like to display a list? (in order) \n"
+                                 + "1. Direct Index Access \n"
+                                 + "2. With An Iterator \n"
+                                 + "3. For-Each Loop \n"
+                                 + "4. For-Each w/ Lambda \n"
+                                 + "5. For-Each w/ Method Reference \n");
+
+                // possible cases for second input
+                second_choice = Integer.parseInt(stdin.readLine());
+                switch (second_choice) {
+                case 1:
+                    charProgram.displayDirectIndexAccess();
+                    break;
+
+                case 2:
+                    charProgram.displayIterators();
+                    break;
+
+                case 3:
+                    charProgram.displayForEach();
+                    break;
+
+                case 4:
+                    charProgram.displayForEachLambda();
+                    break;
+
+                case 5:
+                    charProgram.displayForEachMethodRef();
+                    break;
+
+                }
+                break;
+
+            // possible cases for third input
+            case 3:
+                int third_choice = 0;
+                System.out.print("How would you like to display a list? (in reverse) \n"
+                                 + "1. Iterator/ListIterator \n"
+                                 + "2. For-Loop \n");
+                third_choice = Integer.parseInt(stdin.readLine());
+                switch (third_choice) {
+                case 1:
+                    charProgram.reverseWithIterator();
+                    break;
+
+                case 2:
+                    charProgram.reverseWithForLoop();
+                    break;
+                }
+                break;
+
+            case 4:
+                charProgram.displayEveryThirdItemForLoop();
+                break;
+
+            case 5:
+                charProgram.testIfPalindrome();
+                break;
+            }
+        }
+    }
+
+    /**
+     * adds char to ArrayList
+     *
+     * @param add
+     */
+    public void add(char add) {
+        data.add(add);
+    }
+
+    /**
+     * Process ArrayList via direct index access
+     */
+    public void displayDirectIndexAccess() {
+        int dataSize = data.size();
+        for (int index = 0; index < dataSize; index++) {
+            System.out.println(data.get(index));
+        }
+    }
+
+    /**
+     * <
+     * Process ArrayList via an iterator
+     */
+    public void displayIterators() {
+        Iterator<Character> iterator = data.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next().toString());
+        }
+    }
+
+    /**
+     * Process ArrayList via For Each loop
+     */
+    public void displayForEach() {
+        for (char Character : data) {
+            System.out.println(data.get(Character));
+        }
+    }
+
+    /**
+     * Process ArrayList via forEach method + lambda expression
+     */
+    public void displayForEachLambda() {
+        data.forEach(c -> System.out.println(c));
+    }
+
+    /**
+     * Process ArrayList via forEach method + method reference
+     */
+    public void displayForEachMethodRef() {
+        data.forEach(System.out::println);
+    }
+
+    // all reverse methods below
+
+    /**
+     * Process ArrayList in reverse with listIterator
+     */
+    public void reverseWithIterator() {
+        int dataSize = data.size();
+        ListIterator iterator = data.listIterator(dataSize);
+        while (iterator.hasPrevious()) {
+            // previous method returns previous element
+            System.out.println(iterator.previous().toString());
+        }
+    }
+
+    /**
+     * Process ArrayList in reverse with for loop
+     */
+    public void reverseWithForLoop() {
+        int dataSize = data.size();
+        for (int index = dataSize - 1; index >= 0; index--) // decrement
+        {
+            System.out.println(data.get(index));
+        }
+    }
+
+    // third index method(s) below
+
+    /**
+     * Process ArrayList by every 3rd index
+     */
+    public void displayEveryThirdItemForLoop() {
+        int dataSize = data.size();
+        System.out.println(data.get(0));
+        for (int index = 0; index < dataSize; index += 3) {
+            System.out.println(data.get(index));
+        }
+    }
+
+    // all palindrome method(s) below
+
+    /**
+     * Process ArrayList to check if it's a palindrome
+     */
+    boolean testIfPalindrome() {
+        int dataSize = data.size();
+        for (int index = 0; index < dataSize / 2; index++) {
+            if (data.get(index) != data.get((dataSize - index) - 1)) {
+                System.out.println("Given list is NOT a palindrome");
+                return false;
+            }
+        }
+        System.out.println("Given list IS a palindrome");
+        return true;
+
+    }
+}

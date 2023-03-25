@@ -1,0 +1,63 @@
+/**
+ * Purpose: Data Structure and Algorithms Lab 4
+ * Status: Complete and thoroughly tested
+ * Last update: 02/13/23
+ * Submitted:  02/13/23
+ * Comment: test suite and sample run attached
+ * Comment: I declare that this is entirely my own work
+ * @author: Antonio Rosado
+ * @version: 2023.02.13
+ */
+
+public class DNode
+{
+    private Object item;
+    private DNode next; // next item
+    private DNode back; // previous item
+
+    public DNode(Object newItem)
+    {
+        item = newItem;
+        next = this;
+        back = this;
+    } // end constructor
+
+    public DNode(Object newItem, DNode nextNode, DNode lastNode)
+    {
+        item = newItem;
+        next = nextNode;
+        back = lastNode;
+    } // end constructor
+
+    public void setItem(Object newItem)
+    {
+        item = newItem;
+    } // end setItem
+
+    public Object getItem()
+    {
+        return item;
+    } // end getItem
+
+    public void setNext(DNode nextNode)
+    {
+        next = nextNode;
+    } // end setNext
+
+    public DNode getNext()
+    {
+        return next;
+    } // end getNext
+
+    public void setBack(DNode lastNode)
+    {
+        back = lastNode;
+        // end setLast
+    }
+
+    public DNode getBack()
+    {
+        return back;
+        // end getLast
+    }
+} // end class DNode

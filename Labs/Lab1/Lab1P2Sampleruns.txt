@@ -1,0 +1,31 @@
+Enter number of pairs: 6
+Enter number: 9.0
+Enter weight: 3.4
+Enter number: 24.0
+Enter weight: 46.6
+Enter number: 67.0
+Enter weight: 9.5
+Enter number: 9.0
+Enter weight: 23.1
+Enter number: 84.0
+Enter weight: 45.0
+Enter number: 32.0
+Enter weight: 3.1
+Simple arithmetic of these 6 numbers is: 37.5
+Weighted arithmetic mean of these 6 pairs is: 44.93190512624331Enter number of pairs: 6
+Enter number: 9.0
+Enter weight: 3.4
+Enter number: 24.0
+Enter weight: 46.6
+Enter number: 67.0
+Enter weight: 9.5
+Enter number: 9.0
+Enter weight: 23.1
+Enter number: 84.0
+Enter weight: 45.0
+Enter number: 32.0
+Enter weight: 3.1
+Simple arithmetic of these 6 numbers is: 37.5
+Weighted arithmetic mean of these 6 pairs is: 44.93190512624331Enter number of pairs: Enter number of pairs: 0
+Simple arithmetic mean of these 0 numbers is: 0
+Weighted arithmetic mean of these 0 pairs is: 0

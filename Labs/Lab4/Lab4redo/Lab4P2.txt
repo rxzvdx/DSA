@@ -1,0 +1,37 @@
+a) Space Complexity analysis:
+The total space complexity of the CDLS implementation is 12 bytes. 
+
+The CDLS implementation uses class DNode that itself contains 3 instance variables.
+Those being because:
+head = ref1 (next) + ref2 (back) (DNode)
+numItems = int: ref + int + n * (ref1 + ref2 + ref3) = (2n + 3) * 4 bytes.
+
+
+b) Time Complexity analysis:
+Operations used: get(int index), add(int index, Object item), remove(int index), find(int index) and shifting (items[i] = items[i + or -] different size)
+
+Traversal: curr = curr.getNext() or curr = curr.getBack();
+
+get(int index):
+Depends
+Best case: index 0 costs 0
+Worst case: index n/2 costs n/2 
+Average: index n/4 costs n/4
+
+
+add(int index, Object item): 
+Depends
+Best: index 0 costs 1
+Worst: index n-1/2 costs n/4
+Average: index n-1/4 costs n-1/8
+
+find(int index):
+Depends
+Best: index 0 costs 0
+Worst: index n/2 costs n/2
+Average: index n/4 costs n/4
+
+Time used:
+Best case - 0
+Worst case - n/2
+Average case - n/4

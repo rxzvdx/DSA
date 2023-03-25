@@ -1,0 +1,1 @@
+In this lab, I learned how to iterate through an ArrayList in multiple different ways i.e. (reading through in reverse, reading the third index), and the way to perform those iterations can be done in even MORE ways. I found doing the same thing in a different way to be useful and has definitely gained me some experience as a computer scientist. 

@@ -1,0 +1,76 @@
+/**
+ * Purpose: Data Structure and Algorithms Lab 5
+ * Status: Complete and thoroughly tested
+ * Last update: 02/20/23
+ * Submitted: 02/20/23
+ * Comment: test suite and sample run attached
+ * Comment: I declare that this is entirely my own work
+ * @author: Antonio Rosado
+ * @version: 2023.02.20
+ */
+
+public interface StackInterface<T>
+{
+    /**
+     * Check if Stack is empty
+     * @return Boolean true/false
+     */
+    public boolean isEmpty();
+    // Precondition: None.
+    // Postcondition: Returns true if the stack is empty;
+    // otherwise returns false.
+
+    /**
+     * Removes or 'pops' item from the top of the stack
+     * @throws StackException   thrown if stack is empty
+     *
+     * @return head == null
+     */
+    public T pop() throws StackException;
+    // Precondition: None.
+    // Postcondition: If the stack is not empty, the item
+    // that was added most recently is removed from the
+    // stack.
+    // Exception: Throws StackException if the stack is
+    // empty.
+
+    /**
+     * Removes all items on the stack
+     */
+    public void popAll();
+    // Precondition: None.
+    // PostCondition: Stack is empty.
+
+    /**
+     * Adds or 'pushes' an item to top of the stack
+     * @param T newItem        new item to be pushed onto stack
+     * @throws StackException   thrown if stack is empty
+     */
+    public void push(T newItem) throws StackException;
+    // Precondition: newItem is the item to be added.
+    // Postcondition: If insertion is successful, newItem
+    // is on the top of the stack.
+    // Exception: Some implementations may throw
+    // StackException when newItem cannot be placed on
+    // the stack.
+
+    /**
+     * Retrieves item from the top of the stack
+     * @throws StackException   thrown if stack is empty
+     */
+    public T peek() throws StackException;
+    // Precondition: None.
+    // Postcondition: If the stack is not empty, the item
+    // that was added most recently is returned. The
+    // stack is unchanged.
+    // Exception: Throws StackException if the stack is
+    // empty.
+
+    /**
+     * Returns a string representation of stack
+     */
+    public String toString();
+    // Return the String representation of the items in the
+    // collection (top to bottom; single space delimited)
+    // - no additional narratives
+} // end StackInterface

@@ -1,0 +1,236 @@
+What would you like to do? 
+1. Add a character 
+2. Display a list (in order entered) 
+3. Display a list (reversed) 
+4. Display every 3rd element of list 
+5. Test if list is a palindrome 
+6. Quit. 
+You chose: 1
+
+Enter the character you would like to add to the list: r
+What would you like to do? 
+1. Add a character 
+2. Display a list (in order entered) 
+3. Display a list (reversed) 
+4. Display every 3rd element of list 
+5. Test if list is a palindrome 
+6. Quit. 
+You chose: 1
+
+Enter the character you would like to add to the list: a
+What would you like to do? 
+1. Add a character 
+2. Display a list (in order entered) 
+3. Display a list (reversed) 
+4. Display every 3rd element of list 
+5. Test if list is a palindrome 
+6. Quit. 
+You chose: 1
+
+Enter the character you would like to add to the list: c
+What would you like to do? 
+1. Add a character 
+2. Display a list (in order entered) 
+3. Display a list (reversed) 
+4. Display every 3rd element of list 
+5. Test if list is a palindrome 
+6. Quit. 
+You chose: 1
+
+Enter the character you would like to add to the list: e
+What would you like to do? 
+1. Add a character 
+2. Display a list (in order entered) 
+3. Display a list (reversed) 
+4. Display every 3rd element of list 
+5. Test if list is a palindrome 
+6. Quit. 
+You chose: 1
+
+Enter the character you would like to add to the list: c
+What would you like to do? 
+1. Add a character 
+2. Display a list (in order entered) 
+3. Display a list (reversed) 
+4. Display every 3rd element of list 
+5. Test if list is a palindrome 
+6. Quit. 
+You chose: 1
+
+Enter the character you would like to add to the list: a
+What would you like to do? 
+1. Add a character 
+2. Display a list (in order entered) 
+3. Display a list (reversed) 
+4. Display every 3rd element of list 
+5. Test if list is a palindrome 
+6. Quit. 
+You chose: 1
+
+Enter the character you would like to add to the list: r
+What would you like to do? 
+1. Add a character 
+2. Display a list (in order entered) 
+3. Display a list (reversed) 
+4. Display every 3rd element of list 
+5. Test if list is a palindrome 
+6. Quit. 
+You chose: 2
+
+How would you like to display a list? (in order) 
+1. Direct Index Access 
+2. With An Iterator 
+3. For-Each Loop 
+4. For-Each w/ Lambda 
+5. For-Each w/ Method Reference 
+r
+a
+c
+e
+c
+a
+r
+What would you like to do? 
+1. Add a character 
+2. Display a list (in order entered) 
+3. Display a list (reversed) 
+4. Display every 3rd element of list 
+5. Test if list is a palindrome 
+6. Quit. 
+You chose: 3
+
+How would you like to display a list? (in reverse) 
+1. Iterator/ListIterator 
+2. For-Loop 
+r
+a
+c
+e
+c
+a
+r
+What would you like to do? 
+1. Add a character 
+2. Display a list (in order entered) 
+3. Display a list (reversed) 
+4. Display every 3rd element of list 
+5. Test if list is a palindrome 
+6. Quit. 
+You chose: 4
+
+r
+r
+e
+r
+What would you like to do? 
+1. Add a character 
+2. Display a list (in order entered) 
+3. Display a list (reversed) 
+4. Display every 3rd element of list 
+5. Test if list is a palindrome 
+6. Quit. 
+You chose: 5
+
+Given list IS a palindrome
+What would you like to do? 
+1. Add a character 
+2. Display a list (in order entered) 
+3. Display a list (reversed) 
+4. Display every 3rd element of list 
+5. Test if list is a palindrome 
+6. Quit. 
+You chose: 6
+
+What would you like to do? 
+1. Add a character 
+2. Display a list (in order entered) 
+3. Display a list (reversed) 
+4. Display every 3rd element of list 
+5. Test if list is a palindrome 
+6. Quit. 
+You chose: 1
+
+Enter the character you would like to add to the list: r
+What would you like to do? 
+1. Add a character 
+2. Display a list (in order entered) 
+3. Display a list (reversed) 
+4. Display every 3rd element of list 
+5. Test if list is a palindrome 
+6. Quit. 
+You chose: 1
+
+Enter the character you would like to add to the list: a
+What would you like to do? 
+1. Add a character 
+2. Display a list (in order entered) 
+3. Display a list (reversed) 
+4. Display every 3rd element of list 
+5. Test if list is a palindrome 
+6. Quit. 
+You chose: 1
+
+Enter the character you would like to add to the list: g
+What would you like to do? 
+1. Add a character 
+2. Display a list (in order entered) 
+3. Display a list (reversed) 
+4. Display every 3rd element of list 
+5. Test if list is a palindrome 
+6. Quit. 
+You chose: 2
+
+How would you like to display a list? (in order) 
+1. Direct Index Access 
+2. With An Iterator 
+3. For-Each Loop 
+4. For-Each w/ Lambda 
+5. For-Each w/ Method Reference 
+r
+a
+g
+What would you like to do? 
+1. Add a character 
+2. Display a list (in order entered) 
+3. Display a list (reversed) 
+4. Display every 3rd element of list 
+5. Test if list is a palindrome 
+6. Quit. 
+You chose: 3
+
+How would you like to display a list? (in reverse) 
+1. Iterator/ListIterator 
+2. For-Loop 
+g
+a
+r
+What would you like to do? 
+1. Add a character 
+2. Display a list (in order entered) 
+3. Display a list (reversed) 
+4. Display every 3rd element of list 
+5. Test if list is a palindrome 
+6. Quit. 
+You chose: 4
+
+r
+r
+What would you like to do? 
+1. Add a character 
+2. Display a list (in order entered) 
+3. Display a list (reversed) 
+4. Display every 3rd element of list 
+5. Test if list is a palindrome 
+6. Quit. 
+You chose: 5
+
+Given list is NOT a palindrome
+What would you like to do? 
+1. Add a character 
+2. Display a list (in order entered) 
+3. Display a list (reversed) 
+4. Display every 3rd element of list 
+5. Test if list is a palindrome 
+6. Quit. 
+You chose: 6
+
