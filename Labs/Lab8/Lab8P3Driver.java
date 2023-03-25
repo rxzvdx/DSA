@@ -11,7 +11,7 @@
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-public class Lab8P2Driver extends ListArrayBasedPlus
+public class Lab8P3Driver extends ListArrayBasedPlus
 {
     static BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
     public static void main (String[] args) throws IOException 
@@ -20,7 +20,7 @@ public class Lab8P2Driver extends ListArrayBasedPlus
       boolean exit = false;
       int pos = -1;
         
-	  while (!exit) 
+    while (!exit) 
     {
             System.out.println("Select from the following menu: \n"
                              + "0. Exit the program \n"

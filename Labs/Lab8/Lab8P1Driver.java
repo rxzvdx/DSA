@@ -99,7 +99,7 @@ public class Lab8P1Driver extends ListArrayBasedPlus
                 System.out.print("You are now searching for an item. \n Enter the item to search for: ");
                 String key = stdin.readLine();
                 int position = search(key, list_plus);
-                if(position != -1)
+                if(position != 202)
                 {
                   System.out.println("Item " + "'" + key + "'" + " found in position " + position + " in the list.");
                 }
@@ -126,7 +126,7 @@ public class Lab8P1Driver extends ListArrayBasedPlus
                 {
                   System.out.println("List of size " + list_plus.size() + " has the following items: " + list_plus.toString());
                 }
-                  break;
+                break;
             }
         }
     }
@@ -144,13 +144,14 @@ public class Lab8P1Driver extends ListArrayBasedPlus
      */
     public static int search(String key, ListArrayBasedPlus list)
     {
+      int position = 202;
       for(int index = 0; index < list.size(); index++)
       {
-        if(((String) list.get(index)).compareTo(key) == 0)
+        if(key.equals(list.get(index)))
         {
-          return index;
+          position = index;
         }
       }
-      return -1;
+      return position;
     }
 }
