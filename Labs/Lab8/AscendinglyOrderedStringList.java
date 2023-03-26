@@ -135,7 +135,6 @@ public class AscendinglyOrderedStringList implements AscendinglyOrderedStringLis
             {
                 position = midIndex;
                 success = true;
-                stop(success, position);
                 break; 
             }
         }
