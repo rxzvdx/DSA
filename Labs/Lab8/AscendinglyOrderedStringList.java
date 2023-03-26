@@ -138,25 +138,25 @@ public class AscendinglyOrderedStringList implements AscendinglyOrderedStringLis
                 break; 
             }
         }
-        stop(!success, position);
+        //stop(!success, position);
         return low;
     } // end search
 
-    /**
-     * Indicates when search should stop or not
-     * @param success     boolean, if key was found
-     * @param position    posiition key was found (202 if !found)
-     */
-    protected static void stop(boolean success, int position)
-    {
-        if(success)
-        {
-            System.out.println("Success.");
-        }
+    // /**
+    //  * Indicates when search should stop or not
+    //  * @param success     boolean, if key was found
+    //  * @param position    posiition key was found (202 if !found)
+    //  */
+    // protected static void stop(boolean success, int position)
+    // {
+    //     if(success)
+    //     {
+    //         System.out.println("Success.");
+    //     }
 
-        else
-        {
-            System.out.println("Unsuccessful.");
-        }
-    }
+    //     else
+    //     {
+    //         System.out.println("Unsuccessful.");
+    //     }
+    // }
 }
