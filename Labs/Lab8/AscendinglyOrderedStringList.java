@@ -33,6 +33,10 @@ public class AscendinglyOrderedStringList implements AscendinglyOrderedStringLis
     public void add(String item) throws ListIndexOutOfBoundsException 
     {
         int pos = search(item);
+        if(pos == 202)
+        {
+            pos = 0;
+        }
         if (pos >= 0 && pos < numItems && items[pos].compareTo(item) == 0) 
         {
             // Item already exists, don't insert duplicate
@@ -95,7 +99,7 @@ public class AscendinglyOrderedStringList implements AscendinglyOrderedStringLis
      * while(low <= high)
      * {
      *    midIndex = (low + high) / 2
-     *    if (key > midIndex)
+     *    if (key > midKey)
      *       low = midIndex + 1
      *    else
      *       high = midIndex
@@ -111,28 +115,31 @@ public class AscendinglyOrderedStringList implements AscendinglyOrderedStringLis
         int high = numItems - 1;
         int position = 202;
         boolean success = false;
-        while (low < high) 
+        while (low <= high) 
         {
             int midIndex = (low + high) / 2;
-            if (key.compareTo(items[midIndex]) > 0) 
+            String midKey = items[midIndex];
+            if (key.compareTo(midKey) > 0) 
             {
+                // key > midKey, search upper half of list
                 low = midIndex + 1;
+                stop(success, position);
             } 
             
-            else 
+            else if(key.compareTo(midKey) < 0)
+            {
+                // key <= midKey, search lower half of list
+                high = midIndex;
+                stop(success, position);
+            }
+
+            else
             {
                 position = midIndex;
-                high = midIndex;
+                success = true;
+                stop(success, position);
+                break; 
             }
-        }
-        if(key == items[size() - 1])
-        {
-            stop(success, position);
-        }
-
-        else
-        {
-            stop(!success, position);
         }
         return position;
     } // end search
@@ -144,15 +151,14 @@ public class AscendinglyOrderedStringList implements AscendinglyOrderedStringLis
      */
     protected static void stop(boolean success, int position)
     {
-        System.out.println("Searching for item...");
         if(success)
         {
-        System.out.println("Item found at position " + position);
+        System.out.println("Success.");
         }
 
         else
         {
-        System.out.println("Item not found.");
+        System.out.println("Unsuccessful.");
         }
     }
 }

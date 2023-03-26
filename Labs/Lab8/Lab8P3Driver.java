@@ -11,12 +11,12 @@
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-public class Lab8P3Driver extends ListArrayBasedPlus
+public class Lab8P3Driver 
 {
     static BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
     public static void main (String[] args) throws IOException 
     {
-      ListArrayBasedPlus list_plus = new ListArrayBasedPlus();
+      AscendinglyOrderedStringList list = new AscendinglyOrderedStringList();
       boolean exit = false;
       int pos = -1;
         
@@ -24,12 +24,11 @@ public class Lab8P3Driver extends ListArrayBasedPlus
     {
             System.out.println("Select from the following menu: \n"
                              + "0. Exit the program \n"
-                             + "1. Insert item into ordered list \n"
-                             + "2. Remove item from the list \n"
-                             + "3. Get item from the list \n"
-                             + "4. Search for a specific item in the list \n" 
-                             + "5. Clear the list \n"
-                             + "6. Print size and content of the list \n");
+                             + "1. Insert specified item into the list \n"
+                             + "2. Remove item in specified position in the list \n"
+                             + "3. Search list for a specific item \n" 
+                             + "4. Clear the list \n"
+                             + "5. Display the content of the list \n");
 
             System.out.print("Make your menu selection now: " );
             int input = Integer.parseInt(stdin.readLine());
@@ -43,108 +42,74 @@ public class Lab8P3Driver extends ListArrayBasedPlus
                   break;
 
               case 1:
+                try
+                {
                   System.out.println("You are now inserting an item into the list.");
                   System.out.print("Enter item: ");
-                  String key = stdin.readLine();
-                  System.out.println(key);
-                  
-                  // Search for the correct position to insert the item
-                  // Using Modified Sequential Search III
-                  int low = 0;
-                  int high = list_plus.size() - 1;
-                  int midIndex = 0;
-                  boolean found = false;
-                  while(low <= high && !found)
+                  String item = stdin.readLine();
+                  if(list.search(item) != 202)
                   {
-                    midIndex = (low + high) / 2; 
-                    if(key.compareTo((String) list_plus.get(midIndex)) == 0)
-                    {
-                      System.out.println("Item " + key + " already exists in the list, try again.");
-                      found = true;
-                    }
-
-                    else if(key.compareTo((String) list_plus.get(midIndex)) < 0)
-                    {
-                      high = midIndex - 1;
-                    }
-
-                    else
-                    {
-                      low = midIndex + 1;
-                    }
-                  }
-
-                  // Insert item into the correct position
-                  if(!found)
-                  {
-                    list_plus.add(midIndex, key);
-                    System.out.println("Item " + key + " inserted in position " + midIndex + " in the list.");
-                  }
-                  break;
-
-              case 2:
-                  System.out.println("You are now removing an item from the list.");    
-                  System.out.print("Enter position to remove item from: ");
-                  pos = Integer.parseInt(stdin.readLine());
-                  System.out.println(pos);
-                    if(pos > list_plus.size() - 1)
-                    {
-                      System.out.println("Position specified is out of range!");
-                    }
-              
-                    else
-                    {
-                      list_plus.remove(pos);
-                      System.out.println("Item " + list_plus.items[pos] + " removed from position " + pos + " in the list.");
-                    }
-                  break;
-
-              case 3:
-                  System.out.print("Enter position to retrieve item from: ");
-                  pos = Integer.parseInt(stdin.readLine());
-                  System.out.println(pos);
-                  if(pos < 0 || pos >= list_plus.size())
-                  {
-                    System.out.println("Position specified is out of range!");
+                    System.out.println(item);
+                    list.add(item);
+                    System.out.println(item + " inserted into the list.");
                   }
 
                   else
                   {
-                    System.out.println("Item " + list_plus.get(pos) + " retrieved from position " + pos + " in the list.");
+                    System.out.println("Item " + item + " is already in the list. Try again!");
                   }
+                }
+
+                catch(ListIndexOutOfBoundsException e)
+                {
+                  System.out.println("ListIndexOutOfBoundsException on 'add'. List is full!");
+                }
                   break;
 
-              case 4:
-                System.out.print("You are now searching for an item. \n Enter the item to search for: ");
-                String key2 = stdin.readLine();
-                int searchPos = search(key2, list_plus);
-                if(searchPos != 202)
+              case 2:
+                try
                 {
-                  System.out.println("Item " + "'" + key2 + "'" + " found in position " + searchPos + " in the list.");
+                  System.out.println("You are now removing an item from the list.");    
+                  System.out.print("Enter position to remove item from: ");
+                  pos = Integer.parseInt(stdin.readLine());
+                  System.out.println(pos);
+                  String removed = list.get(pos);
+                  list.remove(pos);
+                  System.out.println(removed + " removed from the list.");
                 }
+                
+                catch(ListIndexOutOfBoundsException e)
+                {
+                  System.out.println("ListIndexOutOfBoundsException on 'remove'. Position out of bounds!");
+                }
+                break;
 
-                else 
-                {
-                  System.out.println("Item " + "'" + key2 + "'" + " not found in the list.");
-                }
+              case 3:
+                System.out.print("You are now searching for an item. \n Enter the item position to search for: ");
+                pos = Integer.parseInt(stdin.readLine());
+                String searchedItem = list.get(pos);
+                list.search(searchedItem);
+                break;
+
+              case 4:
+                list.removeAll();
+                System.out.println("List cleared");
                 break;
 
               case 5:
-                System.out.println("Clearing list...");
-                list_plus.removeAll();
-                System.out.println("List cleared.");
-                break;
-
-              case 6:
-                if(list_plus.isEmpty())
+                if (list.isEmpty()) 
                 {
                   System.out.println("List is empty.");
-                }
-                
-                else
+                } 
+                else 
                 {
-                  System.out.println("List of size " + list_plus.size() + " has the following items: " + list_plus.toString());
+                  System.out.print("List of size " + list.size() + " has the following items : \n");
+                  list.display();
                 }
+                break;
+
+              default:
+                  System.out.println("Invalid choice.");
                   break;
             }
         }
