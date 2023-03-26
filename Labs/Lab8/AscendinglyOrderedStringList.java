@@ -123,14 +123,12 @@ public class AscendinglyOrderedStringList implements AscendinglyOrderedStringLis
             {
                 // key > midKey, search upper half of list
                 low = midIndex + 1;
-                stop(success, position);
             } 
             
             else if(key.compareTo(midKey) < 0)
             {
                 // key <= midKey, search lower half of list
                 high = midIndex;
-                stop(success, position);
             }
 
             else
@@ -140,6 +138,16 @@ public class AscendinglyOrderedStringList implements AscendinglyOrderedStringLis
                 stop(success, position);
                 break; 
             }
+        }
+
+        if(success)
+        {
+            stop(success, position); // item found
+        }
+
+        else
+        {
+            stop(!success, position); // item not found
         }
         return position;
     } // end search
