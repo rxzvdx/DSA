@@ -33,7 +33,7 @@ public class AscendinglyOrderedStringList implements AscendinglyOrderedStringLis
     public void add(String item) throws ListIndexOutOfBoundsException 
     {
         int pos = search(item);
-        if(pos == 202)
+        if(numItems == 0)
         {
             pos = 0;
         }
@@ -113,7 +113,7 @@ public class AscendinglyOrderedStringList implements AscendinglyOrderedStringLis
     {
         int low = 0;
         int high = numItems - 1;
-        int position = 202;
+        int position = -10;
         boolean success = false;
         while (low <= high) 
         {
@@ -128,7 +128,7 @@ public class AscendinglyOrderedStringList implements AscendinglyOrderedStringLis
             else if(key.compareTo(midKey) < 0)
             {
                 // key <= midKey, search lower half of list
-                high = midIndex;
+                high = midIndex - 1;
             }
 
             else
@@ -138,34 +138,25 @@ public class AscendinglyOrderedStringList implements AscendinglyOrderedStringLis
                 break; 
             }
         }
-
-        if(success)
-        {
-            stop(success, position); // item found
-        }
-
-        else
-        {
-            stop(!success, position); // item not found
-        }
-        return position;
+        stop(!success, position);
+        return low;
     } // end search
 
     /**
      * Indicates when search should stop or not
      * @param success     boolean, if key was found
-     * @param position    posiition key was found (-1 if !found)
+     * @param position    posiition key was found (202 if !found)
      */
     protected static void stop(boolean success, int position)
     {
         if(success)
         {
-        System.out.println("Success.");
+            System.out.println("Success.");
         }
 
         else
         {
-        System.out.println("Unsuccessful.");
+            System.out.println("Unsuccessful.");
         }
     }
 }

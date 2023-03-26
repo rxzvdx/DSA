@@ -47,16 +47,15 @@ public class Lab8P3Driver
                   System.out.println("You are now inserting an item into the list.");
                   System.out.print("Enter item: ");
                   String item = stdin.readLine();
-                  if(list.search(item) != 202)
+                  if(list.search(item) == -10)
+                  {
+                    System.out.println("Item already exists, try again!");
+                  }
+                  else
                   {
                     System.out.println(item);
                     list.add(item);
-                    System.out.println(item + " inserted into the list.");
-                  }
-
-                  else
-                  {
-                    System.out.println("Item " + item + " is already in the list. Try again!");
+                    System.out.println(item + " inserted into the list.");                 
                   }
                 }
 
@@ -89,6 +88,7 @@ public class Lab8P3Driver
                 pos = Integer.parseInt(stdin.readLine());
                 String searchedItem = list.get(pos);
                 list.search(searchedItem);
+                System.out.println("Item found in position " + pos);
                 break;
 
               case 4:
