@@ -10,13 +10,13 @@
  */
 public class AscendinglyOrderedStringList implements AscendinglyOrderedStringListInterface 
 {
-    private static final int MAX_SIZE = 100;
+    private static final int MAX_LIST = 10;
     private String[] items;
     private int numItems;
 
     public AscendinglyOrderedStringList() 
     {
-        items = new String[MAX_SIZE];
+        items = new String[MAX_LIST];
         numItems = 0;
     } // end default constructor
 
@@ -33,12 +33,13 @@ public class AscendinglyOrderedStringList implements AscendinglyOrderedStringLis
     public void add(String item) throws ListIndexOutOfBoundsException 
     {
         int pos = search(item);
-        if (pos >= 0 && pos < numItems && items[pos].equals(item)) 
+        if (pos >= 0 && pos < numItems && items[pos].compareTo(item) == 0) 
         {
             // Item already exists, don't insert duplicate
             return;
         }
-        if (numItems == MAX_SIZE) {
+        if (numItems == MAX_LIST) 
+        {
             throw new ListIndexOutOfBoundsException("List is full");
         }
         // Shift items to make room for new item
@@ -54,7 +55,7 @@ public class AscendinglyOrderedStringList implements AscendinglyOrderedStringLis
     {
         if (index < 0 || index >= numItems) 
         {
-            throw new ListIndexOutOfBoundsException("Index out of range");
+            throw new ListIndexOutOfBoundsException("Index out of range!");
         }
         return items[index];
     } // end get
@@ -63,7 +64,7 @@ public class AscendinglyOrderedStringList implements AscendinglyOrderedStringLis
     {
         if (index < 0 || index >= numItems) 
         {
-            throw new ListIndexOutOfBoundsException("Index out of range");
+            throw new ListIndexOutOfBoundsException("Index out of range!");
         }
         // Shift items to remove item at specified index
         for (int j = index; j < numItems - 1; j++) 
@@ -73,11 +74,43 @@ public class AscendinglyOrderedStringList implements AscendinglyOrderedStringLis
         numItems--;
     } // end remove
 
+    public void removeAll() 
+    {
+        items = new String[MAX_LIST];
+        numItems = 0;
+    } // end removeAll
+
+    public void display() 
+    {
+        for (int index = 0; index < numItems; index++) 
+        {
+            System.out.println(items[index]);
+        }
+    }
+    
+    /**
+     * Searches for an item in the list using compareTo
+     * @param key     the item to search for
+     * @return        the index of the item if found
+     * while(low <= high)
+     * {
+     *    midIndex = (low + high) / 2
+     *    if (key > midIndex)
+     *       low = midIndex + 1
+     *    else
+     *       high = midIndex
+     * }
+     * if(key == currKey)
+     *    stop(succ, pos)
+     * else
+     *    stop(unsucc, pos)
+     */
     public int search(String key) 
     {
         int low = 0;
         int high = numItems - 1;
-        int pos = -1;
+        int position = 202;
+        boolean success = false;
         while (low < high) 
         {
             int midIndex = (low + high) / 2;
@@ -88,24 +121,38 @@ public class AscendinglyOrderedStringList implements AscendinglyOrderedStringLis
             
             else 
             {
-                pos = midIndex;
-                high = midIndex - 1;
+                position = midIndex;
+                high = midIndex;
             }
         }
-        return pos;
+        if(key == items[size() - 1])
+        {
+            stop(success, position);
+        }
+
+        else
+        {
+            stop(!success, position);
+        }
+        return position;
     } // end search
 
-    public void removeAll() 
+    /**
+     * Indicates when search should stop or not
+     * @param success     boolean, if key was found
+     * @param position    posiition key was found (-1 if !found)
+     */
+    protected static void stop(boolean success, int position)
     {
-        items = new String[MAX_SIZE];
-        numItems = 0;
-    } // end removeAll
-
-    public void display() 
-    {
-        for (int index = 0; index < numItems; index++) 
+        System.out.println("Searching for item...");
+        if(success)
         {
-            System.out.println(items[index]);
+        System.out.println("Item found at position " + position);
+        }
+
+        else
+        {
+        System.out.println("Item not found.");
         }
     }
 }
