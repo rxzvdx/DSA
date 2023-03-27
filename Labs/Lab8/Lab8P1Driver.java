@@ -75,8 +75,8 @@ public class Lab8P1Driver extends ListArrayBasedPlus
               
                     else
                     {
-                      list_plus.remove(pos);
                       System.out.println("Item " + list_plus.items[pos] + " removed from position " + pos + " in the list.");
+                      list_plus.remove(pos);
                     }
                   break;
 
