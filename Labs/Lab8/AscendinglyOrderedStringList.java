@@ -32,7 +32,7 @@ public class AscendinglyOrderedStringList extends ListArrayBasedPlus implements 
         }
         if (numItems == MAX_LIST)
         {
-            throw new ListException("ListException on add");
+            resize();
         }
         // Shift items to make room for new item
         for (int index = numItems - 1; index >= pos; index--)
