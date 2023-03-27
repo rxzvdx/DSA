@@ -98,6 +98,7 @@ public class Lab8P1Driver extends ListArrayBasedPlus
               case 4:
                 System.out.print("You are now searching for an item. \n Enter the item to search for: ");
                 String key = stdin.readLine();
+                System.out.println(key);
                 search(key, list_plus);
                 break;
 

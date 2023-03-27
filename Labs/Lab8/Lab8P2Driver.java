@@ -86,38 +86,39 @@ public class Lab8P2Driver extends ListArrayBasedPlus
               case 2:
                   System.out.println("You are now removing an item from the list.");    
                   System.out.print("Enter position to remove item from: ");
-                  pos = Integer.parseInt(stdin.readLine());
-                  System.out.println(pos);
-                    if(pos > list_plus.size() - 1)
+                  int pos2 = Integer.parseInt(stdin.readLine());
+                  System.out.println(pos2);
+                    if(pos2 > list_plus.size() - 1)
                     {
                       System.out.println("Position specified is out of range!");
                     }
               
                     else
                     {
-                      list_plus.remove(pos);
-                      System.out.println("Item " + list_plus.items[pos] + " removed from position " + pos + " in the list.");
+                      System.out.println("Item " + list_plus.get(pos2) + " removed from position " + pos2 + " in the list.");
+                      list_plus.remove(pos2);
                     }
                   break;
 
               case 3:
                   System.out.print("Enter position to retrieve item from: ");
-                  pos = Integer.parseInt(stdin.readLine());
-                  System.out.println(pos);
-                  if(pos < 0 || pos >= list_plus.size())
+                  int pos3 = Integer.parseInt(stdin.readLine());
+                  System.out.println(pos3);
+                  if(pos3 < 0 || pos3 >= list_plus.size())
                   {
                     System.out.println("Position specified is out of range!");
                   }
 
                   else
                   {
-                    System.out.println("Item " + list_plus.get(pos) + " retrieved from position " + pos + " in the list.");
+                    System.out.println("Item " + list_plus.get(pos3) + " retrieved from position " + pos3 + " in the list.");
                   }
                   break;
 
               case 4:
                 System.out.print("You are now searching for an item. \n Enter the item to search for: ");
                 String key2 = stdin.readLine();
+                System.out.println(key2);
                 search(key2, list_plus);
                 break;
 
