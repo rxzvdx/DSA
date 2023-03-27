@@ -30,7 +30,7 @@ public class AscendinglyOrderedStringList extends ListArrayBasedPlus implements 
             System.out.println(item + " already exists in the list. Try again.");
             return;
         }
-        if (numItems == MAX_LIST)
+        if (numItems == items.length)
         {
             resize();
         }
