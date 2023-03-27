@@ -157,7 +157,7 @@ public class Lab8P2Driver extends ListArrayBasedPlus
     public static int search(String key, ListArrayBasedPlus list)
     {
       System.out.println("Searching for item...");
-      int position = -10;
+      int position = -1;
       boolean found = false;
       for(int index = 0; index < list.size(); index++)
       {
@@ -175,7 +175,7 @@ public class Lab8P2Driver extends ListArrayBasedPlus
 
       else
       {
-        stop(false, -10); // stop(unsucc, pos)
+        stop(false, -1); // stop(unsucc, pos)
       }
       return position;
     }

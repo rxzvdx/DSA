@@ -48,7 +48,7 @@ public class Lab8P3Driver
                   System.out.print("Enter item: ");
                   String item = stdin.readLine();
                   int found = list.search(item);
-                  if(found == -10)
+                  if(found == -1)
                   {
                     System.out.println("Item already exists, try again!");
                   }

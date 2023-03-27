@@ -109,7 +109,7 @@ public class AscendinglyOrderedStringList implements AscendinglyOrderedStringLis
     {
         int low = 0;
         int high = numItems - 1;
-        int position = -10;
+        int position = -1;
         boolean success = false;
         while (low <= high) 
         {
@@ -152,7 +152,7 @@ public class AscendinglyOrderedStringList implements AscendinglyOrderedStringLis
 
         else
         {
-            return -10;
+            return -1;
         }
     }
 }
