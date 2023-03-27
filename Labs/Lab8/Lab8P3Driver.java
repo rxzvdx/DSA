@@ -88,7 +88,7 @@ public class Lab8P3Driver
                 pos = Integer.parseInt(stdin.readLine());
                 String searchedItem = list.get(pos);
                 list.search(searchedItem);
-                System.out.println("Item found in position " + pos);
+                System.out.println("Item " + list.get(pos) + " found in position " + pos);
                 break;
 
               case 4:
@@ -113,29 +113,5 @@ public class Lab8P3Driver
                   break;
             }
         }
-    }
-    /**
-     * Searches for an item in the list using compareTo
-     * @param key     the item to search for
-     * @param list    the list to search in
-     * @return        the index of the item if found
-     * 
-     * if (curr == key)
-     *    stop(succ, pos)
-     * else
-     *    advance
-     * stop(unsucc)
-     */
-    public static int search(String key, ListArrayBasedPlus list)
-    {
-      int position = 202;
-      for(int index = 0; index < list.size(); index++)
-      {
-        if(key.equals(list.get(index)))
-        {
-          position = index;
-        }
-      }
-      return position;
     }
 }
