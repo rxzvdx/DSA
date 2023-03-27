@@ -33,10 +33,6 @@ public class AscendinglyOrderedStringList implements AscendinglyOrderedStringLis
     public void add(String item) throws ListIndexOutOfBoundsException 
     {
         int pos = search(item);
-        if(numItems == 0)
-        {
-            pos = 0;
-        }
         if (pos >= 0 && pos < numItems && items[pos].compareTo(item) == 0) 
         {
             // Item already exists, don't insert duplicate
@@ -133,19 +129,19 @@ public class AscendinglyOrderedStringList implements AscendinglyOrderedStringLis
 
             else
             {
-                position = midIndex;
                 success = true;
-                break; 
+                return position = midIndex;
             }
         }
-        //stop(!success, position);
+        stop(success, position);
+        // key was not found, return position where it should be placed
         return low;
     } // end search
 
     /**
      * Indicates when search should stop or not
      * @param success     boolean, if key was found
-     * @param position    posiition key was found (202 if !found)
+     * @param position    posiition key was found (-10 if !found)
      */
     protected static int stop(boolean success, int position)
     {

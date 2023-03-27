@@ -47,7 +47,8 @@ public class Lab8P3Driver
                   System.out.println("You are now inserting an item into the list.");
                   System.out.print("Enter item: ");
                   String item = stdin.readLine();
-                  if(list.search(item) == -10)
+                  int found = list.search(item);
+                  if(found == -10)
                   {
                     System.out.println("Item already exists, try again!");
                   }

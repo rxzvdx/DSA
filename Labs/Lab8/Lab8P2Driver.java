@@ -155,7 +155,8 @@ public class Lab8P2Driver extends ListArrayBasedPlus
      */
     public static int search(String key, ListArrayBasedPlus list)
     {
-      int position = 202;
+      System.out.println("Searching for item...");
+      int position = -10;
       boolean found = false;
       for(int index = 0; index < list.size(); index++)
       {
@@ -173,7 +174,7 @@ public class Lab8P2Driver extends ListArrayBasedPlus
 
       else
       {
-        stop(false, -1); // stop(unsucc, pos)
+        stop(false, -10); // stop(unsucc, pos)
       }
       return position;
     }
@@ -181,11 +182,10 @@ public class Lab8P2Driver extends ListArrayBasedPlus
   /**
    * Indicates when search should stop or not
    * @param success     boolean, if key was found
-   * @param position    posiition key was found (-1 if !found)
+   * @param position    posiition key was found (-10 if !found)
    */
   protected static void stop(boolean success, int position)
   {
-    System.out.println("Searching for item...");
     if(success)
     {
       System.out.println("Item found at position " + position);
