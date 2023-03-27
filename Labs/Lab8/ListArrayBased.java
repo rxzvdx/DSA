@@ -87,7 +87,7 @@ public class ListArrayBased implements ListInterface
 
     public void remove(int index)
     throws ListIndexOutOfBoundsException
-    {   
+    {
         if (index >= 0 && index < numItems)
         {
             // delete item by shifting all items at

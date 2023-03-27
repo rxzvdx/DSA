@@ -8,61 +8,76 @@
  * @author: Antonio Rosado
  * @version: 2023.03.27
  */
-public class AscendinglyOrderedStringList extends ListArrayBasedPlus implements AscendinglyOrderedStringListInterface 
+public class AscendinglyOrderedStringList extends ListArrayBasedPlus implements AscendinglyOrderedStringListInterface
 {
     private static final int MAX_LIST = 10;
     private String[] items;
     private int numItems;
 
-    public AscendinglyOrderedStringList() 
+    public AscendinglyOrderedStringList()
     {
         super();
+        items = new String[MAX_LIST];
+        numItems = 0;
     } // end default constructor
 
-    public void add(String item) throws ListIndexOutOfBoundsException 
+    public void add(String item) throws ListIndexOutOfBoundsException
     {
         int pos = search(item);
-        if (pos >= 0 && pos < numItems && items[pos].compareTo(item) == 0) 
+        if (pos >= 0 && pos < numItems && items[pos].compareTo(item) == 0)
         {
             // Item already exists, don't insert duplicate
+            System.out.println(item + " already exists in the list. Try again.");
             return;
         }
-        if (numItems == items.length)
+        if (numItems == MAX_LIST)
         {
             throw new ListException("ListException on add");
-        } 
+        }
         // Shift items to make room for new item
-        for (int index = numItems - 1; index >= pos; index--) 
+        for (int index = numItems - 1; index >= pos; index--)
         {
             items[index + 1] = items[index];
         }
         items[pos] = item;
         numItems++;
+        super.add(pos, item);
     } // end add
 
-    public String get(int index) throws ListIndexOutOfBoundsException 
+    public String get(int index) throws ListIndexOutOfBoundsException
     {
-        if (index < 0 || index >= numItems) 
+        if (index < 0 || index >= numItems)
         {
             throw new ListIndexOutOfBoundsException("Index out of range!");
         }
         return items[index];
     } // end get
 
-    public void remove(int index) throws ListIndexOutOfBoundsException 
+    public void remove(int index) throws ListIndexOutOfBoundsException
     {
-        if (index < 0 || index >= numItems) 
+        if (index < 0 || index >= numItems)
         {
             throw new ListIndexOutOfBoundsException("Index out of range!");
         }
         // Shift items to remove item at specified index
-        for (int j = index; j < numItems - 1; j++) 
+        for (int j = index; j < numItems - 1; j++)
         {
             items[j] = items[j + 1];
         }
         numItems--;
     } // end remove
 
+    public void display() 
+    {
+      if(numItems != 0)
+      {
+          for (int i = 0; i < numItems; i++) 
+          {
+              System.out.print(items[i] + " "  + "\n");
+          }
+          System.out.println();
+      }
+    }
     /**
      * Searches for an item in the list using compareTo
      * @param key     the item to search for
@@ -80,22 +95,22 @@ public class AscendinglyOrderedStringList extends ListArrayBasedPlus implements 
      * else
      *    stop(unsucc, pos)
      */
-    public int search(String key) 
+    public int search(String key)
     {
         int low = 0;
         int high = numItems - 1;
         int position = -1;
         boolean success = false;
-        while (low <= high) 
+        while (low <= high)
         {
             int midIndex = (low + high) / 2;
             String midKey = items[midIndex];
-            if (key.compareTo(midKey) > 0) 
+            if (key.compareTo(midKey) > 0)
             {
                 // key > midKey, search upper half of list
                 low = midIndex + 1;
-            } 
-            
+            }
+
             else if(key.compareTo(midKey) < 0)
             {
                 // key <= midKey, search lower half of list
