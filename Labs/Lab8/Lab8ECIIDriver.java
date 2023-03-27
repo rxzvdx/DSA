@@ -1,5 +1,5 @@
 /*
- * Purpose: Data Structure and Algorithms Lab 8
+ * Purpose: Data Structure and Algorithms Lab 8 EXTRA CREDIT I
  * Status: Complete and thoroughly tested
  * Last update: 03/27/23
  * Submitted:  03/27/23
@@ -11,7 +11,7 @@
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-public class Lab8P3Driver
+public class Lab8ECIIDriver
 {
     static BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
     public static void main (String[] args) throws IOException
@@ -49,11 +49,8 @@ public class Lab8P3Driver
                     String item = stdin.readLine();
                     int found = list.search(item);
                     System.out.println(item);
-                    if(found != -1)
-                    {
-                      list.add(item);
-                      System.out.println(item + " inserted into the list.");
-                    }
+                    list.add(item);
+                    System.out.println(item + " inserted into the list.");
                 }
 
                 catch(ListIndexOutOfBoundsException e)

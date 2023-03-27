@@ -30,18 +30,22 @@ public class AscendinglyOrderedStringList extends ListArrayBasedPlus implements 
             System.out.println(item + " already exists in the list. Try again.");
             return;
         }
-        if (numItems == items.length)
+
+        else
         {
-            resize();
+            if (numItems == items.length)
+            {
+                resize();
+            }
+            // Shift items to make room for new item
+            for (int index = numItems - 1; index >= pos; index--)
+            {
+                items[index + 1] = items[index];
+            }
+            items[pos] = item;
+            numItems++;
+            super.add(pos, item);
         }
-        // Shift items to make room for new item
-        for (int index = numItems - 1; index >= pos; index--)
-        {
-            items[index + 1] = items[index];
-        }
-        items[pos] = item;
-        numItems++;
-        super.add(pos, item);
     } // end add
 
     public String get(int index) throws ListIndexOutOfBoundsException
@@ -67,16 +71,16 @@ public class AscendinglyOrderedStringList extends ListArrayBasedPlus implements 
         numItems--;
     } // end remove
 
-    public void display() 
+    public void display()
     {
-      if(numItems != 0)
-      {
-          for (int i = 0; i < numItems; i++) 
-          {
-              System.out.print(items[i] + " "  + "\n");
-          }
-          System.out.println();
-      }
+        if(numItems != 0)
+        {
+            for (int i = 0; i < numItems; i++)
+            {
+                System.out.print(items[i] + " "  + "\n");
+            }
+            System.out.println();
+        }
     }
     /**
      * Searches for an item in the list using compareTo
