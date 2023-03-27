@@ -17,7 +17,7 @@ public interface ListInterface
     int size();
     void add(int index, Object item) throws ListIndexOutOfBoundsException;
     Object get(int index) throws ListIndexOutOfBoundsException;
-    Object remove(int index) throws ListIndexOutOfBoundsException;
+    void remove(int index) throws ListIndexOutOfBoundsException;
     void removeAll();
     String toString();
 }  // end ListInterface

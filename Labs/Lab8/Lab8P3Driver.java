@@ -105,7 +105,7 @@ public class Lab8P3Driver
                 else 
                 {
                   System.out.print("List of size " + list.size() + " has the following items : \n");
-                  list.display();
+                  list.toString();
                 }
                 break;
 

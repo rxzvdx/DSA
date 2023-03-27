@@ -85,16 +85,15 @@ public class ListArrayBased implements ListInterface
         }  // end if
     } // end get
 
-    public Object remove(int index)
+    public void remove(int index)
     throws ListIndexOutOfBoundsException
-    {   Object result;
+    {   
         if (index >= 0 && index < numItems)
         {
             // delete item by shifting all items at
             // positions > index toward the beginning of the list
             // (no shift if index == size)
-            result = items[index];
-                     if(numItems == items.length)
+            if(numItems == items.length)
             {
                 throw new ListException("ListException on remove");
             }
@@ -110,6 +109,5 @@ public class ListArrayBased implements ListInterface
             throw new ListIndexOutOfBoundsException(
                 "ListIndexOutOfBoundsException on remove");
         }  // end if
-        return result;
     } //end remove
 }

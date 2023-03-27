@@ -8,7 +8,7 @@
  * @author: Antonio Rosado
  * @version: 2023.03.27
  */
-public class AscendinglyOrderedStringList implements AscendinglyOrderedStringListInterface 
+public class AscendinglyOrderedStringList extends ListArrayBasedPlus implements AscendinglyOrderedStringListInterface 
 {
     private static final int MAX_LIST = 10;
     private String[] items;
@@ -16,19 +16,8 @@ public class AscendinglyOrderedStringList implements AscendinglyOrderedStringLis
 
     public AscendinglyOrderedStringList() 
     {
-        items = new String[MAX_LIST];
-        numItems = 0;
+        super();
     } // end default constructor
-
-    public boolean isEmpty() 
-    {
-        return (numItems == 0);
-    } // end isEmpty
-
-    public int size() 
-    {
-        return numItems;
-    } // end size
 
     public void add(String item) throws ListIndexOutOfBoundsException 
     {
@@ -38,10 +27,10 @@ public class AscendinglyOrderedStringList implements AscendinglyOrderedStringLis
             // Item already exists, don't insert duplicate
             return;
         }
-        if (numItems == MAX_LIST) 
+        if (numItems == items.length)
         {
-            throw new ListIndexOutOfBoundsException("List is full");
-        }
+            throw new ListException("ListException on add");
+        } 
         // Shift items to make room for new item
         for (int index = numItems - 1; index >= pos; index--) 
         {
@@ -74,20 +63,6 @@ public class AscendinglyOrderedStringList implements AscendinglyOrderedStringLis
         numItems--;
     } // end remove
 
-    public void removeAll() 
-    {
-        items = new String[MAX_LIST];
-        numItems = 0;
-    } // end removeAll
-
-    public void display() 
-    {
-        for (int index = 0; index < numItems; index++) 
-        {
-            System.out.println(items[index]);
-        }
-    }
-    
     /**
      * Searches for an item in the list using compareTo
      * @param key     the item to search for
@@ -129,6 +104,7 @@ public class AscendinglyOrderedStringList implements AscendinglyOrderedStringLis
 
             else
             {
+                // key found
                 success = true;
                 return position = midIndex;
             }
@@ -141,7 +117,7 @@ public class AscendinglyOrderedStringList implements AscendinglyOrderedStringLis
     /**
      * Indicates when search should stop or not
      * @param success     boolean, if key was found
-     * @param position    posiition key was found (-10 if !found)
+     * @param position    posiition key was found (-1 if !found)
      */
     protected static int stop(boolean success, int position)
     {
