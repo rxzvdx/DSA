@@ -1,0 +1,1 @@
+Lab 8 showed me how useful Sequential Searches and Binary Searches can be and how they efficiently iterate through collections in a better way than data structures that come in the Java source code.

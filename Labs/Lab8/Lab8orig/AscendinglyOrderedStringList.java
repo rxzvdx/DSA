@@ -104,7 +104,6 @@ public class AscendinglyOrderedStringList extends ListArrayBasedPlus implements 
         int low = 0;
         int high = numItems - 1;
         int position = -1;
-        boolean success = false;
         while (low <= high)
         {
             int midIndex = (low + high) / 2;
@@ -124,30 +123,10 @@ public class AscendinglyOrderedStringList extends ListArrayBasedPlus implements 
             else
             {
                 // key found
-                success = true;
                 return position = midIndex;
             }
-        }
-        stop(success, position);
         // key was not found, return position where it should be placed
+        } 
         return low;
-    } // end search
-
-    /**
-     * Indicates when search should stop or not
-     * @param success     boolean, if key was found
-     * @param position    posiition key was found (-1 if !found)
-     */
-    protected static int stop(boolean success, int position)
-    {
-        if(success)
-        {
-            return position;
-        }
-
-        else
-        {
-            return -1;
-        }
     }
 }

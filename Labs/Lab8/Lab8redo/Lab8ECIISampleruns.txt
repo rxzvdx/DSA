@@ -1,0 +1,241 @@
+Select from the following menu: 
+0. Exit the program 
+1. Insert specified item into the list 
+2. Remove item in specified position in the list 
+3. Search list for a specific item 
+4. Clear the list 
+5. Display the content of the list 
+
+Make your menu selection now: 1
+You are now inserting an item into the list.
+Enter item: -7
+-7 inserted into the list.
+Select from the following menu: 
+0. Exit the program 
+1. Insert specified item into the list 
+2. Remove item in specified position in the list 
+3. Search list for a specific item 
+4. Clear the list 
+5. Display the content of the list 
+
+Make your menu selection now: 1
+You are now inserting an item into the list.
+Enter item: 8
+8 inserted into the list.
+Select from the following menu: 
+0. Exit the program 
+1. Insert specified item into the list 
+2. Remove item in specified position in the list 
+3. Search list for a specific item 
+4. Clear the list 
+5. Display the content of the list 
+
+Make your menu selection now: 1
+You are now inserting an item into the list.
+Enter item: -5
+-5 inserted into the list.
+Select from the following menu: 
+0. Exit the program 
+1. Insert specified item into the list 
+2. Remove item in specified position in the list 
+3. Search list for a specific item 
+4. Clear the list 
+5. Display the content of the list 
+
+Make your menu selection now: 1
+You are now inserting an item into the list.
+Enter item: -5
+-5 inserted into the list.
+Select from the following menu: 
+0. Exit the program 
+1. Insert specified item into the list 
+2. Remove item in specified position in the list 
+3. Search list for a specific item 
+4. Clear the list 
+5. Display the content of the list 
+
+Make your menu selection now: 1
+You are now inserting an item into the list.
+Enter item: 7
+7 inserted into the list.
+Select from the following menu: 
+0. Exit the program 
+1. Insert specified item into the list 
+2. Remove item in specified position in the list 
+3. Search list for a specific item 
+4. Clear the list 
+5. Display the content of the list 
+
+Make your menu selection now: 1
+You are now inserting an item into the list.
+Enter item: -2
+-2 inserted into the list.
+Select from the following menu: 
+0. Exit the program 
+1. Insert specified item into the list 
+2. Remove item in specified position in the list 
+3. Search list for a specific item 
+4. Clear the list 
+5. Display the content of the list 
+
+Make your menu selection now: 1
+You are now inserting an item into the list.
+Enter item: -2
+-2 inserted into the list.
+Select from the following menu: 
+0. Exit the program 
+1. Insert specified item into the list 
+2. Remove item in specified position in the list 
+3. Search list for a specific item 
+4. Clear the list 
+5. Display the content of the list 
+
+Make your menu selection now: 1
+You are now inserting an item into the list.
+Enter item: 4
+4 inserted into the list.
+Select from the following menu: 
+0. Exit the program 
+1. Insert specified item into the list 
+2. Remove item in specified position in the list 
+3. Search list for a specific item 
+4. Clear the list 
+5. Display the content of the list 
+
+Make your menu selection now: 1
+You are now inserting an item into the list.
+Enter item: 1
+1 inserted into the list.
+Select from the following menu: 
+0. Exit the program 
+1. Insert specified item into the list 
+2. Remove item in specified position in the list 
+3. Search list for a specific item 
+4. Clear the list 
+5. Display the content of the list 
+
+Make your menu selection now: 1
+You are now inserting an item into the list.
+Enter item: 0
+0 inserted into the list.
+Select from the following menu: 
+0. Exit the program 
+1. Insert specified item into the list 
+2. Remove item in specified position in the list 
+3. Search list for a specific item 
+4. Clear the list 
+5. Display the content of the list 
+
+Make your menu selection now: 5
+List of size 8 has the following items : 
+-2 
+-2
+-5 
+-5
+-7 
+0 
+1 
+4 
+7 
+8 
+
+Select from the following menu: 
+0. Exit the program 
+1. Insert specified item into the list 
+2. Remove item in specified position in the list 
+3. Search list for a specific item 
+4. Clear the list 
+5. Display the content of the list 
+
+Make your menu selection now: 3
+You are now searching for an item. 
+ Enter the item to search for: 0
+Item found in position 3
+Select from the following menu: 
+0. Exit the program 
+1. Insert specified item into the list 
+2. Remove item in specified position in the list 
+3. Search list for a specific item 
+4. Clear the list 
+5. Display the content of the list 
+
+Make your menu selection now: 2
+You are now removing an item from the list.
+Enter position to remove item from: 3
+0 removed from the list.
+Select from the following menu: 
+0. Exit the program 
+1. Insert specified item into the list 
+2. Remove item in specified position in the list 
+3. Search list for a specific item 
+4. Clear the list 
+5. Display the content of the list 
+
+Make your menu selection now: 4
+List cleared
+Select from the following menu: 
+0. Exit the program 
+1. Insert specified item into the list 
+2. Remove item in specified position in the list 
+3. Search list for a specific item 
+4. Clear the list 
+5. Display the content of the list 
+
+Make your menu selection now: 2
+You are now removing an item from the list.
+Enter position to remove item from: 0
+-2 removed from the list.
+Select from the following menu: 
+0. Exit the program 
+1. Insert specified item into the list 
+2. Remove item in specified position in the list 
+3. Search list for a specific item 
+4. Clear the list 
+5. Display the content of the list 
+
+Make your menu selection now: 2
+You are now removing an item from the list.
+Enter position to remove item from: 1
+-7 removed from the list.
+Select from the following menu: 
+0. Exit the program 
+1. Insert specified item into the list 
+2. Remove item in specified position in the list 
+3. Search list for a specific item 
+4. Clear the list 
+5. Display the content of the list 
+
+Make your menu selection now: 2
+You are now removing an item from the list.
+Enter position to remove item from: 2
+4 removed from the list.
+Select from the following menu: 
+0. Exit the program 
+1. Insert specified item into the list 
+2. Remove item in specified position in the list 
+3. Search list for a specific item 
+4. Clear the list 
+5. Display the content of the list 
+
+Make your menu selection now: 5
+List is empty.
+Select from the following menu: 
+0. Exit the program 
+1. Insert specified item into the list 
+2. Remove item in specified position in the list 
+3. Search list for a specific item 
+4. Clear the list 
+5. Display the content of the list 
+
+Make your menu selection now: 4
+List cleared
+Select from the following menu: 
+0. Exit the program 
+1. Insert specified item into the list 
+2. Remove item in specified position in the list 
+3. Search list for a specific item 
+4. Clear the list 
+5. Display the content of the list 
+
+Make your menu selection now: 0
+Exiting program... good bye
