@@ -43,31 +43,27 @@ public class Lab8P2Driver extends ListArrayBasedPlus
                   break;
 
               case 1:
+                  // NEW CHANGES MADE
                   System.out.println("You are now inserting an item into the list.");
                   System.out.print("Enter item: ");
                   String key = stdin.readLine();
-                  System.out.println(key);
+                  System.out.print(key);
                   // Modified Sequential Search III
-                  int searched = search(key, list_plus);
-                  if(searched > list_plus.length())
+                  int position = search(key, list_plus);
+                  if(position < 0)
+                  {
+                    position = (position + 1)* -1;
+                  }
+
+                  else if(position > list_plus.length())
                   {
                     System.out.println("Position is out of bounds!");
                   }
 
-                  if(searched < 0)
-                  {
-                    searched = (searched + 1)* -1;
-                  }
-
-                  else if (searched == 100)
-                  {
-                    searched = 0;
-                  }
-
                   else
                   {
-                    list_plus.add(searched, key);
-                    System.out.println("Item " + key + " inserted in position " + searched);
+                    list_plus.add(position, key);
+                    System.out.println("Item " + key + " inserted in position " + position);
                   }
                   break;
 
@@ -106,8 +102,18 @@ public class Lab8P2Driver extends ListArrayBasedPlus
               case 4:
                 System.out.print("You are now searching for an item. \n Enter the item to search for: ");
                 String key2 = stdin.readLine();
-                System.out.println(key2);
-                search(key2, list_plus);
+                System.out.println(key2);                
+                System.out.println("Searching for item...");
+                int position2 = search(key2, list_plus);
+                if (position2 <= -1)
+                {
+                  System.out.println(position2 + " no item with that name exists, try again.");
+                }
+
+                else
+                {
+                  System.out.println(key2 + " found at position" + position2);
+                }
                 break;
 
               case 5:
@@ -131,6 +137,7 @@ public class Lab8P2Driver extends ListArrayBasedPlus
         }
     }
     /**
+     * CHANGES MADE TO SEARCH METHOD
      * Searches for an item in the list using compareTo
      * @param key     the item to search for
      * @param list    the list to search in
@@ -145,7 +152,6 @@ public class Lab8P2Driver extends ListArrayBasedPlus
      */
     public static int search(String key, ListArrayBasedPlus list)
     {
-      System.out.println("Searching for item...");
       int position = 0;
       if(list.size() == 0)
       {

@@ -99,7 +99,17 @@ public class Lab8P1Driver extends ListArrayBasedPlus
                 System.out.print("You are now searching for an item. \n Enter the item to search for: ");
                 String key = stdin.readLine();
                 System.out.println(key);
-                search(key, list_plus);
+                System.out.println("Searching for item...");
+                int position = search(key, list_plus);
+                if (position <= -1)
+                {
+                  System.out.println(position + " no item with that name exists, try again.");
+                }
+
+                else
+                {
+                  System.out.println(key + " found at position" + position);
+                }
                 break;
 
               case 5:
@@ -123,6 +133,7 @@ public class Lab8P1Driver extends ListArrayBasedPlus
         }
     }
     /**
+     *  CHANGES MADE TO SEARCH METHOD
      * Searches for an item in the list using compareTo
      * @param key     the item to search for
      * @param list    the list to search in
@@ -136,7 +147,6 @@ public class Lab8P1Driver extends ListArrayBasedPlus
      */
     public static int search(String key, ListArrayBasedPlus list)
     {
-      System.out.println("Searching for item...");
       int position = -1;
       for(int index = 0; index < list.size(); index++)
       {
