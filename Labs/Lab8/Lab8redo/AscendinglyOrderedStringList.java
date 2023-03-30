@@ -10,7 +10,7 @@
  */
 public class AscendinglyOrderedStringList extends ListArrayBasedPlus implements AscendinglyOrderedStringListInterface
 {
-    private static final int MAX_LIST = 10;
+    private static final int MAX_LIST = 3;
     private String[] items;
     private int numItems;
 
@@ -83,6 +83,7 @@ public class AscendinglyOrderedStringList extends ListArrayBasedPlus implements 
         }
     }
     /**
+     * CHANGES MADE TO SEARCH METHOD
      * Searches for an item in the list using compareTo
      * @param key     the item to search for
      * @return        the index of the item if found
@@ -104,7 +105,7 @@ public class AscendinglyOrderedStringList extends ListArrayBasedPlus implements 
         int low = 0;
         int high = numItems - 1;
         int position = -1;
-        while (low <= high)
+        while (low < high)
         {
             int midIndex = (low + high) / 2;
             String midKey = items[midIndex];
@@ -114,19 +115,27 @@ public class AscendinglyOrderedStringList extends ListArrayBasedPlus implements 
                 low = midIndex + 1;
             }
 
-            else if(key.compareTo(midKey) < 0)
-            {
-                // key <= midKey, search lower half of list
-                high = midIndex - 1;
-            }
-
             else
             {
-                // key found
-                return position = midIndex;
+                // key found, set position equal to key
+                position = midIndex;
+                high = midIndex;
             }
-        // key was not found, return position where it should be placed
-        } 
-        return low;
+        }
+        
+        // if not found
+        if(position == -1)
+        {
+            return position;
+        }
+
+        // if already exists, return -1
+        if (!(items[position].compareTo(key) == 0))
+        {
+
+            position = (position + 1) * (-1);
+
+        }
+        return position;
     }
 }
