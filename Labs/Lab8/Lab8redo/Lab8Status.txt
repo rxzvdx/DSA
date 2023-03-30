@@ -1,6 +1,6 @@
 CHANGES MADE:
-Fixed Search method in P1Driver. 
-Fixed Search method & Case 1 in P2Driver.
+Fixed Search method and cases in P1Driver. 
+Fixed Search method & cases in P2Driver.
 Fixed Search method in AscendinglyOrderedStringList
 Problem 1: compiles, runs correctly on all provided input
 Problem 2: compiles, runs correctly on all provided input
