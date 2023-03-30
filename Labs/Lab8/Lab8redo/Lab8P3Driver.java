@@ -18,8 +18,6 @@ public class Lab8P3Driver
     {
         AscendinglyOrderedStringList list = new AscendinglyOrderedStringList();
         boolean exit = false;
-        int pos = -1;
-
         while (!exit)
         {
             System.out.println("Select from the following menu: \n"
@@ -31,7 +29,7 @@ public class Lab8P3Driver
                                + "5. Display the content of the list \n");
 
             System.out.print("Make your menu selection now: " );
-            int input = Integer.parseInt(stdin.readLine());
+            int input = Integer.parseInt(stdin.readLine().trim());
             System.out.println(input);
             // possible cases for initial input
             switch (input)
@@ -45,15 +43,7 @@ public class Lab8P3Driver
                 try
                 {
                     System.out.println("You are now inserting an item into the list.");
-                    System.out.print("Enter item: ");
-                    String item = stdin.readLine();
-                    int found = list.search(item);
-                    System.out.println(item);
-                    if(found != -1)
-                    {
-                      list.add(item);
-                      System.out.println(item + " inserted into the list.");
-                    }
+                    add(list);
                 }
 
                 catch(ListIndexOutOfBoundsException e)
@@ -66,12 +56,7 @@ public class Lab8P3Driver
                 try
                 {
                     System.out.println("You are now removing an item from the list.");
-                    System.out.print("Enter position to remove item from: ");
-                    pos = Integer.parseInt(stdin.readLine());
-                    System.out.println(pos);
-                    String removed = list.get(pos);
-                    list.remove(pos);
-                    System.out.println(removed + " removed from the list.");
+                    remove(list);
                 }
 
                 catch(ListIndexOutOfBoundsException e)
@@ -81,11 +66,8 @@ public class Lab8P3Driver
                 break;
 
             case 3:
-                System.out.print("You are now searching for an item. \n Enter the item to search for: ");
-                String key2 = stdin.readLine();
-                System.out.println(key2);
-                int pos3 = list.search(key2);
-                System.out.println("Item found in position " + pos3);
+                System.out.println("You are now searching for an item.");
+                search(list);
                 break;
 
             case 4:
@@ -109,6 +91,62 @@ public class Lab8P3Driver
                 System.out.println("Invalid choice.");
                 break;
             }
+        }
+    }
+    public static void add(AscendinglyOrderedStringList list) throws IOException
+    {
+        System.out.print("Enter item: ");
+        String item = stdin.readLine().trim();
+        System.out.println(item);
+        try 
+        {
+            if (list.search(item) >= 0) 
+            {
+                System.out.println("Item " + item + " is already in the list. Please enter a different item.");
+            } 
+            else 
+            {
+                list.add(item);
+                System.out.println("Item " + item + " has been added to the list.");
+            }
+        } 
+        catch (ListIndexOutOfBoundsException e) 
+        {
+            System.out.println("List is full.");
+        }
+    }
+
+    public static void remove(AscendinglyOrderedStringList list) throws IOException
+    {
+        System.out.print("Enter position to remove item from: ");
+        int pos = Integer.parseInt(stdin.readLine().trim());
+        System.out.println(pos);
+        try 
+        {
+            String removed = list.get(pos);
+            System.out.println("Item " + removed + " is removed from the list.");
+        } 
+
+        catch (ListIndexOutOfBoundsException e) 
+        {
+        System.out.println("Position specified is out of bounds.");
+        }
+    }
+
+    public static void search(AscendinglyOrderedStringList list) throws IOException
+    {
+        System.out.print("Enter the item to search for: ");
+        String key = stdin.readLine().trim();
+        System.out.println(key);
+        int pos = list.search(key);
+        if(pos >= 0)
+        {
+            System.out.println("Item found in position " + pos);
+        }
+
+        else
+        {
+            System.out.println("Item does not exist, should be inserted in index " + -(pos + 1) );
         }
     }
 }

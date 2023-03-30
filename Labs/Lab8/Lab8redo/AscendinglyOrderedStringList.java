@@ -10,10 +10,14 @@
  */
 public class AscendinglyOrderedStringList extends ListArrayBasedPlus implements AscendinglyOrderedStringListInterface
 {
-    private static final int MAX_LIST = 3;
-    private String[] items;
-    private int numItems;
+    private static final int MAX_LIST = 5; // Maximum capacity of the list
+    private String[] items; // Array to store items
+    private int numItems; // Number of items in the list
 
+    /**
+     * Default constructor for AscendinglyOrderedStringList.
+     * Creates a new AscendinglyOrderedStringList object with an empty array of MAX_LIST size.
+     */
     public AscendinglyOrderedStringList()
     {
         super();
@@ -21,9 +25,17 @@ public class AscendinglyOrderedStringList extends ListArrayBasedPlus implements 
         numItems = 0;
     } // end default constructor
 
+    /**
+     * Adds an item to the list in ascending order.
+     * 
+     * @param item the item to be added to the list
+     * @throws ListIndexOutOfBoundsException if the index is out of range
+     */
     public void add(String item) throws ListIndexOutOfBoundsException
     {
+        // Binary Search II
         int pos = search(item);
+        // Check if item already exists in list
         if (pos >= 0 && pos < numItems && items[pos].compareTo(item) == 0)
         {
             // Item already exists, don't insert duplicate
@@ -31,23 +43,32 @@ public class AscendinglyOrderedStringList extends ListArrayBasedPlus implements 
             return;
         }
 
-        else
+        // Resize array if it is full
+        if (numItems == items.length)
         {
-            if (numItems == items.length)
-            {
-                resize();
-            }
-            // Shift items to make room for new item
-            for (int index = numItems - 1; index >= pos; index--)
-            {
-                items[index + 1] = items[index];
-            }
-            items[pos] = item;
-            numItems++;
-            super.add(pos, item);
+            resize();
         }
+        // Calculate index where item should be inserted
+        pos = -(pos + 1);
+
+        // Shift items to make room for new item
+        for (int index = numItems - 1; index >= pos; index--)
+        {
+            items[index + 1] = items[index];
+        }
+        items[pos] = item;
+        numItems++;
+        // Call add method of ListArrayBasedPlus to add item to list
+        super.add(pos, item);
     } // end add
 
+    /**
+     * Returns the item at the specified index in the list.
+     * 
+     * @param index the index of the item to be returned
+     * @return the item at the specified index in the list
+     * @throws ListIndexOutOfBoundsException if the index is out of range
+     */
     public String get(int index) throws ListIndexOutOfBoundsException
     {
         if (index < 0 || index >= numItems)
@@ -57,6 +78,12 @@ public class AscendinglyOrderedStringList extends ListArrayBasedPlus implements 
         return items[index];
     } // end get
 
+    /**
+     * Removes the item at the specified index from the list.
+     * 
+     * @param index the index of the item to be removed from the list
+     * @throws ListIndexOutOfBoundsException if the index is out of range
+     */
     public void remove(int index) throws ListIndexOutOfBoundsException
     {
         if (index < 0 || index >= numItems)
@@ -68,6 +95,7 @@ public class AscendinglyOrderedStringList extends ListArrayBasedPlus implements 
         {
             items[j] = items[j + 1];
         }
+        items[numItems -1] = null;
         numItems--;
     } // end remove
 
@@ -84,6 +112,7 @@ public class AscendinglyOrderedStringList extends ListArrayBasedPlus implements 
     }
     /**
      * CHANGES MADE TO SEARCH METHOD
+     * Binary Search II
      * Searches for an item in the list using compareTo
      * @param key     the item to search for
      * @return        the index of the item if found
@@ -104,38 +133,29 @@ public class AscendinglyOrderedStringList extends ListArrayBasedPlus implements 
     {
         int low = 0;
         int high = numItems - 1;
-        int position = -1;
-        while (low < high)
+        while (low <= high)
         {
             int midIndex = (low + high) / 2;
-            String midKey = items[midIndex];
-            if (key.compareTo(midKey) > 0)
+            int compare = key.compareTo(items[midIndex]);
+            if (compare == 0)
             {
-                // key > midKey, search upper half of list
-                low = midIndex + 1;
+                // key found
+                return midIndex;
+            }
+
+            else if (compare < 0)
+            {
+                // key smaller, search left half
+                high = midIndex - 1;
             }
 
             else
             {
-                // key found, set position equal to key
-                position = midIndex;
-                high = midIndex;
+                // key larger, search right half
+                low = midIndex + 1;
             }
         }
-        
-        // if not found
-        if(position == -1)
-        {
-            return position;
-        }
-
-        // if already exists, return -1
-        if (!(items[position].compareTo(key) == 0))
-        {
-
-            position = (position + 1) * (-1);
-
-        }
-        return position;
+        // return index where key should be inserted
+        return -(low + 1);
     }
 }
