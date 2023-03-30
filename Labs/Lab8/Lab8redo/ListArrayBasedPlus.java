@@ -70,12 +70,12 @@
          return sb.toString();
      }
  
-     /**
-      * Returns length of Array
-      * @return       int length
-      */
-     public int length()
-     {
-         return items.length;
-     }
+    //  /**
+    //   * Returns length of Array
+    //   * @return       int length
+    //   */
+    //  public int length()
+    //  {
+    //      return items.length;
+    //  }
  }
