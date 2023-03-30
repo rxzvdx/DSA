@@ -11,7 +11,7 @@
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-public class Lab8P2Driver extends ListArrayBasedPlus
+public class Lab8P2Driver 
 {
     static BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
     public static void main (String[] args) throws IOException 
@@ -47,7 +47,7 @@ public class Lab8P2Driver extends ListArrayBasedPlus
                   System.out.println("You are now inserting an item into the list.");
                   System.out.print("Enter item: ");
                   String key = stdin.readLine();
-                  System.out.print(key);
+                  System.out.println(key);
                   // Modified Sequential Search III
                   int position = search(key, list_plus);
                   if(position < 0)
@@ -161,6 +161,7 @@ public class Lab8P2Driver extends ListArrayBasedPlus
       while(key.compareTo((String) list.get(position)) > 0)
       {
         position++;
+        System.out.print("\n" + String.valueOf(key) + " \t > " + String.valueOf(list.get(position))+ "\n"); 
       }
 
       if(key.equals(list.get(position)))

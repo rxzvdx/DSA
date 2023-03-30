@@ -11,7 +11,7 @@
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-public class Lab8P1Driver extends ListArrayBasedPlus
+public class Lab8P1Driver
 {
     static BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
     public static void main (String[] args) throws IOException 
@@ -108,7 +108,7 @@ public class Lab8P1Driver extends ListArrayBasedPlus
 
                 else
                 {
-                  System.out.println(key + " found at position" + position);
+                  System.out.println(key + " found at position " + position);
                 }
                 break;
 
