@@ -156,7 +156,7 @@ public class Lab8P2Driver
      * @param list    the list to search in
      * @return        the index of the item if found
      * 
-     *  EAGERLY ADVANCING
+     * MODIFIED SEQUENTIAL SEARCH III EAGERLY ADVANCING
      * if (curr == key)
      *    stop(succ, pos)
      * else
