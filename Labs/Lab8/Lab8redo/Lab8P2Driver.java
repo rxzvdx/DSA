@@ -55,7 +55,7 @@ public class Lab8P2Driver
                     position = (position + 1)* -1;
                   }
 
-                  else if(position > list_plus.length())
+                  if(position > list_plus.length())
                   {
                     System.out.println("Position is out of bounds!");
                   }
@@ -161,7 +161,6 @@ public class Lab8P2Driver
       while(key.compareTo((String) list.get(position)) > 0)
       {
         position++;
-        System.out.print("\n" + String.valueOf(key) + " \t > " + String.valueOf(list.get(position))+ "\n"); 
       }
 
       if(key.equals(list.get(position)))
