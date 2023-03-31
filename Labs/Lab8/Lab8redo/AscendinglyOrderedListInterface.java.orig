@@ -9,7 +9,7 @@
  * @version: 2023.03.27
  */
 public interface AscendinglyOrderedListInterface<T,KT>
-{
+{ 
     boolean isEmpty();
     int size();
     void add(T item) throws ListIndexOutOfBoundsException;
@@ -17,4 +17,4 @@ public interface AscendinglyOrderedListInterface<T,KT>
     void remove(int index) throws ListIndexOutOfBoundsException;
     int search(KT key);
     void clear();
-}
+} 

@@ -1,9 +1,10 @@
 CHANGES MADE:
 Fixed Search method and cases in P1Driver. 
 Fixed Search method & cases in P2Driver.
-Fixed Search method in AscendinglyOrderedStringList
-Problem 1: compiles, runs correctly on all provided input
-Problem 2: compiles, runs correctly on all provided input
-Problem 3: compiles, runs correctly on all provided input
-ECI: compiles, runs correctly on all provided input
-ECII: compiles, runs correctly on all provided input
+Fixed Search method in AscendinglyOrderedStringList.
+Javadoc html file created and working as intended.
+Problem 1: compiles, runs correctly on all provided input.
+Problem 2: compiles, runs correctly on all provided input.
+Problem 3: compiles, runs correctly on all provided input.
+ECI: compiles, runs correctly on all provided input.
+ECII: compiles, runs correctly on all provided input.

@@ -98,19 +98,19 @@ public class Lab8P3Driver
         System.out.print("Enter item: ");
         String item = stdin.readLine().trim();
         System.out.println(item);
-        try
+        try 
         {
-            if (list.search(item) >= 0)
+            if (list.search(item) >= 0) 
             {
                 System.out.println("Item " + item + " is already in the list. Please enter a different item.");
-            }
-            else
+            } 
+            else 
             {
                 list.add(item);
                 System.out.println("Item " + item + " has been added to the list.");
             }
-        }
-        catch (ListIndexOutOfBoundsException e)
+        } 
+        catch (ListIndexOutOfBoundsException e) 
         {
             System.out.println("List is full.");
         }
@@ -121,15 +121,15 @@ public class Lab8P3Driver
         System.out.print("Enter position to remove item from: ");
         int pos = Integer.parseInt(stdin.readLine().trim());
         System.out.println(pos);
-        try
+        try 
         {
             String removed = list.get(pos);
             System.out.println("Item " + removed + " is removed from the list.");
-        }
+        } 
 
-        catch (ListIndexOutOfBoundsException e)
+        catch (ListIndexOutOfBoundsException e) 
         {
-            System.out.println("Position specified is out of bounds.");
+        System.out.println("Position specified is out of bounds.");
         }
     }
 

@@ -8,12 +8,12 @@
  * @author: Antonio Rosado
  * @version: 2023.03.27
  */
-public interface AscendinglyOrderedStringListInterface 
-{ public boolean isEmpty();
-  public int size();
-  public void add(String item) throws ListIndexOutOfBoundsException;
-  public String get(int index) throws ListIndexOutOfBoundsException;
-  public void remove(int index) throws ListIndexOutOfBoundsException;
-  public int search(String key);
-  public void removeAll();
-} 
+public interface AscendinglyOrderedStringListInterface
+{   public boolean isEmpty();
+    public int size();
+    public void add(String item) throws ListIndexOutOfBoundsException;
+    public String get(int index) throws ListIndexOutOfBoundsException;
+    public void remove(int index) throws ListIndexOutOfBoundsException;
+    public int search(String key);
+    public void removeAll();
+}

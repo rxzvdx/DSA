@@ -1,6 +1,6 @@
 Select from the following menu: 
 0. Exit the program 
-1. Insert item into the list 
+1. Insert item into ordered list 
 2. Remove item from the list 
 3. Get item from the list 
 4. Search for a specific item in the list 
@@ -8,13 +8,13 @@ Select from the following menu:
 6. Print size and content of the list 
 
 Make your menu selection now: 1
-You are now inserting an item into the list.
+You are now inserting an item into the list. 
 Enter item: -7
 Enter the position to enter the item in: 1
 Position specified is out of range!
 Select from the following menu: 
 0. Exit the program 
-1. Insert item into the list 
+1. Insert item into ordered list 
 2. Remove item from the list 
 3. Get item from the list 
 4. Search for a specific item in the list 
@@ -22,13 +22,13 @@ Select from the following menu:
 6. Print size and content of the list 
 
 Make your menu selection now: 1
-You are now inserting an item into the list.
+You are now inserting an item into the list. 
 Enter item: -7
 Enter the position to enter the item in: 0
-Item -7 inserted in position 0 in the list.
+Item -7 inserted in position 0
 Select from the following menu: 
 0. Exit the program 
-1. Insert item into the list 
+1. Insert item into ordered list 
 2. Remove item from the list 
 3. Get item from the list 
 4. Search for a specific item in the list 
@@ -36,13 +36,13 @@ Select from the following menu:
 6. Print size and content of the list 
 
 Make your menu selection now: 1
-You are now inserting an item into the list.
+You are now inserting an item into the list. 
 Enter item: 8
 Enter the position to enter the item in: 1
-Item 8 inserted in position 1 in the list.
+Item 8 inserted in position 1
 Select from the following menu: 
 0. Exit the program 
-1. Insert item into the list 
+1. Insert item into ordered list 
 2. Remove item from the list 
 3. Get item from the list 
 4. Search for a specific item in the list 
@@ -50,13 +50,13 @@ Select from the following menu:
 6. Print size and content of the list 
 
 Make your menu selection now: 1
-You are now inserting an item into the list.
+You are now inserting an item into the list. 
 Enter item: 7
 Enter the position to enter the item in: 2
-Item 7 inserted in position 2 in the list.
+Item 7 inserted in position 2
 Select from the following menu: 
 0. Exit the program 
-1. Insert item into the list 
+1. Insert item into ordered list 
 2. Remove item from the list 
 3. Get item from the list 
 4. Search for a specific item in the list 
@@ -64,13 +64,13 @@ Select from the following menu:
 6. Print size and content of the list 
 
 Make your menu selection now: 1
-You are now inserting an item into the list.
+You are now inserting an item into the list. 
 Enter item: 4
 Enter the position to enter the item in: 3
-Item 4 inserted in position 3 in the list.
+Item 4 inserted in position 3
 Select from the following menu: 
 0. Exit the program 
-1. Insert item into the list 
+1. Insert item into ordered list 
 2. Remove item from the list 
 3. Get item from the list 
 4. Search for a specific item in the list 
@@ -78,13 +78,13 @@ Select from the following menu:
 6. Print size and content of the list 
 
 Make your menu selection now: 1
-You are now inserting an item into the list.
+You are now inserting an item into the list. 
 Enter item: 0
 Enter the position to enter the item in: 4
-Item 0 inserted in position 4 in the list.
+Item 0 inserted in position 4
 Select from the following menu: 
 0. Exit the program 
-1. Insert item into the list 
+1. Insert item into ordered list 
 2. Remove item from the list 
 3. Get item from the list 
 4. Search for a specific item in the list 
@@ -92,13 +92,13 @@ Select from the following menu:
 6. Print size and content of the list 
 
 Make your menu selection now: 1
-You are now inserting an item into the list.
+You are now inserting an item into the list. 
 Enter item: 1
 Enter the position to enter the item in: 4
-Item 1 inserted in position 4 in the list.
+Item 1 inserted in position 4
 Select from the following menu: 
 0. Exit the program 
-1. Insert item into the list 
+1. Insert item into ordered list 
 2. Remove item from the list 
 3. Get item from the list 
 4. Search for a specific item in the list 
@@ -106,13 +106,13 @@ Select from the following menu:
 6. Print size and content of the list 
 
 Make your menu selection now: 1
-You are now inserting an item into the list.
+You are now inserting an item into the list. 
 Enter item: -2
 Enter the position to enter the item in: 0
-Item -2 inserted in position 0 in the list.
+Item -2 inserted in position 0
 Select from the following menu: 
 0. Exit the program 
-1. Insert item into the list 
+1. Insert item into ordered list 
 2. Remove item from the list 
 3. Get item from the list 
 4. Search for a specific item in the list 
@@ -120,13 +120,13 @@ Select from the following menu:
 6. Print size and content of the list 
 
 Make your menu selection now: 1
-You are now inserting an item into the list.
+You are now inserting an item into the list. 
 Enter item: -5
 Enter the position to enter the item in: 1
-Item -5 inserted in position 1 in the list.
+Item -5 inserted in position 1
 Select from the following menu: 
 0. Exit the program 
-1. Insert item into the list 
+1. Insert item into ordered list 
 2. Remove item from the list 
 3. Get item from the list 
 4. Search for a specific item in the list 
@@ -137,7 +137,7 @@ Make your menu selection now: 6
 List of size 8 has the following items: -2 -5 -7 8 7 4 1 0 
 Select from the following menu: 
 0. Exit the program 
-1. Insert item into the list 
+1. Insert item into ordered list 
 2. Remove item from the list 
 3. Get item from the list 
 4. Search for a specific item in the list 
@@ -148,10 +148,10 @@ Make your menu selection now: 4
 You are now searching for an item. 
  Enter the item to search for: 7
 Searching for item...
-Item found at position 4
+7 found at position 4
 Select from the following menu: 
 0. Exit the program 
-1. Insert item into the list 
+1. Insert item into ordered list 
 2. Remove item from the list 
 3. Get item from the list 
 4. Search for a specific item in the list 
@@ -162,10 +162,10 @@ Make your menu selection now: 4
 You are now searching for an item. 
  Enter the item to search for: 8
 Searching for item...
-Item found at position 3
+8 found at position 3
 Select from the following menu: 
 0. Exit the program 
-1. Insert item into the list 
+1. Insert item into ordered list 
 2. Remove item from the list 
 3. Get item from the list 
 4. Search for a specific item in the list 
@@ -176,10 +176,10 @@ Make your menu selection now: 4
 You are now searching for an item. 
  Enter the item to search for: -20
 Searching for item...
-Item not found.
+ -1 no item with that name exists, try again.
 Select from the following menu: 
 0. Exit the program 
-1. Insert item into the list 
+1. Insert item into ordered list 
 2. Remove item from the list 
 3. Get item from the list 
 4. Search for a specific item in the list 
@@ -187,12 +187,12 @@ Select from the following menu:
 6. Print size and content of the list 
 
 Make your menu selection now: 2
-You are now removing an item from the list.
+You are now removing an item from the list. 
 Enter position to remove item from: 0
 Item -2 removed from position 0 in the list.
 Select from the following menu: 
 0. Exit the program 
-1. Insert item into the list 
+1. Insert item into ordered list 
 2. Remove item from the list 
 3. Get item from the list 
 4. Search for a specific item in the list 
@@ -200,12 +200,12 @@ Select from the following menu:
 6. Print size and content of the list 
 
 Make your menu selection now: 2
-You are now removing an item from the list.
+You are now removing an item from the list. 
 Enter position to remove item from: 0
 Item -5 removed from position 0 in the list.
 Select from the following menu: 
 0. Exit the program 
-1. Insert item into the list 
+1. Insert item into ordered list 
 2. Remove item from the list 
 3. Get item from the list 
 4. Search for a specific item in the list 
@@ -213,11 +213,11 @@ Select from the following menu:
 6. Print size and content of the list 
 
 Make your menu selection now: 3
-Enter position to retrieve item from: 1
+You are now retrieving an item. Enter position to retrieve item from: 1
 Item 8 retrieved from position 1 in the list.
 Select from the following menu: 
 0. Exit the program 
-1. Insert item into the list 
+1. Insert item into ordered list 
 2. Remove item from the list 
 3. Get item from the list 
 4. Search for a specific item in the list 
@@ -225,11 +225,11 @@ Select from the following menu:
 6. Print size and content of the list 
 
 Make your menu selection now: 3
-Enter position to retrieve item from: 2
+You are now retrieving an item. Enter position to retrieve item from: 2
 Item 7 retrieved from position 2 in the list.
 Select from the following menu: 
 0. Exit the program 
-1. Insert item into the list 
+1. Insert item into ordered list 
 2. Remove item from the list 
 3. Get item from the list 
 4. Search for a specific item in the list 
@@ -240,7 +240,7 @@ Make your menu selection now: 6
 List of size 6 has the following items: -7 8 7 4 1 0 
 Select from the following menu: 
 0. Exit the program 
-1. Insert item into the list 
+1. Insert item into ordered list 
 2. Remove item from the list 
 3. Get item from the list 
 4. Search for a specific item in the list 
@@ -252,7 +252,7 @@ Clearing list...
 List cleared.
 Select from the following menu: 
 0. Exit the program 
-1. Insert item into the list 
+1. Insert item into ordered list 
 2. Remove item from the list 
 3. Get item from the list 
 4. Search for a specific item in the list 
@@ -263,7 +263,7 @@ Make your menu selection now: 6
 List is empty.
 Select from the following menu: 
 0. Exit the program 
-1. Insert item into the list 
+1. Insert item into ordered list 
 2. Remove item from the list 
 3. Get item from the list 
 4. Search for a specific item in the list 
