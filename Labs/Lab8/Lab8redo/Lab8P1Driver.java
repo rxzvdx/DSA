@@ -96,6 +96,11 @@ public class Lab8P1Driver
         list_plus.add(position, item);
         System.out.println("Item " + item + " inserted in position " + position);
       }
+
+      else
+      {
+        System.out.println("Position specified is out of range!");
+      }
     }
 
     public static void remove(ListArrayBasedPlus list_plus) throws IOException
@@ -122,7 +127,7 @@ public class Lab8P1Driver
       int position = Integer.parseInt(stdin.readLine().trim());
       System.out.println(position);
       int size = list_plus.size();
-      if(position < 0 || position >= size)
+      if(position >= size)
       {
         System.out.println("Position specified is out of range!");
       }

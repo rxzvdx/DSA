@@ -93,7 +93,7 @@ public class ListArrayBased implements ListInterface
             // delete item by shifting all items at
             // positions > index toward the beginning of the list
             // (no shift if index == size)
-            if(numItems == items.length)
+            if(index < 0 || index >= numItems)
             {
                 throw new ListException("ListException on remove");
             }
