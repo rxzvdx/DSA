@@ -84,12 +84,12 @@ public class Lab8P1Driver extends ListArrayBasedPlus
                   System.out.print("Enter position to retrieve item from: ");
                   pos = Integer.parseInt(stdin.readLine());
                   System.out.println(pos);
-                  if(pos > list_plus.length())
+                  //if(pos > list_plus.length())
                   {
                     System.out.println("Position specified is out of range!");
                   }
 
-                  else
+                  //else
                   {
                     System.out.println("Item " + list_plus.get(pos) + " retrieved from position " + pos + " in the list.");
                   }
