@@ -22,13 +22,12 @@ public class Sorting
         {
             System.out.println("Select from the following menu: \n"
                                + "0. Exit the program \n"
-                               + "1. Insert items into array \n"
-                               + "2. Bubblesort the array \n"
-                               + "3. Improved Bubblesort the array \n"
-                               + "4. Selection sort the array \n"
-                               + "5. Improved selection sort the array \n"
-                               + "6. Insertion sort the array \n"
-                               + "7. Improved insertion sort the array");
+                               + "1. Bubblesort an array \n"
+                               + "2. Improved Bubblesort an array \n"
+                               + "3. Selection sort an array \n"
+                               + "4. Improved selection sort an array \n"
+                               + "5. Insertion sort an array \n"
+                               + "6. Improved Insertion Sort an array");
 
             System.out.print("Make your menu selection now: " );
             int input = Integer.parseInt(stdin.readLine().trim());
@@ -46,7 +45,7 @@ public class Sorting
                 break;
 
             case 2:
-                improvedBubblesort(insert());
+                ImprovedBubblesort(insert());
                 break;
 
             case 3:
@@ -58,8 +57,11 @@ public class Sorting
                 break;
 
             case 5:
-                insertionSort(insert());
+                InsertionSort(insert());
                 break;
+            
+            case 6:
+                ImprovedInsertionSort(insert());
 
             default:
                 System.out.println("Invalid choice.");
@@ -78,7 +80,7 @@ public class Sorting
         System.out.println("How many items would you like to insert in the array? ");
         int amount = Integer.parseInt(stdin.readLine().trim());
         int[] array = new int[amount]; // array size = amount given
-        for(int index = 0; index <= amount; index++)
+        for(int index = 0; index < amount; index++)
         {
             // populate array
             System.out.println("Enter integer " + index + " : ");
@@ -101,7 +103,7 @@ public class Sorting
         int length = array.length;
         for(int index = 0; index < length; index++)
         {
-            for(int j = 0; j < length - index; j++)
+            for(int j = 1; j < length - index; j++)
             {
                 for (int k = 1; k < length - index; k++)
                 {
@@ -127,24 +129,32 @@ public class Sorting
      * @param array     Array of values
      * @return array
      */
-    private static void improvedBubblesort(int[] array) 
+    private static void ImprovedBubblesort(int[] array) 
     {
         int comps = 0; // # of comparisons 
-        int swaps = 0; // # of swaps\
+        int swaps = 0; // # of swaps
         int temp = 0; 
         int length = array.length;
+        boolean swapped;
         for(int index = 0; index < length - 1; index++)
         {
+            swapped = false;
            for(int j = 0; j < length - 1 - index; j++)
            {
+                comps++;
                 if(array[j] > array[j + 1])
                 {
                     temp = array[j];
                     array[j] = array[j + 1];
                     array[j + 1] = temp;
                     swaps++;
+                    swapped = true;
                 }
-                comps++;
+           }
+           
+           if(!swapped)
+           {
+               break;
            }
         }
         toString(array, comps, swaps);
@@ -246,7 +256,7 @@ public class Sorting
  * 
  * @param array     Array of values
  */
-private static int[] insertionSort(int[] array)
+private static void InsertionSort(int[] array)
     {
         int comps = 0;
         int swaps = 0;
@@ -265,8 +275,72 @@ private static int[] insertionSort(int[] array)
             swaps++;
         }
         toString(array, comps, swaps);
-        return array;
-}
+    }
+
+    /**
+     * EXTRA CREDIT W/ BINARY SEARCH
+     * Implements an improved insertion sort algorithm to sort an integer array in ascending order.
+     * 
+     * @param array     Array of values
+     */
+    private static void ImprovedInsertionSort(int[] array) 
+    { 
+        int comps = 0;
+        int swaps = 0;
+        int length = array.length;
+        for (int index = 1; index < length; index++) 
+        {
+            int key = array[index]; // begins at 1
+            int pos = binarySearch(index, key, array);
+            for(int j = (index- 1); j >= pos; j--) 
+            {
+                swaps++;
+                array[j + 1] = array[j];
+            }
+            array[pos] = key;
+            swaps++; // swaps++
+        }
+        toString(array, comps, swaps);
+    }
+
+     /**
+     * Binary Search II
+     * Searches for an item in the array
+     * 
+     * @param key     the item to search for
+     * @return        the index of the item if found OR -1 for duplicates/nonexisting items
+     */
+    private static int binarySearch(int index, int key, int[] array) 
+    {
+        {
+            int low = 0;
+            int length = array.length;
+            int high = length - 1;
+            while (low <= high)
+            {
+                int midIndex = (low + high) / 2;
+                if (key == midIndex)
+                {
+                    // key found
+                    return midIndex;
+                }
+    
+                else if (key < midIndex)
+                {
+                    // key smaller, search left half
+                    high = midIndex - 1;
+                }
+    
+                else
+                {
+                    // key larger, search right half
+                    low = midIndex + 1;
+                }
+            }
+            // return index where key should be inserted
+            return -(low + 1);
+        }
+    }
 
     /**
      * Returns string representation of array
@@ -277,11 +351,11 @@ private static int[] insertionSort(int[] array)
     {
         int length = array.length;
         System.out.println("Sorted data: ");
-        System.out.println("\n Comparisons: " + comps + "\n Swaps: " + swaps + "\n");
         for(int index = 0; index < length; index++)
         {
             System.out.print(array[index] + " ");
         }
         System.out.println();
+        System.out.println("\n Comparisons: " + comps + "\n Swaps: " + swaps + "\n");
     }
 }

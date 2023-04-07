@@ -1,0 +1,10 @@
+Time Complexity:
+Insertion Sort is a sorting algorithm that works by taking each element from an unsorted list and placing it in its correct position in a sorted list. Improved Insertion Sort is a sorting algorithm that arranges each element of an unsorted list into its appropriate position in a sorted list. Unlike the original algorithm, Improved Insertion Sort uses binary search to locate the correct position of each element, rather than comparing it with all previous elements.
+
+To analyze the time complexity of Improved Insertion Sort, one can consider the number of comparisons and element movements required to sort the input list. In the worst-case scenario, when the input list is in reverse order, each element would need to be compared with all previous elements, leading to a time complexity of O(n^2).
+
+However, by using binary search, the number of comparisons required for each element decreases, resulting in a more efficient algorithm. The number of comparisons needed for each element is proportional to the logarithm of the size of the sorted sub-list, leading to a best-case time complexity of O(n log n) when the input list is already sorted.
+
+On average, Improved Insertion Sort has a time complexity of O(n^2), which is slower than other efficient sorting algorithms such as Merge Sort and Quick Sort. However, Improved Insertion Sort has the advantage of being an in-place sorting algorithm, which means that it does not require extra memory space to perform the sorting operation.
+
+Therefore, the time complexity of Improved Insertion Sort can be expressed as O(n^2) in the worst case, O(n log n) in the best case, and O(n^2) in the average case.
