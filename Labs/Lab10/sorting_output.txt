@@ -1,0 +1,30 @@
+For 16 numbers in range [1,100]:
+Initially: 76 37 85 39 42 69 88 44 81 43 34 85 96 62 66 69
+Sorted:    34 37 39 42 43 44 62 66 69 69 76 81 85 85 88 96
+Performed 49 item comparisons.
+
+
+For 20 numbers in range [-30,40]:
+Initially: 33 26 10 -9 -19 11 20 -23 -24 -2 -30 25 -11 5 -9 39 6 -9 -5 -22
+Sorted:    -30 -24 -23 -22 -19 -11 -9 -9 -9 -5 -2 5 6 10 11 20 25 26 33 39
+Performed 65 item comparisons.
+
+
+For 33 numbers in range [12,68]:
+Initially: 37 64 17 56 43 63 45 47 28 53 52 20 37 52 37 63 50 48 30 22 49 27 45 62 19 42 55 27 39 64 41 61 38
+Sorted:    17 19 20 22 27 27 28 30 37 37 37 38 39 41 42 43 45 45 47 48 49 50 52 52 53 55 56 61 62 63 63 64 64
+Performed 138 item comparisons.
+
+
+For 5 numbers in range [-3,8]:
+Initially: 6 3 2 7 3
+Sorted:    2 3 3 6 7
+Performed 7 item comparisons.
+
+
+For 41 numbers in range [0,30]:
+Initially: 15 21 25 19 13 10 18 16 29 14 15 2 20 12 5 10 12 19 8 12 6 1 10 25 17 24 21 21 7 4 28 6 19 27 16 27 14 17 1 18 0
+Sorted:    0 1 1 2 4 5 6 6 7 8 10 10 10 12 12 12 13 14 14 15 15 16 16 17 17 18 18 19 19 19 20 21 21 21 24 25 25 27 27 28 29
+Performed 178 item comparisons.
+
+

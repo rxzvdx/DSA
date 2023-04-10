@@ -1,0 +1,42 @@
+The 3-WaySplit MergeSort algorithm is a variant of the MergeSort algorithm that splits the input array into 3 subarrays instead of 2 subarrays. The algorithm works as follows:
+
+If the input array has size 1, return it.
+
+Split the input array into three subarrays of equal size.
+
+Recursively sort the three subarrays using 3-WaySplit MergeSort.
+
+Merge the three sorted subarrays into a single sorted array.
+
+To analyze the number of item comparisons performed by this algorithm, let us consider the worst-case and best-case scenarios:
+
+Worst-case scenario: In the worst-case scenario, the largest item in the first subarray is smaller than the smallest item in the second subarray, and the largest item in the second subarray is smaller than the smallest item in the third subarray. This requires comparisons between each element in the first subarray and each element in the second subarray, and between each element in the second subarray and each element in the third subarray. Therefore, the total number of comparisons required in the worst case is:
+
+T(n) = 2(n/3)^2 + 2(n/3)^2 + 2(n/3) = 4(n^2)/9 + 2n/3
+
+Best-case scenario: In the best-case scenario, the items in the three subarrays are interleaved such that no comparisons are needed between items in different subarrays during the merging process. This requires comparisons between each element in the first subarray and each element in the second subarray, and between each element in the second subarray and each element in the third subarray, and also comparisons between adjacent elements within each subarray. Therefore, the total number of comparisons required in the best case is:
+
+T(n) = 2(n/3)^2 + 2(n/3)^2 + n - 2 = 4(n^2)/9 + n - 2
+
+To find the recurrence relation for the number of item comparisons performed, let us first define T(n) as the total number of comparisons required to sort an array of size n using 3-WaySplit MergeSort. Then, we can express T(n) in terms of the number of comparisons required to sort the subarrays:
+
+T(n) = 3T(n/3) + 4(n^2)/9 + 2n/3
+
+Using backwards substitution with the values from the worst-case analysis, we can find the exact closed-form solution for the number of item comparisons performed:
+
+T(n) = (8/27)n^2 + (16/9)nlog3(n) - (56/27)n
+
+The time complexity of this 3-WaySplit MergeSort variant can be expressed using the Big-O notation as O(nlog3(n)).
+
+As a conclusion of my analysis in addition to all the steps above, the exact worst-case number of comparisons for the 2-way merge is 2(nlog2(n)) - n, and for the 3-way merge, it is (8/27)n^2 + (16/9)nlog3(n) - (56/27)n
+
+Comparing the worst-case number of comparisons, we can see that the 3-way merge requires fewer comparisons for large values of n, meaning it is more efficient. However, for small values of n, the 2-way merge may perform better due to the additional overhead of splitting the array into 3 subarrays and merging them in the 3-way merge.
+
+The time complexity of the 2-way merge is O(nlog2(n)), while the time complexity of the 3-way merge is O(nlog3(n)).
+
+Therefore, the 3-way merge is more efficient than the 2-way merge, as it has a smaller worst-case number of comparisons for large values of n and a better time complexity.
+
+In summary, the 3-WaySplit MergeSort variant is a more efficient algorithm than the original MergeSort algorithm, as it requires fewer comparisons and has a better time complexity. However, for small values of n, the overhead of splitting the array into 3 subarrays and merging them may make the original MergeSort algorithm perform better.
+
+Comparing the worst-case number of comparisons for the 2-way merge (original method) and the 3-way merge (this method), we can see that the worst-case number of comparisons for the 2-way merge is 2(nlog2(n)) - n, while for the 3-way merge it is (8/27)n^2 + (16/9)nlog3(n) - (56/27)n. In terms of efficiency, the 3-way merge is more efficient than the 2-way merge, as it has a smaller worst-case number of comparisons for large values of n.
+
