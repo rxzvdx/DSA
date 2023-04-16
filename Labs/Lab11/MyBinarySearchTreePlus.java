@@ -16,30 +16,54 @@ extends MyBinarySearchTree<T,KT>
 implements BSTPInterface<T,KT>
 {
 
+    /**
+     * Returns a String representation of the elements in the tree traversed in-order.
+     * @return a String representation of the tree elements in-order
+     */
     @Override
     public String toStringInorder() 
     {
         return inOrderHelper(root);
     }
 
+    /**
+     * Returns a String representation of the elements in the tree traversed pre-order.
+     * @return a String representation of the tree elements pre-order
+     */
     @Override
     public String toStringPreorder() 
     {
         return preOrderHelper(root);    
     }
 
+    /**
+     * Returns a String representation of the elements in the tree traversed post-order.
+     * @return a String representation of the tree elements post-order
+     */
     @Override
     public String toStringPostorder() 
     {
         return postOrderHelper(root);
     }
 
+    /**
+     * Checks if the tree has the "odd-even" characteristic, which is defined as follows:
+     * At every level of the tree, the nodes must either have both children or no children.
+     * Additionally, if the level is even, the number of nodes in that level must be even,
+     * and if the level is odd, the number of nodes in that level must be odd.
+     * @return true if the tree has the "odd-even" characteristic, false otherwise
+     */
     @Override
     public boolean hasCharacteristic() 
     {
         return hasCharacteristicHelper(root, 0);
     }
 
+    /**
+     * Private helper method to traverse the tree in-order and return a String representation of its elements.
+     * @param node the root of the tree or subtree to traverse
+     * @return a String representation of the tree or subtree in-order
+     */
     private String inOrderHelper(TreeNode<T> node)
     {
         if(node == null)
@@ -50,7 +74,12 @@ implements BSTPInterface<T,KT>
         String right = inOrderHelper(node.getRightChild());
         return left + node.getItem().toString() + " " + right; 
     }
-    
+
+    /**
+     * Private helper method to traverse the tree pre-order and return a String representation of its elements.
+     * @param node the root of the tree or subtree to traverse
+     * @return a String representation of the tree or subtree pre-order
+     */
     private String preOrderHelper(TreeNode<T> node)
     {
         if (node == null)
@@ -62,6 +91,11 @@ implements BSTPInterface<T,KT>
         return node.getItem().toString() + " " + left + right;
     }
 
+    /**
+    * Private helper method to traverse the tree post-order and return a String representation of its elements.
+    * @param node the root of the tree or subtree to traverse
+    * @return a String representation of the tree or subtree post-order
+    */
     private String postOrderHelper(TreeNode<T> node)
     {
         if (node == null)
@@ -73,6 +107,13 @@ implements BSTPInterface<T,KT>
         return left + right + node.getItem().toString() + " ";
     }
 
+    /**
+     * Checks if the tree has the "odd-even" characteristic, which is defined as follows:
+     * At every level of the tree, the nodes must either have both children or no children.
+     * Additionally, if the level is even, the number of nodes in that level must be even,
+     * and if the level is odd, the number of nodes in that level must be odd.
+     * @return true if the tree has the "odd-even" characteristic, false otherwise
+     */
     private boolean hasCharacteristicHelper(TreeNode<T> node, int level)
     {
         if (node == null) 
