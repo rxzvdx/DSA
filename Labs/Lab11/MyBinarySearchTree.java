@@ -32,8 +32,11 @@ public class MyBinarySearchTree<T extends KeyedItem<KT>,
     }  // end insert
 
     /*
-     * Retrieve Method (Iterative)
-     */
+    * Retrieve Method (Iterative)
+    * Retrieves an item from the binary search tree with the specified search key.
+    * @param searchKey the search key of the item to be retrieved
+    * @return the retrieved item, or null if the item is not found
+    */
     public T retrieve(KT searchKey) 
     {
         //implement iteratively
@@ -157,8 +160,11 @@ public class MyBinarySearchTree<T extends KeyedItem<KT>,
     }  // end deleteNode
 
     /*
-     * findLeftMost Method (Iterative)
-     */
+    * findLeftMost Method (Iterative)
+    * Finds the leftmost TreeNode of the given TreeNode in a binary search tree.
+    * @param tNode the TreeNode to search from
+    * @return the leftmost TreeNode
+    */
     protected T findLeftmost(TreeNode<T> tNode)  
     {
         //implement iteratively
@@ -171,8 +177,11 @@ public class MyBinarySearchTree<T extends KeyedItem<KT>,
     }  // end findLeftmost
 
     /*
-     * deleteLeftMost Method (Iterative)
-     */
+    * deleteLeftMost Method (Iterative)
+    * Deletes the leftmost TreeNode of the given TreeNode in a binary search tree.
+    * @param tNode the TreeNode to delete from
+    * @return the updated TreeNode after deletion
+    */
     protected TreeNode<T> deleteLeftmost(TreeNode<T> tNode) 
     {
         //implement iteratively
@@ -195,5 +204,4 @@ public class MyBinarySearchTree<T extends KeyedItem<KT>,
             return tNode;
         }
     }  // end deleteLeftmost
-
 }  // end MyBinarySearchTree
