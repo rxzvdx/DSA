@@ -22,17 +22,6 @@ implements BSTPInterface<T,KT>
         return inOrderHelper(root);
     }
 
-    private String inOrderHelper(TreeNode<T> node)
-    {
-        if(node == null)
-        {
-            return "";
-        }
-        String left = inOrderHelper(node.getLeftChild());
-        String right = inOrderHelper(node.getRightChild());
-        return left + node.getItem().toString() + " " + right; 
-    }
-
     @Override
     public String toStringPreorder() 
     {
@@ -51,6 +40,17 @@ implements BSTPInterface<T,KT>
         return hasCharacteristicHelper(root, 0);
     }
 
+    private String inOrderHelper(TreeNode<T> node)
+    {
+        if(node == null)
+        {
+            return "";
+        }
+        String left = inOrderHelper(node.getLeftChild());
+        String right = inOrderHelper(node.getRightChild());
+        return left + node.getItem().toString() + " " + right; 
+    }
+    
     private String preOrderHelper(TreeNode<T> node)
     {
         if (node == null)
