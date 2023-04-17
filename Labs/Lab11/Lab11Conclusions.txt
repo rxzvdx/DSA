@@ -1,0 +1,8 @@
+I learned about Binary Search Trees (BSTs) and how they are mostly
+used for efficiency in searching, insertion, and deletion operations 
+on a collection of elements. BSTs are a type of binary tree in which 
+each node has at most two children, and each node's left child has a key 
+value less than its own key value, while its right child has a key value 
+greater than its own key value. This ordering property allows for fast 
+search and insertion operations, making BSTs useful for implementing 
+data structures like sets and maps. 
