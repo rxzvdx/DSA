@@ -12,9 +12,39 @@ package Lab11;
 public class Item <KT extends Comparable<? super KT>> extends KeyedItem<KT>
 {
 
-    public Item(KT key) 
+    private boolean assocboolean;
+    private String assocstring;
+    public Item(KT key, boolean assocboolean, String assocstring) 
     {
         super(key);
+        this.assocboolean = assocboolean;
+        this.assocstring = assocstring;
+    }
+
+    public boolean isAssocboolean() 
+    {
+        return assocboolean;
+    }
+
+    public void setAssocboolean(boolean assocboolean) 
+    {
+        this.assocboolean = assocboolean;
+    }
+
+    public String getAssocstring() 
+    {
+        return assocstring;
+    }
+
+    public void setAssocstring(String assocstring) 
+    {
+        this.assocstring = assocstring;
+    }
+
+    @Override
+    public String toString() 
+    {
+        return "{" + getKey() + "/" + assocboolean + "/" + assocstring + "}";
     }
     
 }
