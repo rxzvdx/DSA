@@ -80,6 +80,7 @@ public class Lab11P3Driver
     {
         System.out.print("Enter the key of the item to search for: ");
         String key = stdin.readLine();
+        System.out.println(key);
         KeyedItem item = tree.retrieve(key);
         if (item == null) 
         {
@@ -95,8 +96,11 @@ public class Lab11P3Driver
     {
         System.out.print("Enter the key of the item to insert: ");
         String key = stdin.readLine();
+        System.out.println(key);
+
         System.out.print("Enter associated boolean: ");
         String bool = stdin.readLine();
+        System.out.println(bool);
         boolean assocboolean;
         if(bool.equalsIgnoreCase("true"))
         {
@@ -108,7 +112,7 @@ public class Lab11P3Driver
         }
         System.out.print("Enter associated string: ");
         String assocstring = stdin.readLine();
-
+        System.out.println(assocstring);
         KeyedItem existingItem = tree.retrieve(key);
         if (existingItem != null) 
         {
@@ -125,10 +129,11 @@ public class Lab11P3Driver
     {
         System.out.print("Enter the key of the item to delete: ");
         String key = stdin.readLine();
-        System.out.println("Item " + "'" + key + "'" + " deleted.");
+        System.out.println(key);
         KeyedItem existingItem = tree.retrieve(key);
         if(existingItem != null)
         {
+            System.out.println("Item " + "'" + key + "'" + " deleted.");
             tree.delete(existingItem);
         }
         else
@@ -140,14 +145,22 @@ public class Lab11P3Driver
     private static void characteristic()
     {
         System.out.println("Checking if BST has required characteristic...");
-        boolean hasCharacteristic = tree.hasCharacteristic();
-        if (hasCharacteristic) 
+        if(!(tree.isEmpty()))
         {
-            System.out.println("The BST has the required characteristic.");
-        } 
-        else 
+            boolean hasCharacteristic = tree.hasCharacteristic();
+            if (hasCharacteristic) 
+            {
+                System.out.println("The BST has the required characteristic.");
+            } 
+            else 
+            {
+                System.out.println("The BST does NOT have the required characteristic!");
+            }
+        }
+
+        else
         {
-            System.out.println("The BST does NOT have the required characteristic!");
+            System.out.println("The BST is empty.");
         }
     }
 
