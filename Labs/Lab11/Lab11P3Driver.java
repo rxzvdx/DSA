@@ -55,15 +55,15 @@ private static MyBinarySearchTreePlus<Item<Integer>, Integer> tree = new MyBinar
                     break;
 
                 case 4:
-                    System.out.println("\nContent of the BST in-order:\n" + tree.toStringInorder());
+                    inOrderDisplay();                   
                     break;
 
                 case 5:
-                    System.out.println("\nContent of the BST post-order:\n" + tree.toStringPostorder());
+                    postOrderDisplay();
                     break;
 
                 case 6:
-                    System.out.println("\nContent of the BST pre-order:\n" + tree.toStringPreorder());
+                    preOrderDisplay();
                     break;
 
                 case 7:
@@ -71,7 +71,7 @@ private static MyBinarySearchTreePlus<Item<Integer>, Integer> tree = new MyBinar
                     break;
 
                 default:
-                    System.out.println("\nInvalid option, please try again.\n");
+                    System.out.println("Invalid option, please try again.\n");
                     break;
             }
         }
@@ -128,6 +128,46 @@ private static MyBinarySearchTreePlus<Item<Integer>, Integer> tree = new MyBinar
         else 
         {
             System.out.println("\nThe BST does NOT have the required characteristic!");
+        }
+    }
+
+    private static void inOrderDisplay()
+    {
+        if(tree.isEmpty())
+        {
+            System.out.println("Empty BST - nothing to display.");
+        }
+
+        else
+        {
+            System.out.println("Content of the BST in-order:\n" + tree.toStringInorder());
+
+        } 
+    }
+
+    private static void postOrderDisplay()
+    {
+        if(tree.isEmpty())
+        {
+            System.out.println("Empty BST - nothing to display.");
+        }
+
+        else
+        {
+            System.out.println("Content of the BST post-order:\n" + tree.toStringPostorder());
+        } 
+    }
+
+    private static void preOrderDisplay()
+    {
+        if(tree.isEmpty())
+        {
+            System.out.println("Empty BST - nothing to display.");
+        }
+
+        else
+        {
+            System.out.println("\nContent of the BST pre-order:\n" + tree.toStringPreorder());
         }
     }
 }
