@@ -14,7 +14,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 public class Lab11P3Driver
 {
-private static MyBinarySearchTreePlus<Item<Integer>, Integer> tree = new MyBinarySearchTreePlus<>();
+    private static MyBinarySearchTreePlus tree = new MyBinarySearchTreePlus();
     private static BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
     public static void main (String[] args) throws IOException
     {
@@ -76,11 +76,11 @@ private static MyBinarySearchTreePlus<Item<Integer>, Integer> tree = new MyBinar
             }
         }
     }
-    private static void searchItem() 
+    private static void searchItem() throws IOException
     {
-        System.out.print("\nEnter the key of the item to search for: ");
+        System.out.print("Enter the key of the item to search for: ");
         String key = stdin.readLine();
-        Item item = tree.retrieve(new Item(key, false, null));
+        KeyedItem item = tree.retrieve(key);
         if (item == null) 
         {
             System.out.println("\nItem with key '" + key + "' not found in BST.");
@@ -91,7 +91,7 @@ private static MyBinarySearchTreePlus<Item<Integer>, Integer> tree = new MyBinar
         }
     }
     
-    private static void insertItem() 
+    private static void insertItem() throws IOException
     {
         System.out.print("Enter the key of the item to insert: ");
         String key = stdin.readLine();
@@ -109,30 +109,37 @@ private static MyBinarySearchTreePlus<Item<Integer>, Integer> tree = new MyBinar
         System.out.print("Enter associated string: ");
         String assocstring = stdin.readLine();
 
-        Item existingItem = tree.retrieve(new Item(key, assocboolean, assocstring));
+        KeyedItem existingItem = tree.retrieve(key);
         if (existingItem != null) 
         {
             System.out.println("Item with key '" + key + "' already exists in BST and cannot be inserted again.");
         } 
         else 
         {
-            
-            Item item = tree.insert(new Item(key, assocboolean, assocstring));
-            System.out.println("Item " + item + " inserted into BST with key " + key);
+            tree.insert(new Item(key, assocboolean, assocstring));
+            System.out.println("Item " + assocstring + " inserted into BST with key " + key);
         }
     }
 
-    private static void deleteItem()
+    private static void deleteItem() throws IOException
     {
         System.out.print("Enter the key of the item to delete: ");
         String key = stdin.readLine();
         System.out.println("Item " + "'" + key + "'" + " deleted.");
-        tree.delete(new Item(key, false, value));
+        KeyedItem existingItem = tree.retrieve(key);
+        if(existingItem != null)
+        {
+            tree.delete(existingItem);
+        }
+        else
+        {
+            System.out.println("Item does not exist, cannot delete a non-existent item!");
+        }
     }
 
     private static void characteristic()
     {
-        System.out.println("\nChecking if BST has required characteristic...");
+        System.out.println("Checking if BST has required characteristic...");
         boolean hasCharacteristic = tree.hasCharacteristic();
         if (hasCharacteristic) 
         {
