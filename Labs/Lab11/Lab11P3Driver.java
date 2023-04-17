@@ -117,7 +117,7 @@ private static MyBinarySearchTreePlus<Item<Integer>, Integer> tree = new MyBinar
         else 
         {
             
-            Item item = tree.insert(new Item(key, false, value));
+            Item item = tree.insert(new Item(key, assocboolean, assocstring));
             System.out.println("Item " + item + " inserted into BST with key " + key);
         }
     }
