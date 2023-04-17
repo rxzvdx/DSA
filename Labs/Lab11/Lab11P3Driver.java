@@ -93,25 +93,38 @@ private static MyBinarySearchTreePlus<Item<Integer>, Integer> tree = new MyBinar
     
     private static void insertItem() 
     {
-        System.out.print("\nEnter the key of the item to insert: ");
+        System.out.print("Enter the key of the item to insert: ");
         String key = stdin.readLine();
-        Item existingItem = tree.retrieve(new Item(key, false, null));
+        System.out.print("Enter associated boolean: ");
+        String bool = stdin.readLine();
+        boolean assocboolean;
+        if(bool.equalsIgnoreCase("true"))
+        {
+            assocboolean = true;
+        }
+        else
+        {
+            assocboolean = false;
+        }
+        System.out.print("Enter associated string: ");
+        String assocstring = stdin.readLine();
+
+        Item existingItem = tree.retrieve(new Item(key, assocboolean, assocstring));
         if (existingItem != null) 
         {
-            System.out.println("\nItem with key '" + key + "' already exists in BST and cannot be inserted again.");
+            System.out.println("Item with key '" + key + "' already exists in BST and cannot be inserted again.");
         } 
         else 
         {
-            System.out.print("Enter the value of the item to insert: ");
-            String value = stdin.readLine();
-            tree.insert(new Item(key, false, value));
-            System.out.println("\nItem with key '" + key + "' and value '" + value + "' has been inserted into the BST.");
+            
+            Item item = tree.insert(new Item(key, false, value));
+            System.out.println("Item " + item + " inserted into BST with key " + key);
         }
     }
 
     private static void deleteItem()
     {
-        System.out.print("\nEnter the key of the item to delete: ");
+        System.out.print("Enter the key of the item to delete: ");
         String key = stdin.readLine();
         System.out.println("Item " + "'" + key + "'" + " deleted.");
         tree.delete(new Item(key, false, value));
