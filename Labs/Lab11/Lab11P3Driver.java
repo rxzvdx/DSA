@@ -14,7 +14,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 public class Lab11P3Driver
 {
-    private static MyBinarySearchTreePlus<Item, String> tree = new MyBinarySearchTreePlus<Item, String>();
+private static MyBinarySearchTreePlus<Item<Integer>, Integer> tree = new MyBinarySearchTreePlus<>();
     private static BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
     public static void main (String[] args) throws IOException
     {
@@ -114,7 +114,7 @@ public class Lab11P3Driver
         System.out.print("\nEnter the key of the item to delete: ");
         String key = stdin.readLine();
         System.out.println("Item " + "'" + key + "'" + " deleted.");
-        tree.delete(key);
+        tree.delete(new Item(key, false, value));
     }
 
     private static void characteristic()
