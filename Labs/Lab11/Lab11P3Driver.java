@@ -83,11 +83,11 @@ public class Lab11P3Driver
         KeyedItem item = tree.retrieve(key);
         if (item == null) 
         {
-            System.out.println("\nItem with key '" + key + "' not found in BST.");
+            System.out.println("Item with key '" + key + "' not found in BST.");
         } 
         else 
         {
-            System.out.println("\nItem with key '" + key + "' found in BST:\n" + item.toString());
+            System.out.println("Item with key '" + key + "' found in BST:\n" + item.toString());
         }
     }
     
@@ -143,11 +143,11 @@ public class Lab11P3Driver
         boolean hasCharacteristic = tree.hasCharacteristic();
         if (hasCharacteristic) 
         {
-            System.out.println("\nThe BST has the required characteristic.");
+            System.out.println("The BST has the required characteristic.");
         } 
         else 
         {
-            System.out.println("\nThe BST does NOT have the required characteristic!");
+            System.out.println("The BST does NOT have the required characteristic!");
         }
     }
 
@@ -187,7 +187,7 @@ public class Lab11P3Driver
 
         else
         {
-            System.out.println("\nContent of the BST pre-order:\n" + tree.toStringPreorder());
+            System.out.println("Content of the BST pre-order:\n" + tree.toStringPreorder());
         }
     }
 }
