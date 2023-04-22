@@ -1,12 +1,12 @@
 /*
- * Purpose: Data Structure and Algorithms Lab 11
+ * Purpose: Data Structure and Algorithms Lab 12
  * Status: Complete and thoroughly tested
- * Last update: 4/17/23
- * Submitted:  4/17/23
+ * Last update: 4/21/23
+ * Submitted:  4/21/23
  * Comment: Test suite and run sample attached.
  * Comment: I declare that this is entirely my own work
  * @author: Antonio Rosado
- * @version: 2023.04.17
+ * @version: 2023.04.21
  */
 package Lab12;
 import java.io.IOException;
