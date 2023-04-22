@@ -17,7 +17,7 @@ public class Lab12P3Driver
     private static BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
     public static void main (String[] args) throws IOException
     {
-        HashTable table = new HashTable();;
+        HashTable table = new HashTable();
         boolean exit = false;
         while (!exit)
         {
