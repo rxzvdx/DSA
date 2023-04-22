@@ -1,0 +1,1 @@
+I learned how Horner's rule can be used to efficiently create HashTables as Horner's rule is a technique used for quickly evaluating polynomials. Horner's rule can be used to compute a hash code for a given key.
