@@ -80,7 +80,8 @@ public class MyBinarySearchTree<T extends KeyedItem<KT>,
             result = tNode;
         }  // end if
         else
-        {   T nodeItem = tNode.getItem();
+        {   
+            T nodeItem = tNode.getItem();
 
             // search for the insertion position
 

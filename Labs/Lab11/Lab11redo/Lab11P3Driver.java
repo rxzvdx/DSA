@@ -82,13 +82,21 @@ public class Lab11P3Driver
         String key = stdin.readLine();
         System.out.println(key + "\n");
         KeyedItem item = tree.retrieve(key);
-        if (item == null) 
+        if(!(tree.isEmpty()))
         {
-            System.out.println("Item with key '" + key + "' not found in BST.");
-        } 
-        else 
+            if (item == null) 
+            {
+                System.out.println("Item with key '" + key + "' not found in BST.");
+            } 
+            else 
+            {
+                System.out.println("Item with key '" + key + "' found in BST:\n" + item.toString());
+            }
+        }
+
+        else
         {
-            System.out.println("Item with key '" + key + "' found in BST:\n" + item.toString());
+            System.out.println("The BST is empty.");
         }
     }
     
