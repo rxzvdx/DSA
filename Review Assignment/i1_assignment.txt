@@ -1,0 +1,104 @@
+5
+4
+3
+2
+1
+dentist appointment
+3
+October
+2022
+1
+go shopping
+14
+September
+2023
+1
+renew car registration
+1
+September
+0
+1
+return library books
+1 
+September
+2023
+1
+check semester schedule
+1
+September
+2023
+1
+pay college bill
+30
+June
+0
+1
+go to the movies
+1
+September
+2023
+1
+apply for graduation
+2
+February
+2024
+4
+1
+send flowers to Mom
+1 
+September
+0
+1 
+go shopping
+pay college bill
+renew dog license
+1
+January
+0
+4
+5
+dentist appointment
+5
+doctor appointment
+5
+renew dog license
+5
+apply for graduation
+2
+send flowers to Mom
+4
+1
+check courses 
+1 
+September
+2024
+1
+send candy to Mom
+1 
+September
+0
+4
+2
+return books
+2
+return library books
+4
+3
+2
+September
+2023
+Y
+4
+3
+1
+September
+2023
+N
+4
+3
+1
+September
+2024
+Y
+4
+0

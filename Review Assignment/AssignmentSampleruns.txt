@@ -1,0 +1,320 @@
+
+Select from the following menu: 
+	0. Exit the program
+	1. Add an event
+	2. Delete an event
+	3. Delete all events on a specified day
+	4. Display content of Calendar
+	5. Search for an event
+
+Make your menu selection now: 5
+There are no events in the Calendar.
+
+Make your menu selection now: 4
+Your Calendar has no registered events.
+
+Make your menu selection now: 3
+There are no events to delete in the Calendar.
+
+Make your menu selection now: 2
+There are no events to delete in the Calendar.
+
+Make your menu selection now: 1
+You are now adding a new event to your Calendar.
+	Enter the name of the event: dentist appointment
+	Enter day of event: 3
+	Enter month of event: October
+	Enter year of event: 2022
+Event "dentist appointment" has been registered for 3 October 2022.
+
+Make your menu selection now: 1
+You are now adding a new event to your Calendar.
+	Enter the name of the event: go shopping
+	Enter day of event: 14
+	Enter month of event: September
+	Enter year of event: 2023
+Event "go shopping" has been registered for 14 September 2023.
+
+Make your menu selection now: 1
+You are now adding a new event to your Calendar.
+	Enter the name of the event: renew car registration
+	Enter day of event: 1
+	Enter month of event: September
+	Enter year of event: 0
+Event "renew car registration" has been registered for 1 September 0.
+
+Make your menu selection now: 1
+You are now adding a new event to your Calendar.
+	Enter the name of the event: return library books
+	Enter day of event: 1
+	Enter month of event: September
+	Enter year of event: 2023
+Event "return library books" has been registered for 1 September 2023.
+
+Make your menu selection now: 1
+You are now adding a new event to your Calendar.
+	Enter the name of the event: check semester schedule
+	Enter day of event: 1
+	Enter month of event: September
+	Enter year of event: 2023
+Event "check semester schedule" has been registered for 1 September 2023.
+
+Make your menu selection now: 1
+You are now adding a new event to your Calendar.
+	Enter the name of the event: pay college bill
+	Enter day of event: 30
+	Enter month of event: June
+	Enter year of event: 0
+Event "pay college bill" has been registered for 30 June 0.
+
+Make your menu selection now: 1
+You are now adding a new event to your Calendar.
+	Enter the name of the event: go to the movies
+	Enter day of event: 1
+	Enter month of event: September
+	Enter year of event: 2023
+Event "go to the movies" has been registered for 1 September 2023.
+
+Make your menu selection now: 1
+You are now adding a new event to your Calendar.
+	Enter the name of the event: apply for graduation
+	Enter day of event: 2
+	Enter month of event: February
+	Enter year of event: 2024
+Event "apply for graduation" has been registered for 2 February 2024.
+
+Make your menu selection now: 4
+Your Calendar has the following 8 events:
+Event "dentist appointment" is on October 3, 2022.
+Event "go shopping" is on September 14, 2023.
+Event "renew car registration" is on September 1 of every year.
+Event "return library books" is on September 1, 2023.
+Event "check semester schedule" is on September 1, 2023.
+Event "pay college bill" is on June 30 of every year.
+Event "go to the movies" is on September 1, 2023.
+Event "apply for graduation" is on February 2, 2024.
+
+
+Make your menu selection now: 1
+You are now adding a new event to your Calendar.
+	Enter the name of the event: send flowers to Mom
+	Enter day of event: 1
+	Enter month of event: September
+	Enter year of event: 0
+Event "send flowers to Mom" has been registered for 1 September 0.
+
+Make your menu selection now: 1
+You are now adding a new event to your Calendar.
+	Enter the name of the event: go shopping
+Event "go shopping" already exists. Enter a different event name!
+	Enter the name of the event: pay college bill
+Event "pay college bill" already exists. Enter a different event name!
+	Enter the name of the event: renew dog license
+	Enter day of event: 1
+	Enter month of event: January
+	Enter year of event: 0
+Event "renew dog license" has been registered for 1 January 0.
+
+Make your menu selection now: 4
+Your Calendar has the following 10 events:
+Event "dentist appointment" is on October 3, 2022.
+Event "go shopping" is on September 14, 2023.
+Event "renew car registration" is on September 1 of every year.
+Event "return library books" is on September 1, 2023.
+Event "check semester schedule" is on September 1, 2023.
+Event "pay college bill" is on June 30 of every year.
+Event "go to the movies" is on September 1, 2023.
+Event "apply for graduation" is on February 2, 2024.
+Event "send flowers to Mom" is on September 1 of every year.
+Event "renew dog license" is on January 1 of every year.
+
+
+Make your menu selection now: 5
+You are now searching for an event.
+	Enter the name of the event to search for: dentist appointment
+Event "dentist appointment" is on October 3, 2022.
+
+Make your menu selection now: 5
+You are now searching for an event.
+	Enter the name of the event to search for: doctor appointment
+Event doctor appointment is not in the Calendar
+
+Make your menu selection now: 5
+You are now searching for an event.
+	Enter the name of the event to search for: renew dog license
+Event "renew dog license" is on January 1 of every year.
+
+Make your menu selection now: 5
+You are now searching for an event.
+	Enter the name of the event to search for: apply for graduation
+Event "apply for graduation" is on February 2, 2024.
+
+Make your menu selection now: 2
+You are now deleting an event from your Calendar.
+Name of event to delete: send flowers to Mom
+Event "send flowers to Mom" has been deleted from the Calendar.
+
+Make your menu selection now: 4
+Your Calendar has the following 9 events:
+Event "dentist appointment" is on October 3, 2022.
+Event "go shopping" is on September 14, 2023.
+Event "renew car registration" is on September 1 of every year.
+Event "return library books" is on September 1, 2023.
+Event "check semester schedule" is on September 1, 2023.
+Event "pay college bill" is on June 30 of every year.
+Event "go to the movies" is on September 1, 2023.
+Event "apply for graduation" is on February 2, 2024.
+Event "renew dog license" is on January 1 of every year.
+
+
+Make your menu selection now: 1
+You are now adding a new event to your Calendar.
+	Enter the name of the event: check courses
+	Enter day of event: 1
+	Enter month of event: September
+	Enter year of event: 2024
+Event "check courses" has been registered for 1 September 2024.
+
+Make your menu selection now: 1
+You are now adding a new event to your Calendar.
+	Enter the name of the event: send candy to Mom
+	Enter day of event: 1
+	Enter month of event: September
+	Enter year of event: 0
+Event "send candy to Mom" has been registered for 1 September 0.
+
+Make your menu selection now: 4
+Your Calendar has the following 11 events:
+Event "dentist appointment" is on October 3, 2022.
+Event "go shopping" is on September 14, 2023.
+Event "renew car registration" is on September 1 of every year.
+Event "return library books" is on September 1, 2023.
+Event "check semester schedule" is on September 1, 2023.
+Event "pay college bill" is on June 30 of every year.
+Event "go to the movies" is on September 1, 2023.
+Event "apply for graduation" is on February 2, 2024.
+Event "renew dog license" is on January 1 of every year.
+Event "check courses" is on September 1, 2024.
+Event "send candy to Mom" is on September 1 of every year.
+
+
+Make your menu selection now: 2
+You are now deleting an event from your Calendar.
+Name of event to delete: return books
+No event with this name in the Calendar!
+
+Make your menu selection now: 2
+You are now deleting an event from your Calendar.
+Name of event to delete: return library books
+Event "return library books" has been deleted from the Calendar.
+
+Make your menu selection now: 4
+Your Calendar has the following 10 events:
+Event "dentist appointment" is on October 3, 2022.
+Event "go shopping" is on September 14, 2023.
+Event "renew car registration" is on September 1 of every year.
+Event "check semester schedule" is on September 1, 2023.
+Event "pay college bill" is on June 30 of every year.
+Event "go to the movies" is on September 1, 2023.
+Event "apply for graduation" is on February 2, 2024.
+Event "renew dog license" is on January 1 of every year.
+Event "check courses" is on September 1, 2024.
+Event "send candy to Mom" is on September 1 of every year.
+
+
+Make your menu selection now: 3
+You are now deleting all events for a specified day.
+	Enter day: 2
+	Enter month of event: September
+	Enter year of event: 2023
+	Should any yearly events be deleted also?(Y/N): Y
+There are no events on September 2, 2023.
+
+Make your menu selection now: 4
+Your Calendar has the following 10 events:
+Event "dentist appointment" is on October 3, 2022.
+Event "go shopping" is on September 14, 2023.
+Event "renew car registration" is on September 1 of every year.
+Event "check semester schedule" is on September 1, 2023.
+Event "pay college bill" is on June 30 of every year.
+Event "go to the movies" is on September 1, 2023.
+Event "apply for graduation" is on February 2, 2024.
+Event "renew dog license" is on January 1 of every year.
+Event "check courses" is on September 1, 2024.
+Event "send candy to Mom" is on September 1 of every year.
+
+
+Make your menu selection now: 3
+You are now deleting all events for a specified day.
+	Enter day: 1
+	Enter month of event: September
+	Enter year of event: 2023
+	Should any yearly events be deleted also?(Y/N): N
+Events on September 1, 2023 excluding yearly have been deleted from the Calendar.
+
+Make your menu selection now: 4
+Your Calendar has the following 8 events:
+Event "dentist appointment" is on October 3, 2022.
+Event "go shopping" is on September 14, 2023.
+Event "renew car registration" is on September 1 of every year.
+Event "pay college bill" is on June 30 of every year.
+Event "apply for graduation" is on February 2, 2024.
+Event "renew dog license" is on January 1 of every year.
+Event "check courses" is on September 1, 2024.
+Event "send candy to Mom" is on September 1 of every year.
+
+
+Make your menu selection now: 3
+You are now deleting all events for a specified day.
+	Enter day: 1
+	Enter month of event: September
+	Enter year of event: 2024
+	Should any yearly events be deleted also?(Y/N): Y
+Events on September 1, 2024 including yearly have been deleted from the Calendar.
+
+Make your menu selection now: 4
+Your Calendar has the following 5 events:
+Event "dentist appointment" is on October 3, 2022.
+Event "go shopping" is on September 14, 2023.
+Event "pay college bill" is on June 30 of every year.
+Event "apply for graduation" is on February 2, 2024.
+Event "renew dog license" is on January 1 of every year.
+
+
+Make your menu selection now: 0
+Exiting program...good byeMake your menu selection now: 
+0. Exit the program 
+1. Add an event 
+2. Delete an event 
+3. Delete all events on a specified day 
+4. Display content of calendar 
+5. Search for an event 
+You chose: You are now searching for an event.
+Enter the name of the event to search for: 4
+Make your menu selection now: 
+0. Exit the program 
+1. Add an event 
+2. Delete an event 
+3. Delete all events on a specified day 
+4. Display content of calendar 
+5. Search for an event 
+You chose: You are now searching for an event.
+Enter the name of the event to search for: 4
+Make your menu selection now: 
+0. Exit the program 
+1. Add an event 
+2. Delete an event 
+3. Delete all events on a specified day 
+4. Display content of calendar 
+5. Search for an event 
+You chose: You are now searching for an event.
+Enter the name of the event to search for: 4
+Make your menu selection now: 
+0. Exit the program 
+1. Add an event 
+2. Delete an event 
+3. Delete all events on a specified day 
+4. Display content of calendar 
+5. Search for an event 
+You chose: You are now searching for an event.
+Enter the name of the event to search for: 4

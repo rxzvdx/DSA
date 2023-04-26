@@ -1,0 +1,739 @@
+::::::::::::::
+AssignmentStatus.txt
+::::::::::::::
+::::::::::::::
+AssignmentConclusions.txt
+::::::::::::::
+This assignment was definitely a refresher for me and helped me remember a ton of IOOP and OOPDA material. It sort of encapsulated everything (at least the important things) that I was taught in those courses all in one program. I feel a little more comfortable with lambdas because of this assignment as before, I'll admit I was a bit iffy on them besides doing simple things like using the .forEach method or printing something.::::::::::::::
+Driver.java
+::::::::::::::
+/*
+ * Purpose: Data Structure and Algorithms Review Programming Assignment
+ * Status: Complete and thoroughly tested
+ * Last update: 1/27/23
+ * Submitted:  1/28/23
+ * Comment: test suite and sample run attached
+ * Comment: I declare that this is entirely my own work
+ * @author: Antonio Rosado
+ * @version: 2023.01.27
+ */
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Iterator;
+
+public class Driver {
+    static BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
+
+    public static void main(String args[]) throws IOException
+    {
+        boolean exit = false;
+        int day = 0;
+        String month = "";
+        int year = 0;
+        String date = "";
+        String eventName = "";
+        Event event = new Event(day, month, year, date, eventName);
+        EventCollection eventCollection = new EventCollection(day, month, year, date, eventName);
+
+        while (!exit) {
+            System.out.print("Make your menu selection now: \n"
+                             + "0. Exit the program \n"
+                             + "1. Add an event \n"
+                             + "2. Delete an event \n"
+                             + "3. Delete all events on a specified day \n"
+                             + "4. Display content of calendar \n"
+                             + "5. Search for an event \n");
+
+            System.out.print("You chose: ");
+            int input = Integer.parseInt(stdin.readLine());
+
+            // possible cases for initial input
+            switch (input) {
+
+            case 0:
+                System.out.println("Exiting program... good bye");
+                exit = true;
+                break;
+
+            case 1:
+                System.out.println("You are now adding a new event to the Calendar. \n");
+                System.out.print("Enter the name of the event: ");
+                eventName = stdin.readLine();
+                System.out.println(eventName);
+
+                System.out.print("Enter day of event: ");
+                day = Integer.parseInt(stdin.readLine());
+
+                System.out.println(day);
+                Event.addDay(day);
+
+                System.out.print("Enter month of event: ");
+                month = stdin.readLine();
+                System.out.println(month);
+                Event.addMonth(month);
+
+                System.out.print("Enter year of event: ");
+                year = Integer.parseInt(stdin.readLine());
+                System.out.println(year);
+                Event.addYear(year);
+                date = Event.getDate(month, day, year);
+
+                if(EventCollection.eventMap.containsKey(eventName))
+                {
+                    System.out.println("Event " + "'" + eventName + "'" + " already exists. Enter a different event name!");
+                }
+                else
+                {
+                    System.out.println("Event " + "'" + eventName + "'" + " has been registered for " + date);
+                    EventCollection.eventMap.put(eventName, date);
+                    if(year == 0)
+                    {
+                        String date2 =  month + "," + " " + day + " " + "of every year";
+                        eventCollection = new EventCollection(day, month, year, date2, eventName);
+                        EventCollection.eventMap.put(eventName, date2);
+                    }
+                }
+                break;
+
+            case 2:
+                System.out.println("You are now deleting an event from your Calendar.");
+                System.out.print("Name of event to delete: ");
+                eventName = stdin.readLine();
+                System.out.println(eventName);
+
+                if(EventCollection.eventMap.isEmpty())
+                {
+                    System.out.println("There are no events to delete in the Calendar.");
+                }
+
+                else if(!(EventCollection.eventMap.containsKey(eventName)))
+                {
+                    System.out.println("No event with this name in the Calendar!");
+                }
+
+                else
+                {
+                    EventCollection.removeEvent(eventName);
+                    System.out.println("Event " + "'" + eventName + "'" + " has been deleted from the Calendar.");
+                }
+                break;
+
+            case 3:
+                String dateCheck = "";
+                String dateCheck2 = "";
+                if (EventCollection.eventMap.isEmpty()) {
+                    System.out.println("There are no events in the calendar.");
+                }
+
+                else
+                {
+                    System.out.println("You are now deleting all events for a specified day.");
+
+                    System.out.print("Enter day: ");
+                    day = Integer.parseInt(stdin.readLine());
+                    System.out.println(day);
+
+                    System.out.print("Enter month of event: ");
+                    month = stdin.readLine();
+                    System.out.println(month);
+
+                    System.out.print("Enter year of event: ");
+                    year = Integer.parseInt(stdin.readLine());
+                    System.out.println(year);
+                    System.out.println("Should any yearly events be deleted also?(Y/N) ");
+                    String inputYN = stdin.readLine();
+                    System.out.println(inputYN);
+                    if(inputYN.equalsIgnoreCase("Y"))
+                    {
+                        dateCheck = month + "," + " " + day + " " + "of every year";
+                        EventCollection.removeEventsOnDay(dateCheck);
+                        System.out.println("Events on " + dateCheck + " including yearly have been deleted from the Calendar");
+
+                    }
+
+                    else if(inputYN.equalsIgnoreCase("N"))
+                    {
+                        dateCheck2 = (month + " " + day + ", " + year + ".");
+                        System.out.println("Events on " + dateCheck2 + " excluding yearly have been deleted from the Calendar");
+                        EventCollection.removeEventsOnDay(dateCheck2);
+                    }
+                    
+                    else
+                    {
+                        System.out.println("There are no events on "  + "'" + dateCheck + "'" );
+                    }
+
+                }
+                break;
+
+            case 4:
+                System.out.println("Your Calendar has the following " + EventCollection.eventMap.size() + " events:");
+                if(EventCollection.eventMap.isEmpty())
+                {
+                    System.out.println("Your Calendar has no registered events.");
+                }
+                else
+                {
+                    EventCollection.eventMap.entrySet().forEach(entry -> {
+                        System.out.println("Event " + "'" + entry.getKey() + "'" + " is on " + entry.getValue());
+                    });
+                }
+                break;
+
+            case 5:
+                System.out.println("You are now searching for an event.");
+                System.out.print("Enter the name of the event to search for: ");
+                eventName = stdin.readLine();
+                System.out.println(eventName);
+                boolean searching = true;
+                while(searching)
+                {
+                    if(EventCollection.eventMap.containsKey(eventName))
+                    {
+                        searching = false;
+                        System.out.println("Event " + "'" + eventName + "'" + " is on " + EventCollection.eventMap.get(eventName));
+                    }
+                }
+                if(searching)
+                {
+                    System.out.println("No event named " + "'" + eventName + "'" + " exists.");
+                }
+                break;
+
+            case 6:
+                EventCollection.eventMap.entrySet().forEach(entry -> {
+                    System.out.println(entry.getKey() + " " + entry.getValue());
+                });
+
+            }
+        }
+    }
+}::::::::::::::
+Event.java
+::::::::::::::
+/*
+ * Purpose: Data Structure and Algorithms Review Programming Assignment
+ * Status: Complete and thoroughly tested
+ * Last update: 1/27/23
+ * Submitted:  1/27/23
+ * Comment: test suite and sample run attached
+ * Comment: I declare that this is entirely my own work
+ * @author: Antonio Rosado
+ * @version: 2023.01.27
+ */
+
+
+/**
+ * Creates an event depending on user input
+ *
+ * @author (Antonio Rosado)
+ * @version (1/24/2023)
+ */
+public class Event {
+    protected static int day; // day int
+    protected static String month; // month int
+    protected static int year; // year int
+    protected static String date = ""; // date string
+    protected static String eventName = "";
+
+    /**
+     *
+     * Creates an event with specified info
+     * @param int day               day of event
+     * @param int month             month of event
+     * @param int year              year of event
+     * @param String date           date of event
+     * @param String eventName      name of eveng
+     */
+    public Event(int day, String month, int year, String date, String eventName)
+    {
+        Event.day = day;
+        Event.month = month;
+        Event.year = year;
+        Event.date = date;
+        Event.eventName = eventName;
+    }
+
+    /**
+     * Return day of event
+     *
+     * @return    day int
+     */
+    public static int getDay ()
+    {
+        return day;
+    }
+
+    /**
+     * Return month of event
+     *
+     * @return    month int
+     */
+    public static String getMonth ()
+    {
+        return month;
+    }
+
+    /**
+    * Return year of event
+    *
+    * @return    year int
+    */
+    public static int getYear ()
+    {
+        return year;
+    }
+
+    /**
+    * Return year of event
+    *
+    * @return    year int
+    */
+    public static int findEvent ()
+    {
+        return year;
+    }
+
+    /**
+     * Return date of event
+     * @param int day               day of event
+     * @param int month             month of event
+     * @param int year              year of event
+     * @return                      month + date + year
+     */
+    public static String getDate (String month, int day, int year)
+    {
+        String date = (month + " " + day + ", " + year + ".");
+        return date;
+    }
+
+    /**
+     * Return name of event
+     *
+     * @return    day int
+     */
+    public static String getEventName ()
+    {
+        return eventName;
+    }
+
+    /**
+     * Return month of event
+     *
+     * @return    month int
+     */
+    public static void addEvent(String event) {
+    }
+
+    public static void addDay(int day) {
+    }
+
+    public static void addMonth(String month) {
+    }
+
+    public static void addYear(int year) {
+    }
+
+    public static void addEventName(String eventName)
+    {
+
+    }
+}
+::::::::::::::
+EventCollection.java
+::::::::::::::
+/*
+ * Purpose: Data Structure and Algorithms Review Programming Assignment
+ * Status: Complete and thoroughly tested
+ * Last update: 1/27/23
+ * Submitted:  1/27/23
+ * Comment: test suite and sample run attached
+ * Comment: I declare that this is entirely my own work
+ * @author: Antonio Rosado
+ * @version: 2023.01.27
+ */
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Collections;
+
+public class EventCollection extends Event {
+    static HashMap<String, String> eventMap = new HashMap<>();
+
+    /**
+     *
+     * Creates an event with specified info
+     * @param int day               day of event
+     * @param int month             month of event
+     * @param int year              year of event
+     * @param String date           date of event
+     * @param String eventName      name of event
+     */
+    public EventCollection(int day, String month, int year, String date, String eventName) {
+
+        super(day, month, year, date, eventName);
+
+    }
+
+    /**
+     * Add event to eventList
+     * @param String eventname       String eventName
+     */
+    public static void addEvent(String eventName)
+    {
+        if(eventMap != null && (!eventMap.containsKey(eventName)))
+        {
+            eventMap.put(eventName, date);
+        }
+    }
+
+    /**
+     * Remove event by specified event name
+     *
+     * @param String eventName eventName String
+     */
+    public static void removeEvent(String eventName)
+    {
+        if(eventMap.containsKey(eventName))
+        {
+            eventMap.remove(eventName);
+        }
+    }
+
+    /**
+     * Remove all events on specifed day
+     * @param String date       date string
+     */
+    public static void removeEventsOnDay(String dateCheck)
+    {
+        if(!(eventMap.isEmpty()) && (eventMap.containsValue(dateCheck)))
+        {
+            eventMap.values().removeAll(Collections.singleton(dateCheck));
+        }
+    }
+}
+::::::::::::::
+AssignmentSampleruns.txt
+::::::::::::::
+
+Select from the following menu: 
+	0. Exit the program
+	1. Add an event
+	2. Delete an event
+	3. Delete all events on a specified day
+	4. Display content of Calendar
+	5. Search for an event
+
+Make your menu selection now: 5
+There are no events in the Calendar.
+
+Make your menu selection now: 4
+Your Calendar has no registered events.
+
+Make your menu selection now: 3
+There are no events to delete in the Calendar.
+
+Make your menu selection now: 2
+There are no events to delete in the Calendar.
+
+Make your menu selection now: 1
+You are now adding a new event to your Calendar.
+	Enter the name of the event: dentist appointment
+	Enter day of event: 3
+	Enter month of event: October
+	Enter year of event: 2022
+Event "dentist appointment" has been registered for 3 October 2022.
+
+Make your menu selection now: 1
+You are now adding a new event to your Calendar.
+	Enter the name of the event: go shopping
+	Enter day of event: 14
+	Enter month of event: September
+	Enter year of event: 2023
+Event "go shopping" has been registered for 14 September 2023.
+
+Make your menu selection now: 1
+You are now adding a new event to your Calendar.
+	Enter the name of the event: renew car registration
+	Enter day of event: 1
+	Enter month of event: September
+	Enter year of event: 0
+Event "renew car registration" has been registered for 1 September 0.
+
+Make your menu selection now: 1
+You are now adding a new event to your Calendar.
+	Enter the name of the event: return library books
+	Enter day of event: 1
+	Enter month of event: September
+	Enter year of event: 2023
+Event "return library books" has been registered for 1 September 2023.
+
+Make your menu selection now: 1
+You are now adding a new event to your Calendar.
+	Enter the name of the event: check semester schedule
+	Enter day of event: 1
+	Enter month of event: September
+	Enter year of event: 2023
+Event "check semester schedule" has been registered for 1 September 2023.
+
+Make your menu selection now: 1
+You are now adding a new event to your Calendar.
+	Enter the name of the event: pay college bill
+	Enter day of event: 30
+	Enter month of event: June
+	Enter year of event: 0
+Event "pay college bill" has been registered for 30 June 0.
+
+Make your menu selection now: 1
+You are now adding a new event to your Calendar.
+	Enter the name of the event: go to the movies
+	Enter day of event: 1
+	Enter month of event: September
+	Enter year of event: 2023
+Event "go to the movies" has been registered for 1 September 2023.
+
+Make your menu selection now: 1
+You are now adding a new event to your Calendar.
+	Enter the name of the event: apply for graduation
+	Enter day of event: 2
+	Enter month of event: February
+	Enter year of event: 2024
+Event "apply for graduation" has been registered for 2 February 2024.
+
+Make your menu selection now: 4
+Your Calendar has the following 8 events:
+Event "dentist appointment" is on October 3, 2022.
+Event "go shopping" is on September 14, 2023.
+Event "renew car registration" is on September 1 of every year.
+Event "return library books" is on September 1, 2023.
+Event "check semester schedule" is on September 1, 2023.
+Event "pay college bill" is on June 30 of every year.
+Event "go to the movies" is on September 1, 2023.
+Event "apply for graduation" is on February 2, 2024.
+
+
+Make your menu selection now: 1
+You are now adding a new event to your Calendar.
+	Enter the name of the event: send flowers to Mom
+	Enter day of event: 1
+	Enter month of event: September
+	Enter year of event: 0
+Event "send flowers to Mom" has been registered for 1 September 0.
+
+Make your menu selection now: 1
+You are now adding a new event to your Calendar.
+	Enter the name of the event: go shopping
+Event "go shopping" already exists. Enter a different event name!
+	Enter the name of the event: pay college bill
+Event "pay college bill" already exists. Enter a different event name!
+	Enter the name of the event: renew dog license
+	Enter day of event: 1
+	Enter month of event: January
+	Enter year of event: 0
+Event "renew dog license" has been registered for 1 January 0.
+
+Make your menu selection now: 4
+Your Calendar has the following 10 events:
+Event "dentist appointment" is on October 3, 2022.
+Event "go shopping" is on September 14, 2023.
+Event "renew car registration" is on September 1 of every year.
+Event "return library books" is on September 1, 2023.
+Event "check semester schedule" is on September 1, 2023.
+Event "pay college bill" is on June 30 of every year.
+Event "go to the movies" is on September 1, 2023.
+Event "apply for graduation" is on February 2, 2024.
+Event "send flowers to Mom" is on September 1 of every year.
+Event "renew dog license" is on January 1 of every year.
+
+
+Make your menu selection now: 5
+You are now searching for an event.
+	Enter the name of the event to search for: dentist appointment
+Event "dentist appointment" is on October 3, 2022.
+
+Make your menu selection now: 5
+You are now searching for an event.
+	Enter the name of the event to search for: doctor appointment
+Event doctor appointment is not in the Calendar
+
+Make your menu selection now: 5
+You are now searching for an event.
+	Enter the name of the event to search for: renew dog license
+Event "renew dog license" is on January 1 of every year.
+
+Make your menu selection now: 5
+You are now searching for an event.
+	Enter the name of the event to search for: apply for graduation
+Event "apply for graduation" is on February 2, 2024.
+
+Make your menu selection now: 2
+You are now deleting an event from your Calendar.
+Name of event to delete: send flowers to Mom
+Event "send flowers to Mom" has been deleted from the Calendar.
+
+Make your menu selection now: 4
+Your Calendar has the following 9 events:
+Event "dentist appointment" is on October 3, 2022.
+Event "go shopping" is on September 14, 2023.
+Event "renew car registration" is on September 1 of every year.
+Event "return library books" is on September 1, 2023.
+Event "check semester schedule" is on September 1, 2023.
+Event "pay college bill" is on June 30 of every year.
+Event "go to the movies" is on September 1, 2023.
+Event "apply for graduation" is on February 2, 2024.
+Event "renew dog license" is on January 1 of every year.
+
+
+Make your menu selection now: 1
+You are now adding a new event to your Calendar.
+	Enter the name of the event: check courses
+	Enter day of event: 1
+	Enter month of event: September
+	Enter year of event: 2024
+Event "check courses" has been registered for 1 September 2024.
+
+Make your menu selection now: 1
+You are now adding a new event to your Calendar.
+	Enter the name of the event: send candy to Mom
+	Enter day of event: 1
+	Enter month of event: September
+	Enter year of event: 0
+Event "send candy to Mom" has been registered for 1 September 0.
+
+Make your menu selection now: 4
+Your Calendar has the following 11 events:
+Event "dentist appointment" is on October 3, 2022.
+Event "go shopping" is on September 14, 2023.
+Event "renew car registration" is on September 1 of every year.
+Event "return library books" is on September 1, 2023.
+Event "check semester schedule" is on September 1, 2023.
+Event "pay college bill" is on June 30 of every year.
+Event "go to the movies" is on September 1, 2023.
+Event "apply for graduation" is on February 2, 2024.
+Event "renew dog license" is on January 1 of every year.
+Event "check courses" is on September 1, 2024.
+Event "send candy to Mom" is on September 1 of every year.
+
+
+Make your menu selection now: 2
+You are now deleting an event from your Calendar.
+Name of event to delete: return books
+No event with this name in the Calendar!
+
+Make your menu selection now: 2
+You are now deleting an event from your Calendar.
+Name of event to delete: return library books
+Event "return library books" has been deleted from the Calendar.
+
+Make your menu selection now: 4
+Your Calendar has the following 10 events:
+Event "dentist appointment" is on October 3, 2022.
+Event "go shopping" is on September 14, 2023.
+Event "renew car registration" is on September 1 of every year.
+Event "check semester schedule" is on September 1, 2023.
+Event "pay college bill" is on June 30 of every year.
+Event "go to the movies" is on September 1, 2023.
+Event "apply for graduation" is on February 2, 2024.
+Event "renew dog license" is on January 1 of every year.
+Event "check courses" is on September 1, 2024.
+Event "send candy to Mom" is on September 1 of every year.
+
+
+Make your menu selection now: 3
+You are now deleting all events for a specified day.
+	Enter day: 2
+	Enter month of event: September
+	Enter year of event: 2023
+	Should any yearly events be deleted also?(Y/N): Y
+There are no events on September 2, 2023.
+
+Make your menu selection now: 4
+Your Calendar has the following 10 events:
+Event "dentist appointment" is on October 3, 2022.
+Event "go shopping" is on September 14, 2023.
+Event "renew car registration" is on September 1 of every year.
+Event "check semester schedule" is on September 1, 2023.
+Event "pay college bill" is on June 30 of every year.
+Event "go to the movies" is on September 1, 2023.
+Event "apply for graduation" is on February 2, 2024.
+Event "renew dog license" is on January 1 of every year.
+Event "check courses" is on September 1, 2024.
+Event "send candy to Mom" is on September 1 of every year.
+
+
+Make your menu selection now: 3
+You are now deleting all events for a specified day.
+	Enter day: 1
+	Enter month of event: September
+	Enter year of event: 2023
+	Should any yearly events be deleted also?(Y/N): N
+Events on September 1, 2023 excluding yearly have been deleted from the Calendar.
+
+Make your menu selection now: 4
+Your Calendar has the following 8 events:
+Event "dentist appointment" is on October 3, 2022.
+Event "go shopping" is on September 14, 2023.
+Event "renew car registration" is on September 1 of every year.
+Event "pay college bill" is on June 30 of every year.
+Event "apply for graduation" is on February 2, 2024.
+Event "renew dog license" is on January 1 of every year.
+Event "check courses" is on September 1, 2024.
+Event "send candy to Mom" is on September 1 of every year.
+
+
+Make your menu selection now: 3
+You are now deleting all events for a specified day.
+	Enter day: 1
+	Enter month of event: September
+	Enter year of event: 2024
+	Should any yearly events be deleted also?(Y/N): Y
+Events on September 1, 2024 including yearly have been deleted from the Calendar.
+
+Make your menu selection now: 4
+Your Calendar has the following 5 events:
+Event "dentist appointment" is on October 3, 2022.
+Event "go shopping" is on September 14, 2023.
+Event "pay college bill" is on June 30 of every year.
+Event "apply for graduation" is on February 2, 2024.
+Event "renew dog license" is on January 1 of every year.
+
+
+Make your menu selection now: 0
+Exiting program...good byeMake your menu selection now: 
+0. Exit the program 
+1. Add an event 
+2. Delete an event 
+3. Delete all events on a specified day 
+4. Display content of calendar 
+5. Search for an event 
+You chose: You are now searching for an event.
+Enter the name of the event to search for: 4
+Make your menu selection now: 
+0. Exit the program 
+1. Add an event 
+2. Delete an event 
+3. Delete all events on a specified day 
+4. Display content of calendar 
+5. Search for an event 
+You chose: You are now searching for an event.
+Enter the name of the event to search for: 4
+Make your menu selection now: 
+0. Exit the program 
+1. Add an event 
+2. Delete an event 
+3. Delete all events on a specified day 
+4. Display content of calendar 
+5. Search for an event 
+You chose: You are now searching for an event.
+Enter the name of the event to search for: 4
+Make your menu selection now: 
+0. Exit the program 
+1. Add an event 
+2. Delete an event 
+3. Delete all events on a specified day 
+4. Display content of calendar 
+5. Search for an event 
+You chose: You are now searching for an event.
+Enter the name of the event to search for: 4

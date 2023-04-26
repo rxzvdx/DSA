@@ -1,0 +1,39 @@
+current grade as of 3/20: numeric:71.80  letter:C-
+current grade as of 3/31: numeric:73.25  letter:C-
+IMPORTANT COMPETENCY REQUIREMENT: To earn a passing grade a student must obtain at least 50% in EACH of the Course Components 2-3 (labs, quizzes, and exams). [All components and subcomponents are graded on a scale of 100]. I.e. the Lab total grade has to be at least 50, the Quiz total has to be at least 50, and the combined exam grade has to be at least 50. Note that while 50% is a minimum requirement in those 3 categories, it is not sufficient for a passing grade.
+
+A: mandatory meeting:  met 3/9 - discussed the need to bring up the Quiz grades from the 60-70 range up and improve the completion and correctness of the Labs and redos - borrowed textbook - please return at the final on 5/1
+absences: 4/3e 4/6e 4/13
+
+B: Course Components:
+Component 1: Review Assignment(10% of final grade): 75 - 2 days late : does not run on provided input data
+Component 2: Lab total [grade entered after all labs have been submitted and reviewed](20% of final grade):
+labGPA as of 3/20 (Labs 1-6):78
+labGPA as of 3/31 (Labs 1-8):82
+[Note: @=approved redo; *=correct; ~=almost correct; -=missing; #=discussed redo]
+*Lab0(pre-semester prep): correct
+*Lab1 (IOOP/OOPDA review lab):  P1 missing sample runs on all but n=3 and incorrect execution because of missing comma for n=3; P3 missing sample run for 0 pairs; P3 not guideline 10 compliant  | corrected
+*Lab2:  P1 resize should not call super add (-item will be inserted twice!) and should not check if array is full; reverse incorrect - has no effect on the collection; P2 ListArrayListBased - anything other than ArrayList d.f. unnecessary - remove & refactor; ListArrayListBasedPlus unnecessary resize and add and incorrect reverse - you need to test everything thoroughly! | corrected
+@Lab3: displayAndDeleteLargeAndSmall should not be passed  the array as a parameter but declare it as a local variable, allocate mem for it and pass it to findIndexLargeAndSmall; findIndexLargeAndSmall inefficiently compares against smallest AND largest for every list item - clearly pointed out in class to be inefficient; reverse inefficiently passes through the collection twice to put in temp array and then back; P3 incomplete – the task was to investigate PAST the  ==0, <0 and >0 returned value | still not guideline 9 compliant and reverse does not reverse; P3 still incomplete
+@Lab4: unnecessary calls to size method instead of using numItems; add unnecessary code duplication with numItems updated on all branches; toStringR incorrect; P3 incorrect | most corrections made, but toString still incorrect
+@Lab5: pop and peek should throw exceptions; toString should collect top-down -> no corrections made| not guideline 9 compliant; throws exception right away when tested; incorrect implementation because un-healthy items are considered for tip in sample bag and incorrect management of bags | implementation and P2 still incorrect
+@Lab6: CSLS: as discussed in class CNode needs a 1 param constructor that sets the next link to self-reference; replace all calls to isEmpty in Queue/DEQ implementation with probing of d.f.; toString is incorrect and should not contain any narration;  resize should not take params; dequeue should not call resize; DEQ incorrect as well | CSLS dequeue and toString still incorrect; P2 and P3 not tested| CSLS corrected but P2 and P3 still incorrect - weights are off
+*Lab7: prelab P0 n0 incorrect P1 counters incorrect; Math.min is not allowed (see guidelines) [and it is called repeatedly!]- instead use ternary operator, as learned in class; BC3 doesn't use the reduced formula discussed in class that ensures the largest reduction in factors; BCIII analysis incorrect | corrected - only EC analysis is incorrect
+@Lab8: no javadoc; not guideline 9 compliant; not guideline 10 complaint; P2 search encoding incorrect - no positional info if unsuccessful; P3 search incorrect and stop method has no purpose | javadoc incorrect; P2 using wrong search- should have been modified sequential, not binary
+Lab9: +EC; not submitted -approved late submission: Imp Sel incorrect
+@Lab10: P0 incorrect
+@Lab11: prelab not submitted; incorrect execution on provided input data
+@Lab12: chainnode toString not as required; delete incorrect
+
+Component 3: Quiz total [grade entered after all quizzes are administered and graded](25% of final grade):
+ Q1 [Review]: 75
+ Q2: 50
+ Q3: 75
+ Q4: 70
+ Q5: 20
+ Q6:
+ possibly more quizzes including pop quizzes:
+
+Component 4: Exams:
+ Lab Midterm(15% of final grade): 70 - execution fails right away with QueueException and cannot be tested further; incorrect collections and item types used
+ Final Exam(30% of final grade):

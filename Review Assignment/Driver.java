@@ -1,0 +1,204 @@
+/*
+ * Purpose: Data Structure and Algorithms Review Programming Assignment
+ * Status: Complete and thoroughly tested
+ * Last update: 1/27/23
+ * Submitted:  1/28/23
+ * Comment: test suite and sample run attached
+ * Comment: I declare that this is entirely my own work
+ * @author: Antonio Rosado
+ * @version: 2023.01.27
+ */
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Iterator;
+
+public class Driver {
+    static BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
+
+    public static void main(String args[]) throws IOException
+    {
+        boolean exit = false;
+        int day = 0;
+        String month = "";
+        int year = 0;
+        String date = "";
+        String eventName = "";
+        Event event = new Event(day, month, year, date, eventName);
+        EventCollection eventCollection = new EventCollection(day, month, year, date, eventName);
+
+        while (!exit) {
+            System.out.print("Make your menu selection now: \n"
+                             + "0. Exit the program \n"
+                             + "1. Add an event \n"
+                             + "2. Delete an event \n"
+                             + "3. Delete all events on a specified day \n"
+                             + "4. Display content of calendar \n"
+                             + "5. Search for an event \n");
+
+            System.out.print("You chose: ");
+            int input = Integer.parseInt(stdin.readLine());
+
+            // possible cases for initial input
+            switch (input) {
+
+            case 0:
+                System.out.println("Exiting program... good bye");
+                exit = true;
+                break;
+
+            case 1:
+                System.out.println("You are now adding a new event to the Calendar. \n");
+                System.out.print("Enter the name of the event: ");
+                eventName = stdin.readLine();
+                System.out.println(eventName);
+
+                System.out.print("Enter day of event: ");
+                day = Integer.parseInt(stdin.readLine());
+
+                System.out.println(day);
+                Event.addDay(day);
+
+                System.out.print("Enter month of event: ");
+                month = stdin.readLine();
+                System.out.println(month);
+                Event.addMonth(month);
+
+                System.out.print("Enter year of event: ");
+                year = Integer.parseInt(stdin.readLine());
+                System.out.println(year);
+                Event.addYear(year);
+                date = Event.getDate(month, day, year);
+
+                if(EventCollection.eventMap.containsKey(eventName))
+                {
+                    System.out.println("Event " + "'" + eventName + "'" + " already exists. Enter a different event name!");
+                }
+                else
+                {
+                    System.out.println("Event " + "'" + eventName + "'" + " has been registered for " + date);
+                    EventCollection.eventMap.put(eventName, date);
+                    if(year == 0)
+                    {
+                        String date2 =  month + "," + " " + day + " " + "of every year";
+                        eventCollection = new EventCollection(day, month, year, date2, eventName);
+                        EventCollection.eventMap.put(eventName, date2);
+                    }
+                }
+                break;
+
+            case 2:
+                System.out.println("You are now deleting an event from your Calendar.");
+                System.out.print("Name of event to delete: ");
+                eventName = stdin.readLine();
+                System.out.println(eventName);
+
+                if(EventCollection.eventMap.isEmpty())
+                {
+                    System.out.println("There are no events to delete in the Calendar.");
+                }
+
+                else if(!(EventCollection.eventMap.containsKey(eventName)))
+                {
+                    System.out.println("No event with this name in the Calendar!");
+                }
+
+                else
+                {
+                    EventCollection.removeEvent(eventName);
+                    System.out.println("Event " + "'" + eventName + "'" + " has been deleted from the Calendar.");
+                }
+                break;
+
+            case 3:
+                String dateCheck = "";
+                String dateCheck2 = "";
+                if (EventCollection.eventMap.isEmpty()) {
+                    System.out.println("There are no events in the calendar.");
+                }
+
+                else
+                {
+                    System.out.println("You are now deleting all events for a specified day.");
+
+                    System.out.print("Enter day: ");
+                    day = Integer.parseInt(stdin.readLine());
+                    System.out.println(day);
+
+                    System.out.print("Enter month of event: ");
+                    month = stdin.readLine();
+                    System.out.println(month);
+
+                    System.out.print("Enter year of event: ");
+                    year = Integer.parseInt(stdin.readLine());
+                    System.out.println(year);
+                    System.out.println("Should any yearly events be deleted also?(Y/N) ");
+                    String inputYN = stdin.readLine();
+                    System.out.println(inputYN);
+                    if(inputYN.equalsIgnoreCase("Y"))
+                    {
+                        dateCheck = month + "," + " " + day + " " + "of every year";
+                        EventCollection.removeEventsOnDay(dateCheck);
+                        System.out.println("Events on " + dateCheck + " including yearly have been deleted from the Calendar");
+
+                    }
+
+                    else if(inputYN.equalsIgnoreCase("N"))
+                    {
+                        dateCheck2 = (month + " " + day + ", " + year + ".");
+                        System.out.println("Events on " + dateCheck2 + " excluding yearly have been deleted from the Calendar");
+                        EventCollection.removeEventsOnDay(dateCheck2);
+                    }
+                    
+                    else
+                    {
+                        System.out.println("There are no events on "  + "'" + dateCheck + "'" );
+                    }
+
+                }
+                break;
+
+            case 4:
+                System.out.println("Your Calendar has the following " + EventCollection.eventMap.size() + " events:");
+                if(EventCollection.eventMap.isEmpty())
+                {
+                    System.out.println("Your Calendar has no registered events.");
+                }
+                else
+                {
+                    EventCollection.eventMap.entrySet().forEach(entry -> {
+                        System.out.println("Event " + "'" + entry.getKey() + "'" + " is on " + entry.getValue());
+                    });
+                }
+                break;
+
+            case 5:
+                System.out.println("You are now searching for an event.");
+                System.out.print("Enter the name of the event to search for: ");
+                eventName = stdin.readLine();
+                System.out.println(eventName);
+                boolean searching = true;
+                while(searching)
+                {
+                    if(EventCollection.eventMap.containsKey(eventName))
+                    {
+                        searching = false;
+                        System.out.println("Event " + "'" + eventName + "'" + " is on " + EventCollection.eventMap.get(eventName));
+                    }
+                }
+                if(searching)
+                {
+                    System.out.println("No event named " + "'" + eventName + "'" + " exists.");
+                }
+                break;
+
+            case 6:
+                EventCollection.eventMap.entrySet().forEach(entry -> {
+                    System.out.println(entry.getKey() + " " + entry.getValue());
+                });
+
+            }
+        }
+    }
+}

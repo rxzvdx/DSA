@@ -11,11 +11,17 @@ Header:
  */
  
 Styling java files:
-astyle --mode=java  Lab0Driver.java
+astyle --mode=java *.java
  
 Creating allfiles.txt:
 more  Lab0Status.txt  Lab0Conclusions.txt  Lab0Driver.java  Lab0Sampleruns.txt > allfiles.txt
-more Lab4Status.txt Lab4Conclusions.txt DNode.java ListCDLSBased.java Lab4P1Driver.java Lab4P1Sampleruns.txt Lab4P2.txt > allfiles.txt
+DNode.java ListCDLSGeneric.java > allfiles.txt
+Lab5Driver  StackRA  <lab5_input.txt  >lab5_outputRA.txt
+
+java Lab5Driver  StackSLS  <lab5_input.txt  >lab5_outputSLS.txt
+
+javac *.java (compiles all java files in directory)
+
 Making pdf:
 makepdf  allfiles.txt 
   
